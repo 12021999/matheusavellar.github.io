@@ -76,7 +76,8 @@
 				$(this).css({"background-color":"#62BDB6","border":"1px solid #000000"});
 			}).mousedown(function() {
 				$(this).css({"background-color":"#9393A0","border":"1px solid #A50000"});
-				$("#refresh .loaded").animate({"width":"100%"},750,function(){$("#refresh .refreshmsg").text("Done!");});
+				var r = Math.floor(Math.random()*750);
+				$("#refresh .loaded").animate({"width":"100%"},r,function(){$("#refresh .refreshmsg").text("Done!");});
 				setTimeout(function(){window.location.reload();},500);
 			});
 			$("span.cheers").text(" Cheers to ");
