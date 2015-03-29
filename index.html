@@ -126,28 +126,31 @@
 		function start(){
 			$("#left").hover(function(){
 				$("#sidebar").stop().animate({"margin-left":"-10px"});
-				$("#sidebar .gitDescription").stop().animate({"margin-left":"45px"});
-				$("#sidebar .plugDescription").stop().animate({"margin-left":"45px"});
 			}, function(){
 				$("#sidebar").stop().animate({"margin-left":"-43px"});
-				$("#sidebar .gitDescription").stop().animate({"margin-left":"-20px"});
-				$("#sidebar .plugDescription").stop().animate({"margin-left":"-20px"});
 			});
 
+			$(".github").on('click', function(){window.location.assign("https://github.com/Tetheu98")});
+			$(".plug").on('click', function(){window.location.assign("https://plug.dj/@/beta-tester")});
+
 			$("#sidebar .iconbox.github").hover(function(){
-				$("#sidebar .iconbox.github").stop().animate({"width":"120px"});
+				$("#sidebar .gitDescription").stop().animate({"margin-left":"45px"},500);
+				$("#sidebar .iconbox.github").stop().animate({"width":"120px"},500);
 				$("#sidebar .gitDescription").stop().css({"opacity":"1"});
 			},function(){
+				$("#sidebar .gitDescription").stop().animate({"margin-left":"-20px"},500);
 				$("#sidebar .gitDescription").stop().css({"opacity":"0"});
-				$("#sidebar .iconbox.github").stop().animate({"width":"40px"});
+				$("#sidebar .iconbox.github").stop().animate({"width":"40px"},500);
 			});
 
 			$("#sidebar .iconbox.plug").hover(function(){
-				$("#sidebar .iconbox.plug").stop().animate({"width":"120px"});
+				$("#sidebar .plugDescription").stop().animate({"margin-left":"45px"},500);
+				$("#sidebar .iconbox.plug").stop().animate({"width":"120px"},500);
 				$("#sidebar .plugDescription").stop().css({"opacity":"1"});
 			},function(){
+				$("#sidebar .plugDescription").stop().animate({"margin-left":"-20px"},500);
 				$("#sidebar .plugDescription").stop().css({"opacity":"0"});
-				$("#sidebar .iconbox.plug").stop().animate({"width":"40px"});
+				$("#sidebar .iconbox.plug").stop().animate({"width":"40px"},500);
 			});
 
 			$("#refresh").mouseup(function() {
