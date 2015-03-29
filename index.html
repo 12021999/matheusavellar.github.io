@@ -28,6 +28,9 @@
 			-moz-box-shadow: 10px 15px 15px -2px rgba(0,0,0,0.2);
 			box-shadow: 10px 15px 15px -2px rgba(0,0,0,0.2);
 		}
+		div#refresh:hover {
+			background-color: #babaca;
+		}
 		div#uselessinfo {
 			margin-top: 100px;
 			background-color: rgba(0, 0, 0, 0.48);
@@ -63,11 +66,6 @@
 
 		function start(){
 			$("#refresh").on('click', function(){window.location.reload();});
-			$("#refresh").hover(function(){
-				$("#refresh").css({"background-color":"#6297BD"});
-			},function(){
-				$("#refresh").css({"background-color":"#62BDB6"});
-			});
 			$("span.cheers").text(" Cheers to ");
 			$("span.cheers").append("<strong>" + $("body").attr("bgcolor") + "</strong>");
 			$("#uselessinfo").hover(function(){$("#uselessinfo").fadeOut();});
