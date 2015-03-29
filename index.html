@@ -15,10 +15,11 @@
 		/* Color script from http://randomcolour.com/ */
 
 		function start(){
+			$("#loading").fadeOut();
 			$("#left").hover(function(){
-				$("#sidebar").stop().animate({"margin-left":"-10px"},200);
+				$("#sidebar").stop().animate({"margin-left":"-10px","opacity":"0.1"},200);
 			}, function(){
-				$("#sidebar").stop().animate({"margin-left":"-43px"},200);
+				$("#sidebar").stop().animate({"margin-left":"-43px","opacity":"0"},200);
 			});
 
 			$("#refresh").mouseup(function() {
@@ -47,9 +48,12 @@
 			}
 		}
 	</script>
+	<div id="loading">
+		<div id="title">Loading...</div>
+	</div>
 	<div id="left">
 		<div id="sidebar">
-			<div class="iconbox none" style="height: 35px;"></div>
+			<div class="iconbox none" style="height: 5px;"></div>
 			<div class="iconbox github">
 				<i class="icon-git"></i>
 				<a class="description" href="https://github.com/Tetheu98" target="_blank">GitHub</a>
