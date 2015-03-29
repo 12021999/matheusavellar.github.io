@@ -43,6 +43,14 @@ div#uselessinfo {
 	width: 800px;
 	border-radius: 12px;
 }
+div#loading {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background-color: #404040;
+	margin-left: -8px;
+	margin-top: -8px;
+}
 div.iconbox {
 	height: 40px;
 	width: 40px;
