@@ -8,7 +8,7 @@ function beforeStart(){
 		$("#loading").fadeOut();
 		$("#right").fadeIn();
 		$("#left").fadeIn();
-	},5000);
+	},1000);
 }
 function start(){
 	$("#left").hover(function(){
