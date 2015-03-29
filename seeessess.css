@@ -57,7 +57,7 @@ div.iconbox {
 	background-color: rgba(245, 245, 245, 1);
 	border-radius: 22px;
 	cursor: pointer;
-	opacity": 0.4;
+	opacity: 0.4;
 }
 div.none {
 	opacity: 0;
