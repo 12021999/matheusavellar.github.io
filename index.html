@@ -62,26 +62,15 @@
 			top: 12px;
 			color: #ffffff;
 		}
-		span.gitDescription {
+		span.description {
 			position: absolute;
-			margin-left: -22px;
-			margin-top: 7px;
-			color: #333;
-			font-family: 'Apex Sans', sans-serif;
-			font-weight: bold;
-			text-decoration: none;
-			font-size: 20px;
-			z-index: -1;
-		}
-		span.plugDescription {
-			position: absolute;
-			margin-left: -22px;
-			margin-top: 7px;
+			opacity: 0;
+			margin-left: 0px;
+			margin-top: 0px;
 			color: #4c4c4c;
-			font-family: Trebuchet MS;
 			text-decoration: none;
-			font-size: 20px;
-			z-index: -1;
+			height: 40px;
+			width: 40px;
 		}
 		a.pluglink {
 			color:#89be6c;
@@ -99,7 +88,6 @@
 			margin-left: 5px;
 			margin-top: 4px;
 			position: absolute;
-			z-index: 6;
 		}
 		div.iconbox {
 			height: 40px;
@@ -107,15 +95,15 @@
 			background-color: rgba(245, 245, 245, 1);
 			border-radius: 12px;
 			cursor: pointer;
-			z-index: 6;
+		}
+		div.none {
+			opacity: 0;
 		}
 		.icon-git {
 			background-image:url(https://i.imgur.com/aZHUZGP.png);
-			z-index: 6;
 		}
 		.icon-plug {
 			background-image:url(https://i.imgur.com/zkYXlXV.png);
-			z-index: 6;
 		}
 	</style>
 
@@ -142,18 +130,14 @@
 			//http://tetheu98.github.io/
 
 			$(".iconbox.github").hover(function(){
-				$(".gitDescription").stop().animate({"margin-left":"45px"},350).css({"z-index":"6"},350);
 				$(".iconbox.github").stop().animate({"width":"120px"},200);
 			},function(){
-				$(".gitDescription").stop().animate({"margin-left":"-22px"},200).css({"z-index":"-1"},200);
 				$(".iconbox.github").stop().animate({"width":"40px"},350);
 			});
 
 			$(".iconbox.plug").hover(function(){
-				$(".plugDescription").stop().animate({"margin-left":"45px"},350).css({"z-index":"6"},350);
 				$(".iconbox.plug").stop().animate({"width":"120px"},200);
 			},function(){
-				$(".plugDescription").stop().animate({"margin-left":"-22px"},200).css({"z-index":"-1"},200);
 				$(".iconbox.plug").stop().animate({"width":"40px"},350);
 			});
 
@@ -187,15 +171,14 @@
 	</script>
 	<div id="left">
 		<div id="sidebar">
-			<div class="iconbox none" style="opacity: 0;">
-			</div>
-			<div class="iconbox github" href="https://github.com/Tetheu98" target="_blank">
+			<div class="iconbox none"></div>
+			<div class="iconbox github">
 				<i class="icon-git"></i>
-				<span class="gitDescription">GitHub</span>
+				<span class="description" href="https://github.com/Tetheu98" target="_blank">GitHub</span>
 			</div>
-			<div class="iconbox plug" href="https://plug.dj/@/beta-tester" target="_blank">
+			<div class="iconbox plug">
 				<i class="icon-plug"></i>
-				<span class="plugDescription">plug<a style="color:30c7fc;">.</a>dj</span>
+				<span class="description" href="https://plug.dj/@/beta-tester" target="_blank">plug</span>
 			</div>
 		</div>
 	</div>
