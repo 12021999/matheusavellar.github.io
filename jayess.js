@@ -23,7 +23,8 @@ function start(){
 		},function(){
 			$("div.iconbox")[i].animate({"opacity":"0.1"},250);
 		});
-	}*/
+	}
+	GITHUB PLS ; - ; */
 
 	$("#refresh").mouseup(function() {
 		$(this).css({"background-color":"#62BDB6","border":"1px solid #000000"});
