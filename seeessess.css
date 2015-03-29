@@ -12,13 +12,17 @@ div#sidebar {
 }
 div#right {
 	margin-left: 40px;
+	display: none;
+}
+div#left {
+	display: none;
 }
 div#title {
 	font-size: 70px;
 	font-weight: bold;
 }
 div#subtitle {
-	font-size: 29px;
+	font-size: 22px;
 }
 div#refresh {
 	margin-left: auto;
@@ -47,7 +51,7 @@ div#loading {
 	height: 100%;
 	width: 100%;
 	position: absolute;
-	background-color: #0A0A0A;
+	background-color: #404040;
 }
 div.iconbox {
 	height: 40px;
