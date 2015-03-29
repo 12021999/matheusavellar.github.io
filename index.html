@@ -61,6 +61,12 @@
 			$("span.cheers").text(" Cheers to ");
 			$("span.cheers").append("<strong>" + $("body").attr("bgcolor") + "</strong>");
 			$("#uselessinfo").hover(function(){$("#uselessinfo").fadeOut();});
+			if ($("body").attr("bgcolor") == "#000000" || $("body").attr("bgcolor") == "#ffffff"){
+				$("#refresh").fadeOut();
+				$("#title").css({"color":"#999"});
+				$("#subtitle").css({"color":"#999"});
+				$("#subtitle").text("Holy crap! You got " + $("body").attr("bgcolor") + " as a background color!")
+			}
 		}
 	</script>
 	<div id="title"><a style="color:#89be6c; text-decoration: none;" href="https://plug.dj/@/beta-tester" target="_blank">Beta Tester</a>'s GitHub Page</div>
