@@ -25,6 +25,9 @@
 			-moz-box-shadow: 10px 15px 15px -2px rgba(0,0,0,0.2);
 			box-shadow: 10px 15px 15px -2px rgba(0,0,0,0.2);
 		}
+		div#uselessinfo {
+			margin-top: 100px;
+		}
 		span.refreshmsg {
 			position: relative;
 			left: 25px;
@@ -48,12 +51,17 @@
 			},function(){
 				$("#refresh").css({"background-color":"#62BDB6"});
 			});
+			$("span.cheers").text(" Cheers to " + $("body").attr("bgcolor"));
 		}
 	</script>
 	<div id="title"><a style="color:#89be6c; text-decoration: none;" href="https://plug.dj/@/beta-tester" target="_blank">Beta Tester</a>'s GitHub Page</div>
 	<div id="subtitle"><strong>Why'd you make one, Beta?</strong> Well, I don't know! :D</div>
 	<div id="refresh">
 		<span class="refreshmsg">Click here to refresh!</span>
+	</div>
+	<div id="uselessinfo">
+		<strong>Did you know?</strong> Chances you'll see this background color next time you refresh are 1 to 216,777,016.
+		<span class="cheers"></span>
 	</div>
 </body>
 </html>
