@@ -6,7 +6,7 @@ div#sidebar {
 	height: 100%;
 	position: absolute;
 	width: 40px;
-	background-color: rgba(0, 0, 0, 0.1);
+	background-color: rgba(0, 0, 0, 0);
 	margin-left: -43px;
 	margin-top: -10px;
 }
