@@ -15,9 +15,11 @@ div#right {
 div#title {
 	font-size: 70px;
 	font-weight: bold;
+	text-shadow: 6px 6px 0 #444;
 }
 div#subtitle {
 	font-size: 22px;
+	text-shadow: 1px 1px 0 #444;
 }
 div#refresh {
 	margin-left: auto;
