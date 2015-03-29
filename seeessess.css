@@ -12,10 +12,6 @@ div#sidebar {
 }
 div#right {
 	margin-left: 40px;
-	display: none;
-}
-div#left {
-	display: none;
 }
 div#title {
 	font-size: 70px;
@@ -46,12 +42,6 @@ div#uselessinfo {
 	height: 60px;
 	width: 800px;
 	border-radius: 12px;
-}
-div#loading {
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	background-color: #404040;
 }
 div.iconbox {
 	height: 40px;
