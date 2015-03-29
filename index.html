@@ -61,11 +61,18 @@
 			$("span.cheers").text(" Cheers to ");
 			$("span.cheers").append("<strong>" + $("body").attr("bgcolor") + "</strong>");
 			$("#uselessinfo").hover(function(){$("#uselessinfo").fadeOut();});
+			var prev = localStorage.getItem('betaPreviousColor', $("body").attr("bgcolor"));
+			localStorage.setItem('betaPreviousColor', $("body").attr("bgcolor"));
 			if ($("body").attr("bgcolor") == "#000000" || $("body").attr("bgcolor") == "#ffffff"){
 				$("#refresh").fadeOut();
 				$("#title").css({"color":"#999"});
 				$("#subtitle").css({"color":"#999"});
-				$("#subtitle").text("Holy crap! You got " + $("body").attr("bgcolor") + " as a background color!")
+				$("#subtitle").text("Holy crap! You got " + $("body").attr("bgcolor") + " as a background color!");
+			}else if(prev == $("body").attr("bgcolor")){
+				$("#refresh").fadeOut();
+				$("#title").css({"color":"#999"});
+				$("#subtitle").css({"color":"#999"});
+				$("#subtitle").text("Holy crap! You got " + $("body").attr("bgcolor") + " as a background color last time yo joiuned the page! To verify, here's the last saved bg color [" + prev + "]. Amazing!");
 			}
 		}
 	</script>
