@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>v0.0.6</title>
+	<title>v0.0.6.1</title>
 	<link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
 	<link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -72,6 +72,7 @@
 			font-weight: bold;
 			text-decoration: none;
 			font-size: 20px;
+			z-index: 5;
 		}
 		span.plugDescription {
 			display: none;
@@ -82,6 +83,7 @@
 			font-family: Trebuchet MS;
 			text-decoration: none;
 			font-size: 20px;
+			z-index: 5;
 		}
 		a.pluglink {
 			color:#89be6c;
@@ -109,9 +111,11 @@
 		}
 		.icon-git {
 			background-image:url(https://i.imgur.com/aZHUZGP.png);
+			z-index: 6;
 		}
 		.icon-plug {
 			background-image:url(https://i.imgur.com/zkYXlXV.png);
+			z-index: 6;
 		}
 	</style>
 
@@ -134,18 +138,18 @@
 			//$(".plug").on('click', function(){window.location.assign("https://plug.dj/@/beta-tester")});
 
 			$(".iconbox.github").hover(function(){
-				$(".gitDescription").stop().animate({"margin-left":"45px"},200).fadeIn(350);
+				$(".gitDescription").stop().animate({"margin-left":"45px"},200);
 				$(".iconbox.github").stop().animate({"width":"120px"},200);
 			},function(){
-				$(".gitDescription").stop().fadeOut(200).animate({"margin-left":"-20px"},350);
+				$(".gitDescription").stop().animate({"margin-left":"-20px"},350);
 				$(".iconbox.github").stop().animate({"width":"40px"},200);
 			});
 
 			$(".iconbox.plug").hover(function(){
-				$(".plugDescription").stop().animate({"margin-left":"45px"},200).fadeIn(350);
+				$(".plugDescription").stop().animate({"margin-left":"45px"},200);
 				$(".iconbox.plug").stop().animate({"width":"120px"},200);
 			},function(){
-				$(".plugDescription").stop().fadeOut(200).animate({"margin-left":"-20px"},350);
+				$(".plugDescription").stop().animate({"margin-left":"-20px"},350);
 				$(".iconbox.plug").stop().animate({"width":"40px"},200);
 			});
 
