@@ -51,7 +51,8 @@
 			},function(){
 				$("#refresh").css({"background-color":"#62BDB6"});
 			});
-			$("span.cheers").text(" Cheers to <strong>" + $("body").attr("bgcolor") + "</strong>");
+			$("span.cheers").text(" Cheers to ");
+			$("span.cheers").append("<strong>" + $("body").attr("bgcolor") + "</strong>");
 		}
 	</script>
 	<div id="title"><a style="color:#89be6c; text-decoration: none;" href="https://plug.dj/@/beta-tester" target="_blank">Beta Tester</a>'s GitHub Page</div>
