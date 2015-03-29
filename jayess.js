@@ -25,14 +25,6 @@ function start(){
 		setTimeout(function(){window.location.reload();},500);
 	});
 
-	for (var i = 0; i < $("div.iconbox").length; i++){
-		$($("div.iconbox")[i]).hover(function(){
-			$($("div.iconbox")[i]).animate({"opacity":"1"},250);
-		},function(){
-			$($("div.iconbox")[i]).animate({"opacity":"0.1"},250);
-		});
-	}
-
 	$("span.cheers").append("<strong>" + bg_colour + "</strong>");
 	$("#uselessinfo").hover(function(){$("#uselessinfo").fadeOut();});
 	var prev = localStorage.getItem('betaPreviousColor');
@@ -50,4 +42,10 @@ function start(){
 		$("#subtitle").text("Holy crap! You got " + bg_colour + " as a background color last time you joined the page!");
 		window.onbeforeunload = function(){return "DUDE! Just WHAT are you doing?!";}
 	}
+
+	$('div.iconbox').on('hover', function(a){
+		$(this).stop().animate({"opacity":"1"},250);
+	}, function(){
+		$(this).stop().animate({"opacity":"0.4"},250);
+	});
 }
