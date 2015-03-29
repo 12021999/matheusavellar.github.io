@@ -25,14 +25,13 @@ function start(){
 		setTimeout(function(){window.location.reload();},500);
 	});
 
-	/*for (var i = 0; i < $("div.iconbox").length; i++){
-		$("div.iconbox")[i].hover(function(){
-			$("div.iconbox")[i].animate({"opacity":"1"},250);
+	for (var i = 0; i < $("div.iconbox").length; i++){
+		$($("div.iconbox")[i]).hover(function(){
+			$($("div.iconbox")[i]).animate({"opacity":"1"},250);
 		},function(){
-			$("div.iconbox")[i].animate({"opacity":"0.1"},250);
+			$($("div.iconbox")[i]).animate({"opacity":"0.1"},250);
 		});
 	}
-	GITHUB PLS ; - ; */
 
 	$("span.cheers").append("<strong>" + bg_colour + "</strong>");
 	$("#uselessinfo").hover(function(){$("#uselessinfo").fadeOut();});
