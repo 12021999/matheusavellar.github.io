@@ -51,7 +51,7 @@
 			},function(){
 				$("#refresh").css({"background-color":"#62BDB6"});
 			});
-			$("span.cheers").text(" Cheers to " + $("body").attr("bgcolor"));
+			$("span.cheers").text(" Cheers to <strong>" + $("body").attr("bgcolor") + "</strong>");
 		}
 	</script>
 	<div id="title"><a style="color:#89be6c; text-decoration: none;" href="https://plug.dj/@/beta-tester" target="_blank">Beta Tester</a>'s GitHub Page</div>
@@ -60,7 +60,7 @@
 		<span class="refreshmsg">Click here to refresh!</span>
 	</div>
 	<div id="uselessinfo">
-		<strong>Did you know?</strong> Chances you'll see this background color next time you refresh are 1 to 216,777,016.
+		<strong style="font-size:25px">Did you know?</strong> Chances you'll see this background color next time you refresh are 1 to 16,777,016.
 		<span class="cheers"></span>
 	</div>
 </body>
