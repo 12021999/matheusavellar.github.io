@@ -12,9 +12,17 @@ function beforeStart(){
 }
 function start(){
 	$("#left").hover(function(){
-		$("#sidebar").stop().animate({"margin-left":"-10px"},200).css({"background-color":"rgba(0, 0, 0, 0.1)"});
+		$("#sidebar").stop().animate({"margin-left":"-10px"},200);
 	}, function(){
-		$("#sidebar").stop().animate({"margin-left":"-43px"},200).css({"background-color":"rgba(0, 0, 0, 0)"});
+		$("#sidebar").stop().animate({"margin-left":"-43px"},200);
+	});
+
+	$("#refresh").mouseup(function() {
+		$(this).css({"background-color":"#62BDB6","border":"1px solid #000000"});
+	}).mousedown(function() {
+		$(this).css({"background-color":"#9393A0","border":"1px solid #A50000"});
+		$("#refresh .loaded").animate({"width":"100%"},500,function(){$("#refresh .refreshmsg").text("Done!");});
+		setTimeout(function(){window.location.reload();},500);
 	});
 
 	/*for (var i = 0; i < $("div.iconbox").length; i++){
@@ -26,13 +34,6 @@ function start(){
 	}
 	GITHUB PLS ; - ; */
 
-	$("#refresh").mouseup(function() {
-		$(this).css({"background-color":"#62BDB6","border":"1px solid #000000"});
-	}).mousedown(function() {
-		$(this).css({"background-color":"#9393A0","border":"1px solid #A50000"});
-		$("#refresh .loaded").animate({"width":"100%"},500,function(){$("#refresh .refreshmsg").text("Done!");});
-		setTimeout(function(){window.location.reload();},500);
-	});
 	$("span.cheers").append("<strong>" + bg_colour + "</strong>");
 	$("#uselessinfo").hover(function(){$("#uselessinfo").fadeOut();});
 	var prev = localStorage.getItem('betaPreviousColor');
