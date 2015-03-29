@@ -73,6 +73,16 @@
 			text-decoration: none;
 			font-size: 20px;
 		}
+		span.gitDescription {
+			opacity: 0;
+			position: absolute;
+			margin-left: -20px;
+			margin-top: 7px;
+			color: #4c4c4c;
+			font-family: Trebuchet MS;
+			text-decoration: none;
+			font-size: 20px;
+		}
 		a.pluglink {
 			color:#89be6c;
 			text-decoration: none;
@@ -117,17 +127,29 @@
 			$("#left").hover(function(){
 				$("#sidebar").stop().animate({"margin-left":"-10px"});
 				$("#sidebar .gitDescription").stop().animate({"margin-left":"45px"});
+				$("#sidebar .plugDescription").stop().animate({"margin-left":"45px"});
 			}, function(){
 				$("#sidebar").stop().animate({"margin-left":"-43px"});
 				$("#sidebar .gitDescription").stop().animate({"margin-left":"-20px"});
+				$("#sidebar .plugDescription").stop().animate({"margin-left":"-20px"});
 			});
+
 			$("#sidebar .iconbox.github").hover(function(){
 				$("#sidebar .iconbox.github").stop().animate({"width":"120px"});
-				$("#sidebar .gitDescription.gitlink").stop().fadeIn();
+				$("#sidebar .gitDescription").stop().css({"opacity":"1"});
 			},function(){
-				$("#sidebar .gitDescription.gitlink").stop().fadeOut();
+				$("#sidebar .gitDescription").stop().css({"opacity":"0"});
 				$("#sidebar .iconbox.github").stop().animate({"width":"40px"});
 			});
+
+			$("#sidebar .iconbox.plug").hover(function(){
+				$("#sidebar .iconbox.plug").stop().animate({"width":"120px"});
+				$("#sidebar .plugDescription").stop().css({"opacity":"1"});
+			},function(){
+				$("#sidebar .plugDescription").stop().css({"opacity":"0"});
+				$("#sidebar .iconbox.plug").stop().animate({"width":"40px"});
+			});
+
 			$("#refresh").mouseup(function() {
 				$(this).css({"background-color":"#62BDB6","border":"1px solid #000000"});
 			}).mousedown(function() {
@@ -166,6 +188,7 @@
 			</div>
 			<div class="iconbox plug">
 				<i class="icon-plug"></i>
+				<span class="plugDescription">plug<a style="color:30c7fc;">.</a>dj</span>
 			</div>
 		</div>
 	</div>
