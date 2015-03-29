@@ -9,6 +9,14 @@
 			font-family: 'Open Sans', sans-serif;
 			color: #eeeeee;
 		}
+		div#left {
+			height: 100%;
+			position: absolute;
+			width: 40px;
+			background-color: rgba(0, 0, 0, 0.48);
+			margin-left: -10px;
+			margin-top: -10px;
+		}
 		div#title {
 			font-size: 70px;
 		}
@@ -61,6 +69,25 @@
 			font-weight: bold;
 			text-decoration: none;
 		}
+		i {
+			width: 5px;
+			height: 5px;
+			margin-left: 23px;
+			margin-top: 23px;
+			position: absolute;
+		}
+		div.iconbox {
+			height: 40px;
+			width: 40px;
+			background-color: rgba(245, 245, 245, 1);
+			border-radius: 12px;
+		}
+		.icon-git {
+			background-image:url(https://i.imgur.com/aZHUZGP.png);
+		}
+		.icon-plug {
+			background-image:url(https://i.imgur.com/U9QKgXj.png);
+		}
 	</style>
 
 </head>
@@ -100,15 +127,25 @@
 			}
 		}
 	</script>
-	<div id="title"><a class="gitlink" href="https://github.com/Tetheu98" target="_blank">GitHub</a></div>
-	<div id="subtitle">Because you <strong>can</strong> have a page of your own! :D</div>
-	<div id="refresh">
-		<span class="refreshmsg">Click here to refresh!</span>
-		<div class="loaded"></div>
+	<div id="left">
+		  <div class="iconbox github">
+			<i class="icon-git"></i>
+		</div>
+		<div class="iconbox plug">
+			<i class="icon-plug"></i>
+		</div>
 	</div>
-	<div id="uselessinfo">
-		<strong style="font-size:25px; margin-left: 20px;">Did you know?</strong><br><a style="margin-left:10px;"> Chances you'll see this background color next time you refresh are <strong>1 to 16,777,016</strong>.</a>
-		<span class="cheers"></span>
+	<div id="right">
+		<div id="title"><a class="gitlink" href="https://github.com/Tetheu98" target="_blank">GitHub</a></div>
+		<div id="subtitle">Because you <strong>can</strong> have a page of your own! :D</div>
+		<div id="refresh">
+			<span class="refreshmsg">Click here to refresh!</span>
+			<div class="loaded"></div>
+		</div>
+		<div id="uselessinfo">
+			<strong style="font-size:25px; margin-left: 20px;">Did you know?</strong><br><a style="margin-left:10px;"> Chances you'll see this background color next time you refresh are <strong>1 to 16,777,016</strong>.</a>
+			<span class="cheers"></span>
+		</div>
 	</div>
 </body>
 </html>
