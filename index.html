@@ -65,7 +65,7 @@
 		span.gitDescription {
 			opacity: 0;
 			position: absolute;
-			margin-left: 45px;
+			margin-left: -20px;
 			margin-top: 7px;
 			color: #333;
 			font-family: 'Apex Sans', sans-serif;
@@ -115,16 +115,18 @@
 
 		function start(){
 			$("#left").hover(function(){
-				$("#sidebar").animate({"margin-left":"-10px"});
+				$("#sidebar").stop().animate({"margin-left":"-10px"});
+				$("#sidebar .gitDescription").stop().animate({"margin-left":"45px"});
 			}, function(){
-				$("#sidebar").animate({"margin-left":"-43px"});
+				$("#sidebar").stop().animate({"margin-left":"-43px"});
+				$("#sidebar .gitDescription").stop().animate({"margin-left":"-20px"});
 			});
-			$("#left .iconbox.github").hover(function(){
-				$("#left .iconbox.github").css({"width":"120px"});
-				$("#left .description.gitlink").fadeIn();
+			$("#sidebar .iconbox.github").hover(function(){
+				$("#sidebar .iconbox.github").stop().animate({"width":"120px"});
+				$("#sidebar .gitDescription.gitlink").stop().fadeIn();
 			},function(){
-				$("#left .description.gitlink").fadeOut();
-				$("#left .iconbox.github").css({"width":"40px"});
+				$("#sidebar .gitDescription.gitlink").stop().fadeOut();
+				$("#sidebar .iconbox.github").stop().animate({"width":"40px"});
 			});
 			$("#refresh").mouseup(function() {
 				$(this).css({"background-color":"#62BDB6","border":"1px solid #000000"});
@@ -160,7 +162,7 @@
 			</div>
 			<div class="iconbox github">
 				<i class="icon-git"></i>
-				<span class="gitDescription"></span>
+				<span class="gitDescription">GitHub</span>
 			</div>
 			<div class="iconbox plug">
 				<i class="icon-plug"></i>
