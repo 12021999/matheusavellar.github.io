@@ -121,11 +121,9 @@
 				$(this).css({"background-color":"#62BDB6","border":"1px solid #000000"});
 			}).mousedown(function() {
 				$(this).css({"background-color":"#9393A0","border":"1px solid #A50000"});
-				var r = Math.floor(Math.random()*750);
-				$("#refresh .loaded").animate({"width":"100%"},r,function(){$("#refresh .refreshmsg").text("Done!");});
+				$("#refresh .loaded").animate({"width":"100%"},500,function(){$("#refresh .refreshmsg").text("Done!");});
 				setTimeout(function(){window.location.reload();},500);
 			});
-			$("span.cheers").text(" Cheers to ");
 			$("span.cheers").append("<strong>" + $("body").attr("bgcolor") + "</strong>");
 			$("#uselessinfo").hover(function(){$("#uselessinfo").fadeOut();});
 			var prev = localStorage.getItem('betaPreviousColor');
@@ -171,7 +169,7 @@
 		</div>
 		<div id="uselessinfo">
 			<strong style="font-size:25px; margin-left: 20px;">Did you know?</strong><br><a style="margin-left:10px;"> Chances you'll see this background color next time you refresh are <strong>1 to 16,777,016</strong>.</a>
-			<span class="cheers"></span>
+			<span class="cheers"> Cheers to </span>
 		</div>
 	</div>
 </body>
