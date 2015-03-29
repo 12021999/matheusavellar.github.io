@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>v0.0.6.5.4</title>
+	<title>v0.0.6.5.5</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
 	<link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
@@ -28,21 +28,21 @@
 				$("#refresh .loaded").animate({"width":"100%"},500,function(){$("#refresh .refreshmsg").text("Done!");});
 				setTimeout(function(){window.location.reload();},500);
 			});
-			$("span.cheers").append("<strong>" + $("body").attr("bgcolor") + "</strong>");
+			$("span.cheers").append("<strong>" + bg_colour + "</strong>");
 			$("#uselessinfo").hover(function(){$("#uselessinfo").fadeOut();});
 			var prev = localStorage.getItem('betaPreviousColor');
-			localStorage.setItem('betaPreviousColor', $("body").attr("bgcolor"));
-			if ($("body").attr("bgcolor") == "#000000" || $("body").attr("bgcolor") == "#ffffff"){
+			localStorage.setItem('betaPreviousColor', bg_colour);
+			if (bg_colour == "#000000" || bg_colour == "#ffffff"){
 				$("#refresh").fadeOut();
 				$("#title").css({"color":"#999"});
 				$("#subtitle").css({"color":"#999"});
-				$("#subtitle").text("Holy crap! You got " + $("body").attr("bgcolor") + " as a background color!");
+				$("#subtitle").text("Holy crap! You got " + bg_colour + " as a background color!");
 				window.onbeforeunload = function(){return "DUDE! Just WHAT are you doing?!";}
-			}else if(prev == $("body").attr("bgcolor")){
+			}else if(prev == bg_colour){
 				$("#refresh").fadeOut();
 				$("#title").css({"color":"#999"});
 				$("#subtitle").css({"color":"#999"});
-				$("#subtitle").text("Holy crap! You got " + $("body").attr("bgcolor") + " as a background color last time you joined the page!");
+				$("#subtitle").text("Holy crap! You got " + bg_colour + " as a background color last time you joined the page!");
 				window.onbeforeunload = function(){return "DUDE! Just WHAT are you doing?!";}
 			}
 		}
@@ -61,6 +61,10 @@
 			<div class="iconbox youtube">
 				<i class="icon-youtube"></i>
 				<a class="description" href="https://www.youtube.com/user/Tetheu98" target="_blank">YouTube</a>
+			</div>
+			<div class="iconbox facebook">
+				<i class="icon-facebook"></i>
+				<a class="description" href="https://www.facebook.com/ba.beta.tester" target="_blank">facebook</a>
 			</div>
 		</div>
 	</div>
