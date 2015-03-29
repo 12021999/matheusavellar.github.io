@@ -78,11 +78,13 @@
 				$("#title").css({"color":"#999"});
 				$("#subtitle").css({"color":"#999"});
 				$("#subtitle").text("Holy crap! You got " + $("body").attr("bgcolor") + " as a background color!");
+				window.onbeforeunload = function(){return "DUDE! Just WHAT are you doing?!";}
 			}else if(prev == $("body").attr("bgcolor")){
 				$("#refresh").fadeOut();
 				$("#title").css({"color":"#999"});
 				$("#subtitle").css({"color":"#999"});
 				$("#subtitle").text("Holy crap! You got " + $("body").attr("bgcolor") + " as a background color last time you joined the page!");
+				window.onbeforeunload = function(){return "DUDE! Just WHAT are you doing?!";}
 			}
 		}
 	</script>
