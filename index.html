@@ -125,28 +125,28 @@
 
 		function start(){
 			$("#left").hover(function(){
-				$("#sidebar").animate({"margin-left":"-10px"});
+				$("#sidebar").stop().animate({"margin-left":"-10px"},100);
 			}, function(){
-				$("#sidebar").animate({"margin-left":"-43px"});
+				$("#sidebar").stop().animate({"margin-left":"-43px"},100);
 			});
 
 			//$(".github").on('click', function(){window.location.assign("https://github.com/Tetheu98")});
 			//$(".plug").on('click', function(){window.location.assign("https://plug.dj/@/beta-tester")});
 
 			$("#sidebar .iconbox.github").hover(function(){
-				$(".gitDescription").stop().animate({"margin-left":"45px"}).fadeIn(500);
-				$(".iconbox.github").stop().animate({"width":"120px"},500);
+				$(".gitDescription").stop().animate({"margin-left":"45px"},100).fadeIn(200);
+				$(".iconbox.github").stop().animate({"width":"120px"},100);
 			},function(){
-				$(".gitDescription").stop().fadeOut().animate({"margin-left":"-20px"},500);
-				$(".iconbox.github").stop().animate({"width":"40px"},500);
+				$(".gitDescription").stop().fadeOut(100).animate({"margin-left":"-20px"},200);
+				$(".iconbox.github").stop().animate({"width":"40px"},100);
 			});
 
 			$("#sidebar .iconbox.plug").hover(function(){
-				$(".plugDescription").stop().animate({"margin-left":"45px"},500).fadeIn(500);
-				$(".iconbox.plug").stop().animate({"width":"120px"},500);
+				$(".plugDescription").stop().animate({"margin-left":"45px"},100).fadeIn(200);
+				$(".iconbox.plug").stop().animate({"width":"120px"},100);
 			},function(){
-				$(".plugDescription").stop().fadeOut().animate({"margin-left":"-20px"},500);
-				$(".iconbox.plug").stop().animate({"width":"40px"},500);
+				$(".plugDescription").stop().fadeOut(100).animate({"margin-left":"-20px"},200);
+				$(".iconbox.plug").stop().animate({"width":"40px"},100);
 			});
 
 			$("#refresh").mouseup(function() {
