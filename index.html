@@ -63,7 +63,7 @@
 			color: #ffffff;
 		}
 		span.gitDescription {
-			opacity: 0;
+			display: none;
 			position: absolute;
 			margin-left: -20px;
 			margin-top: 7px;
@@ -74,7 +74,7 @@
 			font-size: 20px;
 		}
 		span.plugDescription {
-			opacity: 0;
+			display: none;
 			position: absolute;
 			margin-left: -20px;
 			margin-top: 7px;
@@ -130,26 +130,22 @@
 				$("#sidebar").stop().animate({"margin-left":"-43px"});
 			});
 
-			$(".github").on('click', function(){window.location.assign("https://github.com/Tetheu98")});
-			$(".plug").on('click', function(){window.location.assign("https://plug.dj/@/beta-tester")});
+			//$(".github").on('click', function(){window.location.assign("https://github.com/Tetheu98")});
+			//$(".plug").on('click', function(){window.location.assign("https://plug.dj/@/beta-tester")});
 
 			$("#sidebar .iconbox.github").hover(function(){
-				$("#sidebar .gitDescription").stop().animate({"margin-left":"45px"},500);
+				$("#sidebar .gitDescription").stop().animate({"margin-left":"45px"},500).fadeIn();
 				$("#sidebar .iconbox.github").stop().animate({"width":"120px"},500);
-				$("#sidebar .gitDescription").stop().css({"opacity":"1"});
 			},function(){
-				$("#sidebar .gitDescription").stop().animate({"margin-left":"-20px"},500);
-				$("#sidebar .gitDescription").stop().css({"opacity":"0"});
+				$("#sidebar .gitDescription").stop().animate({"margin-left":"-20px"},500).fadeOut();
 				$("#sidebar .iconbox.github").stop().animate({"width":"40px"},500);
 			});
 
 			$("#sidebar .iconbox.plug").hover(function(){
-				$("#sidebar .plugDescription").stop().animate({"margin-left":"45px"},500);
+				$("#sidebar .plugDescription").stop().animate({"margin-left":"45px"},500).fadeIn();
 				$("#sidebar .iconbox.plug").stop().animate({"width":"120px"},500);
-				$("#sidebar .plugDescription").stop().css({"opacity":"1"});
 			},function(){
-				$("#sidebar .plugDescription").stop().animate({"margin-left":"-20px"},500);
-				$("#sidebar .plugDescription").stop().css({"opacity":"0"});
+				$("#sidebar .plugDescription").stop().animate({"margin-left":"-20px"},500).fadeOut();
 				$("#sidebar .iconbox.plug").stop().animate({"width":"40px"},500);
 			});
 
@@ -185,11 +181,11 @@
 		<div id="sidebar">
 			<div class="iconbox none" style="opacity: 0;">
 			</div>
-			<div class="iconbox github">
+			<div class="iconbox github" href="https://github.com/Tetheu98" target="_blank">
 				<i class="icon-git"></i>
 				<span class="gitDescription">GitHub</span>
 			</div>
-			<div class="iconbox plug">
+			<div class="iconbox plug" href="https://plug.dj/@/beta-tester" target="_blank">
 				<i class="icon-plug"></i>
 				<span class="plugDescription">plug<a style="color:30c7fc;">.</a>dj</span>
 			</div>
