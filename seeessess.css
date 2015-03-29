@@ -43,6 +43,24 @@ div#uselessinfo {
 	width: 800px;
 	border-radius: 12px;
 }
+div#loading {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background-color: #0A0A0A;
+}
+div.iconbox {
+	height: 40px;
+	width: 40px;
+	margin-bottom: 2px;
+	background-color: rgba(245, 245, 245, 1);
+	border-radius: 22px;
+	cursor: pointer;
+}
+div.none {
+	opacity: 0;
+	cursor: default;
+}
 div.loaded {
 	width: 0%;
 	height: 100%;
@@ -73,17 +91,6 @@ i {
 	margin-top: 4px;
 	position: absolute;
 }
-div.iconbox {
-	height: 40px;
-	width: 40px;
-	background-color: rgba(245, 245, 245, 1);
-	border-radius: 12px;
-	cursor: pointer;
-}
-div.none {
-	opacity: 0;
-	cursor: default;
-}
 .icon-git {
 	background-image:url(https://i.imgur.com/kF47Mvu.png);
 }
@@ -95,4 +102,5 @@ div.none {
 }
 .icon-facebook {
 	background-image:url(https://i.imgur.com/NaVYjAu.png);
+	border-radius: 10px;
 }
