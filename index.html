@@ -136,21 +136,25 @@
 
 			//$(".github").on('click', function(){window.location.assign("https://github.com/Tetheu98")});
 			//$(".plug").on('click', function(){window.location.assign("https://plug.dj/@/beta-tester")});
+			
+			//Box gotta go faster than text when retracting (!)
+			//Give it a timeout before zindex changes
+			//http://tetheu98.github.io/
 
 			$(".iconbox.github").hover(function(){
-				$(".gitDescription").stop().animate({"margin-left":"45px"},350).css({"z-index":"6"});
+				$(".gitDescription").stop().animate({"margin-left":"45px"},350).css({"z-index":"6"},350);
 				$(".iconbox.github").stop().animate({"width":"120px"},200);
 			},function(){
-				$(".gitDescription").stop().animate({"margin-left":"-22px"},350).css({"z-index":"-1"});
-				$(".iconbox.github").stop().animate({"width":"40px"},200);
+				$(".gitDescription").stop().animate({"margin-left":"-22px"},200).css({"z-index":"-1"},200);
+				$(".iconbox.github").stop().animate({"width":"40px"},350);
 			});
 
 			$(".iconbox.plug").hover(function(){
-				$(".plugDescription").stop().animate({"margin-left":"45px"},350).css({"z-index":"6"});
+				$(".plugDescription").stop().animate({"margin-left":"45px"},350).css({"z-index":"6"},350);
 				$(".iconbox.plug").stop().animate({"width":"120px"},200);
 			},function(){
-				$(".plugDescription").stop().animate({"margin-left":"-22px"},350).css({"z-index":"-1"});
-				$(".iconbox.plug").stop().animate({"width":"40px"},200);
+				$(".plugDescription").stop().animate({"margin-left":"-22px"},200).css({"z-index":"-1"},200);
+				$(".iconbox.plug").stop().animate({"width":"40px"},350);
 			});
 
 			$("#refresh").mouseup(function() {
