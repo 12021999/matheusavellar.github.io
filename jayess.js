@@ -43,7 +43,7 @@ function start(){
 		window.onbeforeunload = function(){return "DUDE! Just WHAT are you doing?!";}
 	}
 
-	$('div.iconbox').on('hover', function(a){
+	$('div.iconbox').bind('hover', function(a){
 		$(this).stop().animate({"opacity":"1"},250);
 	}, function(){
 		$(this).stop().animate({"opacity":"0.4"},250);
