@@ -4,7 +4,7 @@
 		Color script from http://randomcolour.com/
 		Awesome Triangle Gif from http://www.moillusions.com/impossible-triangle-animated-gif/
 	-->
-	<title>v0.0.6.6.1</title>
+	<title>v0.0.6.6.2</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
 	<link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
@@ -27,10 +27,18 @@
 		}
 		function start(){
 			$("#left").hover(function(){
-				$("#sidebar").stop().animate({"margin-left":"-10px","background-color":"rgba(0, 0, 0, 0.1)"},200);
+				$("#sidebar").stop().animate({"margin-left":"-10px"},200).css({"background-color":"rgba(0, 0, 0, 0.1)"});
 			}, function(){
-				$("#sidebar").stop().animate({"margin-left":"-43px","background-color":"rgba(0, 0, 0, 0)"},200);
+				$("#sidebar").stop().animate({"margin-left":"-43px"},200).css({"background-color":"rgba(0, 0, 0, 0)"});
 			});
+
+			for (var i = 0; i < $("div.iconbox").length; i++){{
+				$("div.iconbox")[i].hover(function(){
+					$("div.iconbox")[i].animate({"opacity":"1"},250);
+				},function(){
+					$("div.iconbox")[i].animate({"opacity":"0.1"},250);
+				});
+			}
 
 			$("#refresh").mouseup(function() {
 				$(this).css({"background-color":"#62BDB6","border":"1px solid #000000"});
