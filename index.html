@@ -5,9 +5,6 @@
 		div{
 			font-family: 'Open Sans', sans-serif;
 			color: #eeeeee;
-			-webkit-box-shadow: 0 0 3px 3px rgba(0,0,0,.2);
-			-moz-box-shadow: 0 0 3px 3px rgba(0,0,0,.2);
-			box-shadow: 0 0 3px 3px rgba(0,0,0,.2);
 		}
 		div#title {
 			font-size: 90px;
@@ -24,6 +21,9 @@
 			border: 1px solid #000000;
 			margin-top: 50px;
 			cursor: pointer;
+			-webkit-box-shadow: 10px 15px 15px -2px rgba(0,0,0,0.2);
+			-moz-box-shadow: 10px 15px 15px -2px rgba(0,0,0,0.2);
+			box-shadow: 10px 15px 15px -2px rgba(0,0,0,0.2);
 		}
 		span.refreshmsg {
 			position: relative;
@@ -43,6 +43,11 @@
 
 		function start(){
 			$("#refresh").on('click', function(){window.location.reload();});
+			$("#refresh").hover(function(){
+				$("#refresh").css({"background-color":"#6297BD"});
+			},function(){
+				$("#refresh").css({"background-color":"#62BDB6"});
+			});
 		}
 	</script>
 	<div id="title"><a style="color:#89be6c; text-decoration: none;" href="https://plug.dj/@/beta-tester" target="_blank">Beta Tester</a>'s GitHub Page</div>
