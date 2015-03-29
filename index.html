@@ -71,7 +71,7 @@
 			font-weight: bold;
 			text-decoration: none;
 			font-size: 20px;
-			z-index: 5;
+			z-index: 4;
 		}
 		span.plugDescription {
 			position: absolute;
@@ -81,7 +81,7 @@
 			font-family: Trebuchet MS;
 			text-decoration: none;
 			font-size: 20px;
-			z-index: 5;
+			z-index: 4;
 		}
 		a.pluglink {
 			color:#89be6c;
@@ -99,6 +99,7 @@
 			margin-left: 5px;
 			margin-top: 4px;
 			position: absolute;
+			z-index: 6;
 		}
 		div.iconbox {
 			height: 40px;
@@ -137,19 +138,19 @@
 			//$(".plug").on('click', function(){window.location.assign("https://plug.dj/@/beta-tester")});
 
 			$(".iconbox.github").hover(function(){
-				$(".gitDescription").stop().animate({"margin-left":"45px"},200).css({"z-index":"6"});
-				$(".iconbox.github").stop().animate({"width":"120px"},350);
+				$(".gitDescription").stop().animate({"margin-left":"45px"},350).css({"z-index":"6"});
+				$(".iconbox.github").stop().animate({"width":"120px"},200);
 			},function(){
-				$(".gitDescription").stop().animate({"margin-left":"-20px"},200).css({"z-index":"5"});
-				$(".iconbox.github").stop().animate({"width":"40px"},350);
+				$(".gitDescription").stop().animate({"margin-left":"-20px"},350).css({"z-index":"4"});
+				$(".iconbox.github").stop().animate({"width":"40px"},200);
 			});
 
 			$(".iconbox.plug").hover(function(){
-				$(".plugDescription").stop().animate({"margin-left":"45px"},200).css({"z-index":"6"});
-				$(".iconbox.plug").stop().animate({"width":"120px"},350);
+				$(".plugDescription").stop().animate({"margin-left":"45px"},350).css({"z-index":"6"});
+				$(".iconbox.plug").stop().animate({"width":"120px"},200);
 			},function(){
-				$(".plugDescription").stop().animate({"margin-left":"-20px"},200).css({"z-index":"5"});
-				$(".iconbox.plug").stop().animate({"width":"40px"},350);
+				$(".plugDescription").stop().animate({"margin-left":"-20px"},350).css({"z-index":"4"});
+				$(".iconbox.plug").stop().animate({"width":"40px"},200);
 			});
 
 			$("#refresh").mouseup(function() {
