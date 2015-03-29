@@ -3,12 +3,10 @@ bg_colour = "#" + ("000000" + bg_colour).slice(-6);
 document.bgColor = bg_colour;
 
 function beforeStart(){
-	setTimeout(function(){
-		start();
-		$("#loading").fadeOut();
-		$("#right").fadeIn();
-		$("#left").fadeIn();
-	},1000);
+	start();
+	$("#loading").fadeOut();
+	$("#right").fadeIn();
+	$("#left").fadeIn();
 }
 function start(){
 	$("#left").hover(function(){
