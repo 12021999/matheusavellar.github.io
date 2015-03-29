@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Useless Beta Page</title>
+	<title>v0.0.5</title>
 	<link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
 	<link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -125,28 +125,28 @@
 
 		function start(){
 			$("#left").hover(function(){
-				$("#sidebar").stop().animate({"margin-left":"-10px"});
+				$("#sidebar").animate({"margin-left":"-10px"});
 			}, function(){
-				$("#sidebar").stop().animate({"margin-left":"-43px"});
+				$("#sidebar").animate({"margin-left":"-43px"});
 			});
 
 			//$(".github").on('click', function(){window.location.assign("https://github.com/Tetheu98")});
 			//$(".plug").on('click', function(){window.location.assign("https://plug.dj/@/beta-tester")});
 
 			$("#sidebar .iconbox.github").hover(function(){
-				$("#sidebar .gitDescription").stop().animate({"margin-left":"45px"},500).fadeIn();
-				$("#sidebar .iconbox.github").stop().animate({"width":"120px"},500);
+				$(".gitDescription").stop().animate({"margin-left":"45px"}).fadeIn(500);
+				$(".iconbox.github").stop().animate({"width":"120px"},500);
 			},function(){
-				$("#sidebar .gitDescription").stop().animate({"margin-left":"-20px"},500).fadeOut();
-				$("#sidebar .iconbox.github").stop().animate({"width":"40px"},500);
+				$(".gitDescription").stop().fadeOut().animate({"margin-left":"-20px"},500);
+				$(".iconbox.github").stop().animate({"width":"40px"},500);
 			});
 
 			$("#sidebar .iconbox.plug").hover(function(){
-				$("#sidebar .plugDescription").stop().animate({"margin-left":"45px"},500).fadeIn();
-				$("#sidebar .iconbox.plug").stop().animate({"width":"120px"},500);
+				$(".plugDescription").stop().animate({"margin-left":"45px"},500).fadeIn(500);
+				$(".iconbox.plug").stop().animate({"width":"120px"},500);
 			},function(){
-				$("#sidebar .plugDescription").stop().animate({"margin-left":"-20px"},500).fadeOut();
-				$("#sidebar .iconbox.plug").stop().animate({"width":"40px"},500);
+				$(".plugDescription").stop().fadeOut().animate({"margin-left":"-20px"},500);
+				$(".iconbox.plug").stop().animate({"width":"40px"},500);
 			});
 
 			$("#refresh").mouseup(function() {
