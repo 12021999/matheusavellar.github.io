@@ -34,14 +34,16 @@
 	</style>
 
 </head>
-<body bgcolor="#d4062e">
+<body bgcolor="#d4062e" onLoad=start()>
 	<script type="text/javascript">
 		var bg_colour = Math.floor(Math.random() * 16777215).toString(16);
 		bg_colour = "#" + ("000000" + bg_colour).slice(-6);
 		document.bgColor = bg_colour;
 		/* Color script from http://randomcolour.com/ */
-		
-		$("#refresh").on('click', function(){window.location.reload();});
+
+		function start(){
+			$("#refresh").on('click', function(){window.location.reload();});
+		}
 	</script>
 	<div id="title"><a style="color:#89be6c; text-decoration: none;" href="https://plug.dj/@/beta-tester" target="_blank">Beta Tester</a>'s GitHub Page</div>
 	<div id="subtitle"><strong>Why'd you make one, Beta?</strong> Well I don't know! :D</div>
