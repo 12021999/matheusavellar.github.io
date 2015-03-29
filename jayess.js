@@ -4,10 +4,10 @@ document.bgColor = bg_colour;
 
 function beforeStart(){
 	setTimeout(function(){
+		start();
 		$("#loading").fadeOut();
 		$("#right").fadeIn();
 		$("#left").fadeIn();
-		start();
 	},5000);
 }
 function start(){
@@ -17,13 +17,13 @@ function start(){
 		$("#sidebar").stop().animate({"margin-left":"-43px"},200).css({"background-color":"rgba(0, 0, 0, 0)"});
 	});
 
-	for (var i = 0; i < $("div.iconbox").length; i++){
+	/*for (var i = 0; i < $("div.iconbox").length; i++){
 		$("div.iconbox")[i].hover(function(){
 			$("div.iconbox")[i].animate({"opacity":"1"},250);
 		},function(){
 			$("div.iconbox")[i].animate({"opacity":"0.1"},250);
 		});
-	}
+	}*/
 
 	$("#refresh").mouseup(function() {
 		$(this).css({"background-color":"#62BDB6","border":"1px solid #000000"});
