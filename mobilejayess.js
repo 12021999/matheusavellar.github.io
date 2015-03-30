@@ -2,5 +2,5 @@ function start(){
 	var bg_colour = Math.floor(Math.random() * 16777215).toString(16);
 	bg_colour = "#" + ("000000" + bg_colour).slice(-6);
 	document.bgColor = bg_colour;
-	$("#title").text(BD.OS + " | " + BD.browser + " | " + BD.browserName);
+	$("#title").text(BD.OS + " | " + BD.browser);
 }

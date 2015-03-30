@@ -1,8 +1,3 @@
-if (BD.OS.indexOf("iPhone") != -1){
-	window.location.assign("http://tetheu98.github.io/mobile");
-}
-$("#right #title").text(BD.OS + " | " + BD.browser + " | " + BD.browserName);
-
 var hasLoaded = false;
 setTimeout(function(){
 	if (!hasLoaded){
@@ -11,6 +6,8 @@ setTimeout(function(){
 },10000);
 
 function beforeStart(){
+	if (BD.OS.indexOf("iPhone") != -1){window.location.assign("/mobile");}
+	$("#right #title").text(BD.OS + " | " + BD.browser);
 	if (localStorage.getItem('betaPreviousColor')){
 		start();
 		$("#loading").fadeOut();
