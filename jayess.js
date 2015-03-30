@@ -1,3 +1,7 @@
+if (isMobile){
+	window.location.assign("/mobile");
+}
+
 var hasLoaded = false;
 setTimeout(function(){
 	if (!hasLoaded){
