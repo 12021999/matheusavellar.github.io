@@ -1,14 +1,24 @@
-var bg_colour = Math.floor(Math.random() * 16777215).toString(16);
-bg_colour = "#" + ("000000" + bg_colour).slice(-6);
-document.bgColor = bg_colour;
-
 function beforeStart(){
-	start();
-	$("#loading").fadeOut();
-	$("#right").fadeIn();
-	$("#left").fadeIn();
+	if (localStorage.getItem('betaPreviousColor')){
+		start();
+		$("#loading").fadeOut();
+		$("#right").fadeIn();
+		$("#left").fadeIn();
+	}else{
+		//Oh my god at the efficiency this has holy crap//
+		setTimeout(function(){
+			start();
+			$("#loading").fadeOut();
+			$("#right").fadeIn();
+			$("#left").fadeIn();
+		},3000);
+	}
 }
 function start(){
+	var bg_colour = Math.floor(Math.random() * 16777215).toString(16);
+	bg_colour = "#" + ("000000" + bg_colour).slice(-6);
+	document.bgColor = bg_colour;
+
 	$("#left").hover(function(){
 		$("#sidebar").stop().animate({"margin-left":"-10px"},200);
 	}, function(){

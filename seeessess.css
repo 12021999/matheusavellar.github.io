@@ -30,9 +30,9 @@ div#refresh {
 	border: 1px solid #000000;
 	margin-top: 50px;
 	cursor: pointer;
-	-webkit-box-shadow: 10px 15px 15px -2px rgba(0,0,0,0.2);
-	-moz-box-shadow: 10px 15px 15px -2px rgba(0,0,0,0.2);
-	box-shadow: 10px 15px 15px -2px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 6px 6px 0px 0px #444;
+	-moz-box-shadow: 6px 6px 0px 0px #444;
+	box-shadow: 6px 6px 0px 0px #444;
 }
 div#refresh:hover {
 	background-color: #babaca;
