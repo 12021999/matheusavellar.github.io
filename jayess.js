@@ -20,7 +20,7 @@ function start(){
 	document.bgColor = bg_colour;
 
 	$("#left").hover(function(){
-		$("#sidebar").stop().animate({"margin-left":"-10px"},200);
+		$("#sidebar").stop().animate({"margin-left":"0px"},200);
 	}, function(){
 		$("#sidebar").stop().animate({"margin-left":"-43px"},200);
 	});
