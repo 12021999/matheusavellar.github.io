@@ -11,14 +11,14 @@ function beforeStart(){
 		start();
 		$("#loading").fadeOut();
 		$("#right").fadeIn();
-		$("#left").fadeIn();
+		$("#bottom").fadeIn();
 	}else{
 		//Oh my god at the efficiency this has holy crap//
 		setTimeout(function(){
 			start();
 			$("#loading").fadeOut();
 			$("#right").fadeIn();
-			$("#left").fadeIn();
+			$("#bottom").fadeIn();
 		},3000);
 	}
 }
