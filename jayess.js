@@ -53,9 +53,7 @@ function start(){
 
 	$("div.iconbox").hover(function(){
 		$(this).stop().animate({"opacity":"1"},250);
-		$("div.none").css({"opacity":"0"});
 	}, function(){
 		$(this).stop().animate({"opacity":"0.4"},250);
-		$("div.none").css({"opacity":"0"});
 	});
 }
