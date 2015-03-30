@@ -3,25 +3,26 @@ setTimeout(function(){
 	if (!hasLoaded){
 		$("#subtitle.loadingLong").show();
 	}
-},5000);
+},10000);
 
 function beforeStart(){
-	/*if (localStorage.getItem('betaPreviousColor')){
+	if (localStorage.getItem('betaPreviousColor')){
 		start();
 		$("#loading").fadeOut();
 		$("#right").fadeIn();
 		$("#left").fadeIn();
-	}else{*/
+	}else{
 		//Oh my god at the efficiency this has holy crap//
 		setTimeout(function(){
 			start();
 			$("#loading").fadeOut();
 			$("#right").fadeIn();
 			$("#left").fadeIn();
-		},15000);
-	//}
+		},3000);
+	}
 }
 function start(){
+	hasLoaded = true;
 	var bg_colour = Math.floor(Math.random() * 16777215).toString(16);
 	bg_colour = "#" + ("000000" + bg_colour).slice(-6);
 	document.bgColor = bg_colour;
