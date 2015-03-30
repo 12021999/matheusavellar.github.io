@@ -53,7 +53,6 @@ div#loading {
 	margin-top: -8px;
 }
 div#loadingPic{
-	background-image: url(https://i.imgur.com/rtnjSZ3.gif);
 	width: 500px;
 	height: 420px;
 }
@@ -63,7 +62,7 @@ div#loadingPic.bottom.png {
 div#loadingPic.bottom.gif {
 	background-image: url(https://i.imgur.com/rtnjSZ3.gif);
 }
-div#loadingPic.bottom.gif, div#loadingStat.bottom.png{
+div#loadingPic.bottom {
 	background-size: contain;
 	width: 125px;
 	height: 105px;
