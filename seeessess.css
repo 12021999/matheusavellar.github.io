@@ -52,24 +52,29 @@ div#loading {
 	margin-left: -8px;
 	margin-top: -8px;
 }
-div#loadingAnim{
+div#loadingPic{
 	background-image: url(https://i.imgur.com/rtnjSZ3.gif);
 	width: 500px;
 	height: 420px;
 }
-div#loadingAnim.bottom{
+div#loadingPic.bottom.png { 
+	background-image: url(https://i.imgur.com/ctDtR8P.png);
+}
+div#loadingPic.bottom.gif {
 	background-image: url(https://i.imgur.com/rtnjSZ3.gif);
+}
+div#loadingPic.bottom.gif, div#loadingStat.bottom.png{
 	background-size: contain;
-	width: 250px;
-	height: 210px;
+	width: 125px;
+	height: 105px;
 	margin-left: 100px;
 	margin-top: 20px;
 }
 div#bottom {
 	width: 100%;
 	background-color: #404040;
-	margin-left: -83px;
-	bottom: 1px;
+	margin-left: -8px;
+	bottom: 0px;
 	position: absolute;
 }
 div.iconbox {
