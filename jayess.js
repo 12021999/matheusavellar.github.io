@@ -30,12 +30,6 @@ function start(){
 	bg_colour = "#" + ("000000" + bg_colour).slice(-6);
 	document.bgColor = bg_colour;
 
-	$("#loadingPic.bottom").hover(function(){
-		$(this).toggleClass("png").toggleClass("gif");
-	}, function(){
-		$(this).toggleClass("png").toggleClass("gif");
-	});
-
 	$("#left").hover(function(){
 		$("#sidebar").stop().animate({"margin-left":"0px"},200);
 	}, function(){
