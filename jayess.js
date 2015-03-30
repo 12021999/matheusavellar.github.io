@@ -1,4 +1,4 @@
-if (BD.OS.indexOf("iPhone") != -1;){
+if (BD.OS.indexOf("iPhone") != -1){
 	window.location.assign("http://tetheu98.github.io/mobile");
 }
 
