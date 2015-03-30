@@ -7,7 +7,6 @@ setTimeout(function(){
 
 function beforeStart(){
 	if (BD.OS.indexOf("iPhone") != -1){window.location.assign("/mobile");}
-	$("#right #title").text(BD.OS + " | " + BD.browser);
 	if (localStorage.getItem('betaPreviousColor')){
 		start();
 		$("#loading").fadeOut();

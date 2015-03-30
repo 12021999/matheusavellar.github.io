@@ -2,12 +2,11 @@ div{
 	font-family: 'Open Sans', sans-serif;
 	color: #eeeeee;
 }
-div#sidebar {
-	height: 100%;
+div#bar {
+	background-color: #404040;
+	height: 200px;
+	width: 100%;
 	position: absolute;
-	width: 60px;
-	margin-left: -43px;
-	margin-top: -10px;
 }
 div#right {
 	margin-left: 75px;
@@ -64,10 +63,9 @@ div#bottom {
 	position: absolute;
 }
 .spinner {
-	width: 30px;
-	height: 30px;
-	background-color: #333;
-
+	width: 60px;
+	height: 60px;
+	background-color: #eee;
 	margin: 100px auto;
 	-webkit-animation: rotateplane 1.2s infinite ease-in-out;
 	animation: rotateplane 1.2s infinite ease-in-out;
@@ -91,7 +89,7 @@ div#bottom {
 }
 div.iconbox {
 	height: 40px;
-	width: 40px;
+	width: 120px;
 	margin-bottom: 2px;
 	background-color: rgba(245, 245, 245, 1);
 	border-radius: 22px;
