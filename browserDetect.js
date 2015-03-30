@@ -44,44 +44,7 @@ var BD = {
 		{string: navigator.platform,subString: "Mac",identity: "Mac"},
 		{string: navigator.userAgent,subString: "iPhone",identity: "iPhone/iPod"},
 		{string: navigator.platform,subString: "Linux",identity: "Linux"}
-	],
-	browserName: "",
-	isWindowPhone: function(){
-		if (agent.indexOf("IEMobile") > -1 || agent.indexOf("Windows Phone") > -1){
-			BD.browserName += " Windows Phone ";
-		}
-	},
-	isFirefox: function(){
-		if (agent.indexOf("Firefox") > -1){
-			BD.browserName += " Firefox ";
-		}
-	},
-	isOpera: function(){
-		if (window.opera != null){
-			BD.browserName += " Opera ";
-		}
-	},
-	isChrome: function(){
-		if (agent.indexOf("Chrome") > -1){
-			BD.browserName += " Chrome ";
-		}
-	},
-	isIOS: function(){
-		if (agent.indexOf("iPod") > -1 || agent.indexOf("iPhone") > -1 || agent.indexOf("iPad") > -1){
-			if (!BD.isWindowPhone){
-				BD.browserName += " iOS ";
-			}
-		}
-	},
-	isAndroid: function(){
-		if (agent.indexOf("Android") > -1 && !BD.isWindowPhone){
-			BD.browserName += " Android ";
-		}
-	},
-	isBlackberry: function(){
-		if (agent.indexOf("Blackberry") > -1){
-			BD.browserName += " Blackberry ";
-		}
-	}
+	]
 };
 BD.init();
+var isMobile = BD.OS.indexOf("iPhone") != -1;
