@@ -1,18 +1,25 @@
+var hasLoaded = false;
+setTimeout(function(){
+	if (!hasLoaded){
+		$("#subtitle.loadingLong").show();
+	}
+},5000);
+
 function beforeStart(){
-	if (localStorage.getItem('betaPreviousColor')){
+	/*if (localStorage.getItem('betaPreviousColor')){
 		start();
 		$("#loading").fadeOut();
 		$("#right").fadeIn();
 		$("#left").fadeIn();
-	}else{
+	}else{*/
 		//Oh my god at the efficiency this has holy crap//
 		setTimeout(function(){
 			start();
 			$("#loading").fadeOut();
 			$("#right").fadeIn();
 			$("#left").fadeIn();
-		},3000);
-	}
+		},15000);
+	//}
 }
 function start(){
 	var bg_colour = Math.floor(Math.random() * 16777215).toString(16);
