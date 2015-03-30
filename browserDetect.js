@@ -47,4 +47,3 @@ var BD = {
 	]
 };
 BD.init();
-var isMobile = BD.OS.indexOf("iPhone") != -1;

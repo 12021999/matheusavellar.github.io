@@ -1,5 +1,5 @@
-if (isMobile){
-	window.location.assign("/mobile");
+if (BD.OS.indexOf("iPhone") != -1;){
+	window.location.assign("http://tetheu98.github.io/mobile");
 }
 
 var hasLoaded = false;
