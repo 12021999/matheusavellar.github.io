@@ -68,6 +68,11 @@ div#languages {
 	background-color: #5E5E5E;
 	position: absolute;
 }
+div#icons {
+	height: 175px;
+	width: 540px;
+	position: absolute;
+}
 div.iconbox {
 	height: 40px;
 	width: 120px;
@@ -77,6 +82,7 @@ div.iconbox {
 	border-radius: 22px;
 	cursor: pointer;
 	opacity: 0.4;
+	float: left;
 }
 div.none {
 	opacity: 0;
