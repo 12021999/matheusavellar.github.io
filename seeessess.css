@@ -57,14 +57,14 @@ div#bottom {
 }
 div#social {
 	background-color: #404040;
-	height: 300px;
+	height: 600px;
 	width: 50%;
 	position: absolute;
 }
 div#languages {
 	left: 50%;
 	width: 50%;
-	height: 300px;
+	height: 600px;
 	background-color: #5E5E5E;
 	position: absolute;
 }
@@ -111,6 +111,11 @@ div.loaded {
 	top: -20px;
 	background-color: rgba(0, 255, 23, 0.3);
 }
+div.explanation {
+	margin-top: 50px;
+	width: 162px;
+
+}
 span.refreshmsg {
 	position: relative;
 	left: 25px;
@@ -154,12 +159,25 @@ a.silver {
 a.bronze {
 	background: #AD6200;
 }
+a.void {
+	background: #380041;
+}
 i {
 	width: 30px;
 	height: 30px;
 	margin-left: 5px;
 	margin-top: 4px;
 	position: absolute;
+}
+.keybox {
+	margin-right: 40px;
+	float: none;
+}
+.header {
+	-webkit-box-shadow: inset 0px 1px 0px 0px #444;
+	-moz-box-shadow: inset 0 1px 0 0 #555d70;
+	box-shadow: inset 0px 1px 0px 0px #444;
+	margin: 15px;
 }
 .icon-git {
 	background-image:url(https://i.imgur.com/kF47Mvu.png);
