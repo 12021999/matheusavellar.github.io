@@ -23,7 +23,7 @@ function beforeStart(){
 	}
 }
 function start(){
-	$("body").hover(function(){console.log("Ajax is working");});
+	$("body").hover(function(){/*AJAX TEST*/});
 	hasLoaded = true;
 	var bg_colour = Math.floor(Math.random() * 16777215).toString(16);
 	bg_colour = "#" + ("000000" + bg_colour).slice(-6);
@@ -65,5 +65,29 @@ function start(){
 		$(this).stop().animate({"opacity":"1"},250);
 	}, function(){
 		$(this).stop().animate({"opacity":"0.4"},250);
+	});
+
+	$(".keybox.gold").hover(function(){
+		$(".iconbox.gold").stop().animate({"opacity":"1"},250);
+	}, function(){
+		$(".iconbox.gold").stop().animate({"opacity":"0.4"},250);
+	});
+
+	$(".keybox.silver").hover(function(){
+		$(".iconbox.silver").stop().animate({"opacity":"1"},250);
+	}, function(){
+		$(".iconbox.silver").stop().animate({"opacity":"0.4"},250);
+	});
+
+	$(".keybox.bronze").hover(function(){
+		$(".iconbox.bronze").stop().animate({"opacity":"1"},250);
+	}, function(){
+		$(".iconbox.bronze").stop().animate({"opacity":"0.4"},250);
+	});
+
+	$(".keybox.void").hover(function(){
+		$(".iconbox.void").stop().animate({"opacity":"1"},250);
+	}, function(){
+		$(".iconbox.void").stop().animate({"opacity":"0.4"},250);
 	});
 }
