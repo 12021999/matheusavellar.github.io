@@ -76,6 +76,8 @@ div#icons {
 	height: 100px;
 }
 #icons.tongue {
+	height: 80px;
+	margin-top: 30px;
 }
 div.iconbox {
 	height: 40px;
