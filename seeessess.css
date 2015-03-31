@@ -82,6 +82,10 @@ div#icons {
 #icons.key {
 	height: 215px;
 }
+#top .version {
+	right: 5px;
+	position: absolute;
+}
 div.iconbox {
 	height: 40px;
 	width: 120px;
