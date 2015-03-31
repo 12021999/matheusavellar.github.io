@@ -2,10 +2,17 @@ div{
 	font-family: 'Open Sans', sans-serif;
 	color: #eeeeee;
 }
-div#bar {
+div#social {
 	background-color: #404040;
 	height: 200px;
 	width: 100%;
+	position: absolute;
+}
+div#languages {
+	left: 50%;
+	width: 50%;
+	height: 200px;
+	background-color: #5E5E5E;
 	position: absolute;
 }
 div#right {
