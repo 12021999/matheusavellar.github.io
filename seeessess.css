@@ -91,6 +91,7 @@ div.iconbox {
 	height: 40px;
 	width: 120px;
 	margin-bottom: 2px;
+	margin-left: 15px;
 	background-color: rgba(245, 245, 245, 1);
 	border-radius: 22px;
 	cursor: pointer;
@@ -113,9 +114,14 @@ span.refreshmsg {
 	top: 12px;
 	color: #ffffff;
 }
-a.description {
+span.description {
 	position: absolute;
+	height: 40px;
+	width: 120px;
 	opacity: 0;
+}
+a.link {
+	position: absolute;
 	margin-left: 0px;
 	margin-top: 0px;
 	color: #4c4c4c;
