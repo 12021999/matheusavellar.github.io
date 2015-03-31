@@ -121,6 +121,9 @@ a.gold {
 a.silver {
 	background: #B2B2B2;
 }
+a.bronze {
+	background: #AD6200;
+}
 i {
 	width: 30px;
 	height: 30px;
