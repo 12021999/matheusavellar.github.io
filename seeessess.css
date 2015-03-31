@@ -2,19 +2,6 @@ div{
 	font-family: 'Open Sans', sans-serif;
 	color: #eeeeee;
 }
-div#social {
-	background-color: #404040;
-	height: 200px;
-	width: 100%;
-	position: absolute;
-}
-div#languages {
-	left: 50%;
-	width: 50%;
-	height: 200px;
-	background-color: #5E5E5E;
-	position: absolute;
-}
 div#right {
 	margin-left: 75px;
 }
@@ -63,36 +50,23 @@ div#loadingPic{
 	height: 420px;
 }
 div#bottom {
-	width: 100%;
-	background-color: #404040;
 	margin-left: -8px;
 	bottom: 0px;
 	position: absolute;
+	width: 100%;
 }
-.spinner {
-	width: 100px;
-	height: 100px;
-	background-color: #eee;
-	margin: 100px auto;
-	-webkit-animation: rotateplane 1.2s infinite ease-in-out;
-	animation: rotateplane 1.2s infinite ease-in-out;
+div#social {
+	background-color: #404040;
+	height: 250px;
+	width: 50%;
+	position: absolute;
 }
-@-webkit-keyframes rotateplane {
-	0% { -webkit-transform: perspective(120px) }
-	50% { -webkit-transform: perspective(120px) rotateY(180deg) }
-	100% { -webkit-transform: perspective(120px) rotateY(180deg)	rotateX(180deg) }
-}
-@keyframes rotateplane {
-	0% { 
-	transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-	-webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
-	} 50% { 
-	transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-	-webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
-	} 100% { 
-	transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-	-webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-	}
+div#languages {
+	left: 50%;
+	width: 50%;
+	height: 250px;
+	background-color: #5E5E5E;
+	position: absolute;
 }
 div.iconbox {
 	height: 40px;
@@ -134,6 +108,19 @@ a.link {
 	width: 120px;
 	opacity: 0;
 }
+a.bg {
+	padding: 0px 4px;
+	border-radius: 7px;
+	width: 27px;
+	height: 40px;
+	position: absolute;
+}
+a.gold {
+	background: #BAA200;
+}
+a.silver {
+	background: #B2B2B2;
+}
 i {
 	width: 30px;
 	height: 30px;
@@ -153,4 +140,29 @@ i {
 .icon-facebook {
 	background-image:url(https://i.imgur.com/NaVYjAu.png);
 	border-radius: 10px;
+}
+.spinner {
+	width: 100px;
+	height: 100px;
+	background-color: #eee;
+	margin: 100px auto;
+	-webkit-animation: rotateplane 1.2s infinite ease-in-out;
+	animation: rotateplane 1.2s infinite ease-in-out;
+}
+@-webkit-keyframes rotateplane {
+	0% { -webkit-transform: perspective(120px) }
+	50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+	100% { -webkit-transform: perspective(120px) rotateY(180deg)	rotateX(180deg) }
+}
+@keyframes rotateplane {
+	0% { 
+	transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+	-webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+	} 50% { 
+	transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+	-webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+	} 100% { 
+	transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+	-webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+	}
 }
