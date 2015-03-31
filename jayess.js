@@ -1,3 +1,4 @@
+var isPt = false;
 var hasLoaded = false;
 setTimeout(function(){
 	if (!hasLoaded){
@@ -6,6 +7,7 @@ setTimeout(function(){
 },10000);
 
 function beforeStart(){
+	if (window.location.href.indexOf("pt") != -1){isPt = true;}
 	if (BD.OS.indexOf("iPhone") != -1){window.location.assign("/mobile");}
 	if (localStorage.getItem('betaPreviousColor')){
 		start();
@@ -39,7 +41,10 @@ function start(){
 		$(this).css({"background-color":"#62BDB6","border":"1px solid #000000"});
 	}).mousedown(function() {
 		$(this).css({"background-color":"#9393A0","border":"1px solid #A50000"});
-		$("#refresh .loaded").animate({"width":"100%"},500,function(){$("#refresh .refreshmsg").text("Done!");});
+		$("#refresh .loaded").animate({"width":"100%"},500,function(){
+			if (!isPt){$("#refresh .refreshmsg").text("Done!");}
+			else{$("#refresh .refreshmsg").text("Pronto!");}
+		});
 		setTimeout(function(){window.location.reload();},500);
 	});
 
