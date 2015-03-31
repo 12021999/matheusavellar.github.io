@@ -124,6 +124,13 @@ span.refreshmsg {
 	top: 12px;
 	color: #ffffff;
 }
+span.description {
+	position: absolute;
+	margin-left: 42px;
+	margin-top: 8px;
+	color: #4c4c4c;
+	text-decoration: none;
+}
 a.description {
 	width: 120px;
 	height: 40px;
