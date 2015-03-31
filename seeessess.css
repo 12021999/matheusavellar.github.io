@@ -88,7 +88,7 @@ div.iconbox {
 	margin-bottom: 15px;
 	margin-left: 15px;
 	background-color: rgba(245, 245, 245, 1);
-	border-radius: 7px;
+	border-radius: 8px;
 	cursor: pointer;
 	opacity: 0.4;
 	-webkit-box-shadow: 6px 6px 0px 0px #444;
@@ -158,8 +158,8 @@ a.void {
 	background: #380041;
 }
 i {
-	width: 30px;
-	height: 30px;
+	width: 120px;
+	height: 40px;
 	margin-left: 5px;
 	margin-top: 4px;
 	position: absolute;
