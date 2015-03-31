@@ -57,14 +57,14 @@ div#bottom {
 }
 div#social {
 	background-color: #404040;
-	height: 250px;
+	height: 300px;
 	width: 50%;
 	position: absolute;
 }
 div#languages {
 	left: 50%;
 	width: 50%;
-	height: 250px;
+	height: 300px;
 	background-color: #5E5E5E;
 	position: absolute;
 }
@@ -94,7 +94,7 @@ div.iconbox {
 	box-shadow: 6px 6px 0px 0px #444;
 }
 div.breaker {
-	top: 65%;
+	top: 62%;
 	width: 100%;
 	height: 1px;
 	position: absolute;
