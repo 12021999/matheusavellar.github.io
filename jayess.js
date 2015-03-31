@@ -1,7 +1,7 @@
 var hasLoaded = false;
 setTimeout(function(){
 	if (!hasLoaded){
-		$("#subtitle.loadingLong").show();
+		window.location.reload();
 	}
 },10000);
 
