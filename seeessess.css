@@ -69,9 +69,13 @@ div#languages {
 	position: absolute;
 }
 div#icons {
-	height: 175px;
 	width: 540px;
-	position: absolute;
+	position: relative;
+}
+#icons.code {
+	height: 100px;
+}
+#icons.tongue {
 }
 div.iconbox {
 	height: 40px;
