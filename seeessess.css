@@ -77,7 +77,9 @@ div#icons {
 }
 #icons.tongue {
 	height: 80px;
-	margin-top: 30px;
+}
+#icons.key {
+	height: 215px;
 }
 div.iconbox {
 	height: 40px;
@@ -88,7 +90,6 @@ div.iconbox {
 	border-radius: 22px;
 	cursor: pointer;
 	opacity: 0.4;
-	float: left;
 	-webkit-box-shadow: 6px 6px 0px 0px #444;
 	-moz-box-shadow: 6px 6px 0px 0px #444;
 	box-shadow: 6px 6px 0px 0px #444;
@@ -168,6 +169,9 @@ i {
 	margin-left: 5px;
 	margin-top: 4px;
 	position: absolute;
+}
+.box {
+	float: left;
 }
 .keybox {
 	margin-right: 40px;
