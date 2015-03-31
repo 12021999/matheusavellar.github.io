@@ -13,6 +13,7 @@ div#title {
 div#subtitle {
 	font-size: 22px;
 	text-shadow: 1px 1px 0 #444;
+	margin: 15px;
 }
 div#refresh {
 	margin-left: auto;
@@ -113,8 +114,8 @@ div.loaded {
 	background-color: rgba(0, 255, 23, 0.3);
 }
 div.explanation {
-	margin-top: 50px;
-	width: 162px;
+	margin-left: 140px;
+	width: 300px;
 
 }
 span.refreshmsg {
@@ -193,7 +194,7 @@ i {
 	background-image:url(https://i.imgur.com/HCu9Iim.png);
 }
 .icon-facebook {
-	background-image:url(https://i.imgur.com/NaVYjAu.png);
+	background-image:url(https://i.imgur.com/W225q8l.png;
 	border-radius: 10px;
 }
 .spinner {
