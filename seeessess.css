@@ -124,13 +124,6 @@ span.refreshmsg {
 	top: 12px;
 	color: #ffffff;
 }
-span.description {
-	position: absolute;
-	margin-left: 42px;
-	margin-top: 8px;
-	color: #4c4c4c;
-	text-decoration: none;
-}
 a.description {
 	width: 120px;
 	height: 40px;
@@ -184,18 +177,20 @@ i {
 	box-shadow: inset 0px 1px 0px 0px #444;
 	margin: 15px;
 }
+.icon {
+	background-image: url(https://i.imgur.com/L3TOnAq.png);
+}
 .icon-git {
-	background-image:url(https://i.imgur.com/kF47Mvu.png);
+	background-position: 0px 0px;
 }
 .icon-plug {
-	background-image:url(https://i.imgur.com/MzokJdr.png);
+	background-position: 0px 40px;
 }
 .icon-youtube {
-	background-image:url(https://i.imgur.com/HCu9Iim.png);
+	background-position: 0px 80px;
 }
 .icon-facebook {
-	background-image:url(https://i.imgur.com/W225q8l.png;
-	border-radius: 10px;
+	background-position: 0px 120px;
 }
 .spinner {
 	width: 100px;
