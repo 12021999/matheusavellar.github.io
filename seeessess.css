@@ -117,12 +117,20 @@ span.refreshmsg {
 	top: 12px;
 	color: #ffffff;
 }
-a.description {
+span.description {
 	position: absolute;
 	margin-left: 42px;
 	margin-top: 8px;
 	color: #4c4c4c;
 	text-decoration: none;
+}
+a.description {
+	width: 120px;
+	height: 40px;
+	position: absolute;
+	margin-left: 0px;
+	margin-top: 0px;
+	opacity: 0;
 }
 a.link {
 	position: absolute;
