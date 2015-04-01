@@ -160,7 +160,6 @@ a.bdg {
 	width: 27px;
 	height: 40px;
 	position: absolute;
-	color:#fff;
 	background:#BAA200;
 	background-repeat:no-repeat;
 	background-image:-webkit-linear-gradient(top left, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 37%, rgba(255, 255, 255, 0.8) 45%, rgba(255, 255, 255, 0.0) 50%);
@@ -244,9 +243,7 @@ i {
 	}
 }
 
-.bdg:hover,
-.bdg:focus {
-	color:#fff;
+.bdg.shine {
 	background-position:0 0, 0 0;
 	-webkit-transition-duration: 0.5s;
 	-moz-transition-duration: 0.5s;
