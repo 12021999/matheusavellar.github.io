@@ -15,11 +15,3 @@ div#moblanguages {
 	background-color: #5E5E5E;
 	position: relative;
 }
-.mobspinner {
-	width: 20px;
-	height: 20px;
-	background-color: #eee;
-	margin: 100px auto;
-	-webkit-animation: rotateplane 1.2s infinite ease-in-out;
-	animation: rotateplane 1.2s infinite ease-in-out;
-}
