@@ -68,39 +68,37 @@ function start(){
 		$(this).stop().animate({"opacity":"0.4"},250);
 	});
 
-	var badgeNames = ["gold","silver","bronze","void"];
-	function boxHover(badgeName){
-		$(".keybox." + badgeName).hover(function(){
-			$(".iconbox." + badgeName).stop().animate({"opacity":"1"},250);
-			$(".iconbox." + badgeName).addClass("shine");
-		}, function(){
-			$(".iconbox." + badgeName).stop().animate({"opacity":"0.4"},250);
-			$(".iconbox." + badgeName).removeClass("shine");
-		});
+	//Possibly the most unefficient way possible to make this//
+	//But flipping *for* won't work here for whatever reason//
+	$(".keybox.gold").hover(function(){
+		$(".iconbox.gold").stop().animate({"opacity":"1"},250);
+		$(".iconbox.gold").addClass("shine");
+	}, function(){
+		$(".iconbox.gold").stop().animate({"opacity":"0.4"},250);
+		$(".iconbox.gold").removeClass("shine");
+	});
 
-		for (var i in badgeNames){
-			if (badgeName == badgeNames[i] && badgeName != badgeNames[badgeNames.length-1]){
-				boxHover(badgeNames[i+1]);
-				break;
-			}
-		}
-	}
-
-	/*$(".keybox.silver").hover(function(){
+	$(".keybox.silver").hover(function(){
 		$(".iconbox.silver").stop().animate({"opacity":"1"},250);
+		$(".iconbox.gold").addClass("shine");
 	}, function(){
 		$(".iconbox.silver").stop().animate({"opacity":"0.4"},250);
+		$(".iconbox.gold").removeClass("shine");
 	});
 
 	$(".keybox.bronze").hover(function(){
 		$(".iconbox.bronze").stop().animate({"opacity":"1"},250);
+		$(".iconbox.gold").addClass("shine");
 	}, function(){
 		$(".iconbox.bronze").stop().animate({"opacity":"0.4"},250);
+		$(".iconbox.gold").removeClass("shine");
 	});
 
 	$(".keybox.void").hover(function(){
 		$(".iconbox.void").stop().animate({"opacity":"1"},250);
+		$(".iconbox.gold").addClass("shine");
 	}, function(){
 		$(".iconbox.void").stop().animate({"opacity":"0.4"},250);
-	});*/
+		$(".iconbox.gold").removeClass("shine");
+	});
 }
