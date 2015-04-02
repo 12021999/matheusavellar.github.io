@@ -71,7 +71,7 @@ function start(){
 	//Possibly the most unefficient way possible to make this//
 	//But flipping *for* won't work here for whatever reason//
 	$(".keybox.gold").hover(function(){
-		$(".iconbox.gold .bdg").stop().animate({"opacity":"1"},250);
+		$(".iconbox.gold").stop().animate({"opacity":"1"},250);
 		$(".iconbox.gold .bdg").addClass("shine");
 	}, function(){
 		$(".iconbox.gold").stop().animate({"opacity":"0.4"},250);
