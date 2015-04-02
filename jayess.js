@@ -93,10 +93,4 @@ function start(){
 		$(".iconbox.bronze").stop().animate({"opacity":"0.4"},250);
 		$(".iconbox.bronze .bdg").removeClass("shine");
 	});
-
-	$(".keybox.void").hover(function(){
-		$(".iconbox.void").stop().animate({"opacity":"1"},250);
-	}, function(){
-		$(".iconbox.void").stop().animate({"opacity":"0.4"},250);
-	});
 }
