@@ -71,34 +71,32 @@ function start(){
 	//Possibly the most unefficient way possible to make this//
 	//But flipping *for* won't work here for whatever reason//
 	$(".keybox.gold").hover(function(){
-		$(".iconbox.gold").stop().animate({"opacity":"1"},250);
-		$(".iconbox.gold").addClass("shine");
+		$(".iconbox.gold .bdg").stop().animate({"opacity":"1"},250);
+		$(".iconbox.gold .bdg").addClass("shine");
 	}, function(){
 		$(".iconbox.gold").stop().animate({"opacity":"0.4"},250);
-		$(".iconbox.gold").removeClass("shine");
+		$(".iconbox.gold .bdg").removeClass("shine");
 	});
 
 	$(".keybox.silver").hover(function(){
 		$(".iconbox.silver").stop().animate({"opacity":"1"},250);
-		$(".iconbox.gold").addClass("shine");
+		$(".iconbox.silver .bdg").addClass("shine");
 	}, function(){
 		$(".iconbox.silver").stop().animate({"opacity":"0.4"},250);
-		$(".iconbox.gold").removeClass("shine");
+		$(".iconbox.silver .bdg").removeClass("shine");
 	});
 
 	$(".keybox.bronze").hover(function(){
 		$(".iconbox.bronze").stop().animate({"opacity":"1"},250);
-		$(".iconbox.gold").addClass("shine");
+		$(".iconbox.bronze .bdg").addClass("shine");
 	}, function(){
 		$(".iconbox.bronze").stop().animate({"opacity":"0.4"},250);
-		$(".iconbox.gold").removeClass("shine");
+		$(".iconbox.bronze .bdg").removeClass("shine");
 	});
 
 	$(".keybox.void").hover(function(){
 		$(".iconbox.void").stop().animate({"opacity":"1"},250);
-		$(".iconbox.gold").addClass("shine");
 	}, function(){
 		$(".iconbox.void").stop().animate({"opacity":"0.4"},250);
-		$(".iconbox.gold").removeClass("shine");
 	});
 }
