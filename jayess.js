@@ -64,8 +64,10 @@ function start(){
 
 	$("div.iconbox").hover(function(){
 		$(this).stop().animate({"opacity":"1"},250);
+		$(this).children(".bdg").addClass("shine");
 	}, function(){
 		$(this).stop().animate({"opacity":"0.4"},250);
+		$(this).children(".bdg").removeClass("shine");
 	});
 
 	//Possibly the most unefficient way possible to make this//
