@@ -71,7 +71,7 @@ function start(){
 	});
 
 	//Possibly the most unefficient way possible to make this//
-	//But flipping *for* won't work here for whatever reason//
+	//But freaking *for* won't work here for whatever reason//
 	$(".keybox.gold").hover(function(){
 		$(".iconbox.gold").stop().animate({"opacity":"1"},250);
 		$(".iconbox.gold .bdg").addClass("shine");
@@ -94,5 +94,30 @@ function start(){
 	}, function(){
 		$(".iconbox.bronze").stop().animate({"opacity":"0.4"},250);
 		$(".iconbox.bronze .bdg").removeClass("shine");
+	});
+
+
+	$(".iconbox.github").hover(function(){
+		$("#social").append("<div class='tooltip'><span>github.com/Tetheu98</span></div>");
+	}, function(){
+		$(".tooltip").remove();
+	});
+
+	$(".iconbox.plug").hover(function(){
+		$("#social").append("<div class='tooltip'><span>plug.dj/@/beta-tester</span></div>");
+	}, function(){
+		$(".tooltip").remove();
+	});
+
+	$(".iconbox.facebook").hover(function(){
+		$("#social").append("<div class='tooltip'><span>facebook.com/ba.beta.tester</span></div>");
+	}, function(){
+		$(".tooltip").remove();
+	});
+
+	$(".iconbox.youtube").hover(function(){
+		$("#social").append("<div class='tooltip'><span>youtube.com/user/Tetheu98</span></div>");
+	}, function(){
+		$(".tooltip").remove();
 	});
 }
