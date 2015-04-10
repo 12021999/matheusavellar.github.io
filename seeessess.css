@@ -249,15 +249,15 @@ i {
 
 .tooltip {
 	background-color: #000;
-	height: 15px;
+	height: 20px;
 	min-width: 70px;
-	max-width: 117px;
 	position: absolute;
 	left: 100px;
 	top: 25px;
 }
 
 .tooltip span {
+	margin:5px;
 	font-size: 15px;
 	font-family: 'Open Sans', sans-serif;
 	color: #eee;
