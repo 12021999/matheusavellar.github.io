@@ -258,6 +258,7 @@ i {
 }
 
 .tooltip span {
-	font-size: 8px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
 	color: #eee;
 }
