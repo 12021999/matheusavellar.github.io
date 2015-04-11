@@ -10,6 +10,16 @@ a.reasons:hover {
 	background-color: #fff;
 }
 
+a.original {
+	text-decoration: none;
+	color: #3498DB;
+}
+
+div#header-ripoff {
+	margin: 15px;
+	margin-top: 40px;
+}
+
 div#title-ripoff {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 100px;
