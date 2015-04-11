@@ -1,7 +1,13 @@
 a.reasons {
 	font-size: 17px;
 	text-decoration: none;
-	color: #fff;
+	font-weight: bold;
+	color: #3498DB;
+	border: #D3D3D3 1px solid;
+	padding: 2px 10px 4px 10px;
+}
+a.reasons:hover {
+	background-color: #fff;
 }
 
 div#title-ripoff {
