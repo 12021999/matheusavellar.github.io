@@ -16,6 +16,9 @@
 			text-decoration: none;
 			color: #eee;
 		}
+		ul.right{
+			-webkit-padding-start: 0;
+		}
 		li {
 			padding-top: 50px;
 			font-size: 20px;
@@ -25,15 +28,14 @@
 			display: block;
 			box-shadow: rgb(255, 255, 255) 0px 1px 0px 0px;
 		}
-		li.first {
-			margin-left: 5%;
-		}
-		li.second {
-			margin-left: 60%;
-		}
-		li.third {
-			margin-left: 35%;
-		}
+		li.first-l {margin-left: 5%;}
+		li.second-l {margin-left: 60%;}
+		li.third-l {margin-left: 35%;}
+		li.first-r {width: 5%;}
+		li.second-r {width: 60%;}
+		li.third-r {width: 35%;}
+		.left-li{text-align: left;}
+		.right-li{text-align: right;}
 	</style>
 	<style type="text/css"></style>
 </head>
@@ -41,16 +43,16 @@
 	<div>
 		<div id="spine" class="left">
 			<ul>
-				<li class="first"><a href="/home" title="Homepage">Homepage</a></li>
-				<li class="second"><a href="/bcs" title="An extension for plug.dj">BCS</a></li>
-				<li class="third"><a href="/color" title="A random color generator that indicates the hexadecimal for the color">Color</a></li>
+				<li class="first-l left-li"><a href="/home" title="Homepage">Homepage</a></li>
+				<li class="second-l left-li"><a href="/bcs" title="An extension for plug.dj">BCS</a></li>
+				<li class="third-l left-li"><a href="/color" title="A random color generator that indicates the hexadecimal for the color">Color</a></li>
 			</ul>
 		</div>
 		<div id="spine" class="right">
-			<ul>
-				<li class="first"><a href="/home" title="Homepage">Homepage</a></li>
-				<li class="second"><a href="/bcs" title="An extension for plug.dj">BCS</a></li>
-				<li class="third"><a href="/color" title="A random color generator that indicates the hexadecimal for the color">Color</a></li>
+			<ul class="right">
+				<li class="first-r right-li"><a href="/home" title="Homepage">Homepage</a></li>
+				<li class="second-r right-li"><a href="/bcs" title="An extension for plug.dj">BCS</a></li>
+				<li class="third-r right-li"><a href="/color" title="A random color generator that indicates the hexadecimal for the color">Color</a></li>
 			</ul>
 		</div>
 	</div>
