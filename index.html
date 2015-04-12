@@ -4,9 +4,13 @@
 		div#spine{
 			height: 300%;
 			width: 50%;
-			top: 15px;
-			text-align: center;
+		}
+		div#spine.left{
 			box-shadow: 1px 0px 0px 0px #FFF;
+			float: left;
+		}
+		div#spine.left{
+			float: right;
 		}
 		a {
 			text-decoration: none;
@@ -35,7 +39,14 @@
 </head>
 <body bgcolor="#0A0A0A">
 	<div>
-		<div id="spine">
+		<div id="spine" class="left">
+			<ul>
+				<li class="first"><a href="/home" title="Homepage">Homepage</a></li>
+				<li class="second"><a href="/bcs" title="An extension for plug.dj">BCS</a></li>
+				<li class="third"><a href="/color" title="A random color generator that indicates the hexadecimal for the color">Color</a></li>
+			</ul>
+		</div>
+		<div id="spine" class="right">
 			<ul>
 				<li class="first"><a href="/home" title="Homepage">Homepage</a></li>
 				<li class="second"><a href="/bcs" title="An extension for plug.dj">BCS</a></li>
