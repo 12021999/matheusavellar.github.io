@@ -3,7 +3,7 @@ div{
 	color: #eeeeee;
 }
 div#right {
-	margin-left: 75px;
+	margin-left: 60px;
 }
 div#title {
 	font-size: 85px;
@@ -36,6 +36,10 @@ div#loadingPic{
 #top .version {
 	right: 5px;
 	position: absolute;
+}
+a.lang {
+	text-decoration: none;
+	color: #fff;
 }
 .spinner {
 	width: 100px;
