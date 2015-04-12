@@ -95,6 +95,16 @@ ul.bcs-list{
 	-webkit-padding-start: 40px;
 }
 
+a.bcs {
+	color: #00BEE8;
+	font-weight: bold;
+}
+
+a.rcs {
+	color: #734ba9;
+	font-weight: bold;
+}
+
 a.subtitle{
 	font-size: 10px;
 	font-style: italic;
