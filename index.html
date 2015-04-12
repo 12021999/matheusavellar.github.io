@@ -6,7 +6,7 @@
 			width: 50%;
 		}
 		div#spine.left{
-			box-shadow: 1px 0px 0px 0px #FFF;
+			box-shadow: 3px 0px 0px 0px #FFF;
 			float: left;
 		}
 		div#spine.right{
@@ -31,11 +31,12 @@
 		li.first-l {margin-left: 5%;}
 		li.second-l {margin-left: 60%;}
 		li.third-l {margin-left: 35%;}
-		li.first-r {width: 5%;}
-		li.second-r {width: 60%;}
-		li.third-r {width: 35%;}
+		li.first-r {width: 30%;}
+		li.second-r {width: 70%;}
+		li.third-r {width: 45%;}
 		.left-li{text-align: left;}
 		.right-li{text-align: right;}
+		.nothing{opacity: 0;}
 	</style>
 	<style type="text/css"></style>
 </head>
@@ -50,6 +51,7 @@
 		</div>
 		<div id="spine" class="right">
 			<ul class="right">
+				<li class="nothing"></li>
 				<li class="first-r right-li"><a href="/home" title="Homepage">Homepage</a></li>
 				<li class="second-r right-li"><a href="/bcs" title="An extension for plug.dj">BCS</a></li>
 				<li class="third-r right-li"><a href="/color" title="A random color generator that indicates the hexadecimal for the color">Color</a></li>
