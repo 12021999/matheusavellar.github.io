@@ -68,9 +68,21 @@ div#break{
 
 div.bcs-header{
 	height: 50px;
-	padding: 25px 25px 0px 25px;
+	padding: 25px 25px 300px 25px;
 	font-size: 23px;
 	font-family: "Open Sans", sans-serif;
+}
+
+div.bcs-footer-comparison{
+	background: url(https://i.imgur.com/R8oRJHs.png);
+	width: 696px;
+	height: 104px;
+}
+
+div.bcs-info-comparison{
+	background: url(https://i.imgur.com/pSmUBdH.png);
+	width: 816px;
+	height: 510px;
 }
 
 ul.bcs-list{
@@ -81,6 +93,11 @@ ul.bcs-list{
 	-webkit-margin-start: 10px;
 	-webkit-margin-end: 0px;
 	-webkit-padding-start: 40px;
+}
+
+a.subtitle{
+	font-size: 10px;
+	font-style: italic;
 }
 
 b.bcs-strong {
