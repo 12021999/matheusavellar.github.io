@@ -24,7 +24,6 @@ div#title-ripoff {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 100px;
 	margin: 15px;
-	padding-right: 25px;
 	font-weight: bold;
 	text-align: center;
 }
@@ -36,10 +35,8 @@ div#subtitle-ripoff {
 
 div#buttons-ripoff {
 	text-align: center;
-	width: 100%;
+	width: calc(100% - 55px);
 	margin: 30px;
-	float: left;
-	position: relative;
 }
 
 a.link-ripoff {
