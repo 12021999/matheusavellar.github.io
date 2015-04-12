@@ -13,18 +13,17 @@
 			font-weight: bold;
 			text-shadow: 6px 6px 0 #444;
 			margin-left: 75px;
+			color: #fff;
 		}
 	</style>
 	<script type="text/javascript" src="https://rawgit.com/Tetheu98/tetheu98.github.io/master/version.js"></script>
 </head>
-<body onload="setColor();">
+<body>
 	<script>
-		function setColor(){
-			var bg_colour = Math.floor(Math.random() * 16777215).toString(16);
-			bg_colour = "#" + ("000000" + bg_colour).slice(-6);
-			document.bgColor = bg_colour;
-			$("#title").text(bg_colour);
-		}
+		var bg_colour = Math.floor(Math.random() * 16777215).toString(16);
+		bg_colour = "#" + ("000000" + bg_colour).slice(-6);
+		document.bgColor = bg_colour;
+		$("#title").text(bg_colour);
 	</script>
 	<div id="title">Hashtag</div>
 </body>
