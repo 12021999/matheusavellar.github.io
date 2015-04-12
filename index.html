@@ -1,32 +1,47 @@
 <html>
 <head>
-	<!--
-		Awesome square animation from http://tobiasahlin.com/spinkit/
-	-->
-	<title>Matheus Avellar</title>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/Tetheu98/tetheu98.github.io/master/browserDetect.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/Tetheu98/tetheu98.github.io/master/version.js"></script>
-	<link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
-	<link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
-	<link rel="stylesheet" href="https://rawgit.com/Tetheu98/tetheu98.github.io/master/seeessess.css" type="text/css">
+	<style type="text/css">
+		div#spine{
+			height: 300%;
+			width: 50%;
+			top: 15px;
+			text-align: center;
+			box-shadow: 1px 0px 0px 0px #FFF;
+		}
+		a {
+			text-decoration: none;
+			color: #eee;
+		}
+		li {
+			padding-top: 50px;
+			font-size: 20px;
+			font-family: 'Spen Sans', sans-serif;
+			color: rgb(238, 238, 238);
+			text-align: left;
+			display: block;
+			box-shadow: rgb(255, 255, 255) 0px 1px 0px 0px;
+		}
+		li.first {
+			margin-left: 5%;
+		}
+		li.second {
+			margin-left: 60%;
+		}
+		li.third {
+			margin-left: 35%;
+		}
+	</style>
+	<style type="text/css"></style>
 </head>
-
-<body bgcolor="#404040" onLoad=beforeStart()>
-	<script type="text/javascript" src="https://rawgit.com/Tetheu98/tetheu98.github.io/master/jayess.js"></script>
-	<div id="loading">
-		<div class="spinner"></div>
-		<div id="subtitle" class="loadingLong" style="margin-left: 10px; margin-top: 30px; display: none;">
-			Taking too long? <strong>It might be broken.</strong> Sorry for the inconvenience!
+<body bgcolor="#0A0A0A">
+	<div>
+		<div id="spine">
+			<ul>
+				<li class="first"><a href="tetheu98.github.io/home" title="Homepage">Homepage</a></li>
+				<li class="second"><a href="tetheu98.github.io/bcs" title="An extension for plug.dj">BCS</a></li>
+				<li class="third"><a href="tetheu98.github.io/color" title="A random color generator that indicates the hexadecimal for the color">Color</a></li>
+			</ul>
 		</div>
 	</div>
-	<div id="top">
-		<a class="lang" href="/pt-br">⏎ Versão em Português</a>
-		<span class="version"></span>
-	</div>
-	<div id="right" style="display: none;">
-		<div id="title"><span>matheus avellar</span></div>
-		<div id="subtitle">We're working on it.</div>
-	</div>
-</body>
-</html>
+
+</body></html>
