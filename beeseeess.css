@@ -15,6 +15,24 @@ a.original {
 	color: #3498DB;
 }
 
+a.link-ripoff {
+	text-decoration: none;
+	display: inline-block;
+	min-width: 155px;
+	min-height: 35px;
+	padding: 14px 28px 14px 28px;
+	font-size: 11px;
+	font-weight: bold;
+	border-radius: 25px;
+	border: 4px solid #3498db;
+	color: #fff;
+	background: #3498db;
+	box-sizing: border-box;
+}
+a.link-ripoff:hover{
+	  border: 4px solid #1D6FA6;
+}
+
 div#header-ripoff {
 	margin: 15px;
 	margin-top: 40px;
@@ -39,20 +57,33 @@ div#buttons-ripoff {
 	margin: 30px;
 }
 
-a.link-ripoff {
-	text-decoration: none;
-	display: inline-block;
-	min-width: 155px;
-	min-height: 35px;
-	padding: 14px 28px 14px 28px;
-	font-size: 11px;
-	font-weight: bold;
-	border-radius: 25px;
-	border: 4px solid #3498db;
-	color: #fff;
-	background: #3498db;
-	box-sizing: border-box;
+div#break{
+	width: 75%;
+	height: 1px;
+	-webkit-box-shadow: 6px 6px 0px 0px #444;
+	-moz-box-shadow: 6px 6px 0px 0px #444;
+	margin-left: 12.5%;
+	box-shadow: 6px 6px 0px 0px #444;
 }
-a.link-ripoff:hover{
-	  border: 4px solid #1D6FA6;
+
+div.bcs-header{
+	height: 50px;
+	padding: 25px 25px 0px 25px;
+	font-size: 23px;
+	font-family: "Open Sans", sans-serif;
+}
+
+ul.bcs-list{
+	font-size: 16px;
+	list-style-type: circle;
+	-webkit-margin-before: 2em;
+	-webkit-margin-after: 2em;
+	-webkit-margin-start: 10px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 40px;
+}
+
+p.bcs-p {
+	margin-left: 20px;
+	font-size: 15px;
 }
