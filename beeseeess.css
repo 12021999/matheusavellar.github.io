@@ -23,8 +23,8 @@ div#header-ripoff {
 div#title-ripoff {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 100px;
-	margin-left: 50px;
 	margin: 15px;
+	padding-right: 25px;
 	font-weight: bold;
 	text-align: center;
 }
