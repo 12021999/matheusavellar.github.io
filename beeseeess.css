@@ -33,21 +33,21 @@ div#break{
 
 div.bcs-header{
 	height: 50px;
-	padding: 25px 25px 300px 25px;
+	padding: 25px 25px 350px 25px;
 	font-size: 23px;
 	font-family: "Open Sans", sans-serif;
 }
 
 div.bcs-footer-comparison{
-	background: url(https://i.imgur.com/R8oRJHs.png);
-	width: 696px;
-	height: 104px;
+	background: url(https://i.imgur.com/L0tw6X9.png);
+	width: 345px;
+	height: 108px;
 }
 
 div.bcs-info-comparison{
 	background: url(https://i.imgur.com/pSmUBdH.png);
-	width: 816px;
-	height: 510px;
+	width: 865px;
+	height: 545px;
 }
 
 ul.bcs-list{
@@ -58,16 +58,6 @@ ul.bcs-list{
 	-webkit-margin-start: 10px;
 	-webkit-margin-end: 0px;
 	-webkit-padding-start: 40px;
-}
-
-a.bcs {
-	color: #00BEE8;
-	font-weight: bold;
-}
-
-a.rcs {
-	color: #734ba9;
-	font-weight: bold;
 }
 
 a.subtitle{
@@ -114,7 +104,12 @@ a.link-ripoff:hover{
 b.bcs-strong {
 	font-weight: bold;
 	font-style: italic;
-	color: #eee;
+	color: #00BEE8;
+}
+b.rcs-strong {
+	font-weight: bold;
+	font-style: italic;
+	color: #734ba9;
 }
 
 p.bcs-p {
