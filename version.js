@@ -1,1 +1,1 @@
-$("#top .version").text("v0.0.10.2");
+function version(){$("#top .version").text("v0.0.11");}
