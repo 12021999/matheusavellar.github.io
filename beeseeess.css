@@ -83,7 +83,14 @@ ul.bcs-list{
 	-webkit-padding-start: 40px;
 }
 
+b.bcs-strong {
+	font-weight: bold;
+	font-style: italic;
+	color: #3498DB;
+}
+
 p.bcs-p {
 	margin-left: 20px;
+	margin-bottom: 35px;
 	font-size: 15px;
 }
