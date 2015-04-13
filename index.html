@@ -82,9 +82,9 @@
 				$("#box").stop().animate({"opacity":"0.1"},250,function(){$("#box").css({"background":"url(" + url + ")"});});
 			}
 
-			$(".first-l a").hover(boxFadeOut(), boxBgChange("https://i.imgur.com/gVIQ85Z.png"));
-			$(".second-l a").hover(boxFadeOut(), boxBgChange("https://i.imgur.com/gVIQ85Z.png"));
-			$(".third-l a").hover(boxFadeOut(), boxBgChange("https://i.imgur.com/IEXCPL1.png)"));
+			$(".first-l a").hover(boxFadeOut, boxBgChange("https://i.imgur.com/gVIQ85Z.png"));
+			$(".second-l a").hover(boxFadeOut, boxBgChange("https://i.imgur.com/gVIQ85Z.png"));
+			$(".third-l a").hover(boxFadeOut, boxBgChange("https://i.imgur.com/IEXCPL1.png)"));
 		};
 	</script>
 	<div id="box"></div>
