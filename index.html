@@ -76,10 +76,10 @@
 			
 			function boxBgChange(url){
 				$("#box").css({"background":"url(" + url + ")"});
-				$("#box").stop().animate({"opacity":"0.7"},250);
+				$("#box").stop().animate({"opacity":"0.7","font-size":"25px"},250);
 			}
 			function boxFadeOut(){
-				$("#box").stop().animate({"opacity":"0.1"},250,function(){$("#box").css({"background":"url(https://i.imgur.com/gVIQ85Z.png)"});});
+				$("#box").stop().animate({"opacity":"0.1","font-size":"20px"},250,function(){$("#box").css({"background":"url(https://i.imgur.com/gVIQ85Z.png)"});});
 			}
 
 			$(".first-l a").hover(function(){boxBgChange("https://i.imgur.com/b3Liy1m.png");}, function(){boxFadeOut();});
