@@ -7,7 +7,7 @@
 	<style type="text/css">
 		div#box{
 			opacity: 0;
-			top: 300px;
+			top: 400px;
 			left: 50px;
 			border-radius: 20px;
 			position: absolute;
@@ -27,17 +27,18 @@
 		div#spine.right {
 			float: right;
 		}
-		div#end {
-			font-size: 53px !important;
-			margin-top: -8px !important;
-			border-radius: 0px 0px 25px 25px !important;
-		}
-		div.end-nothing {
-			height: 15%;
+		div#multiuse {
+			font-size: 38px;
+			margin-top: -8px;
+			border-radius: 0px 0px 25px 25px;
 		}
 		a {
 			text-decoration: none;
 			color: #eee;
+		}
+		p.sub-desc {
+			font-size: 16px;
+			-webkit-margin-before: 5px;
 		}
 		ul.right {
 			-webkit-padding-start: 0;
@@ -82,9 +83,9 @@
 				var box = document.getElementById('box');
 				var scroll = getScrollTop();
 				if (scroll <= 28) {
-					box.style.top = "300px";
+					box.style.top = "400px";
 				}else{
-					box.style.top = (scroll + 300) + "px";
+					box.style.top = (scroll + 400) + "px";
 				}
 			};
 			
@@ -101,9 +102,9 @@
 			$(".third-l a").hover(function(){boxBgChange("https://i.imgur.com/IEXCPL1.png");}, function(){boxFadeOut();});
 		};
 	</script>
-	<div id="end">
-		<div class="end-nothing"></div>
+	<div id="multiuse">
 		Root
+		<p class="sub-desc">Yes, this is really long for no reason</p>
 	</div>
 	<div id="box"></div>
 	<div>
