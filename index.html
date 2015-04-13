@@ -73,23 +73,19 @@
 					box.style.top = (scroll + 300) + "px";
 				}
 			};
-			
-			$(".left-li").hover(function(){
-				$("#box").stop().animate({"opacity":"0.5"});
+
+			$(".first-l a").hover(function(){
+				$("#box").css({"background":"url(https://i.imgur.com/b3Liy1m.png)"});
+				$("#box").stop().animate({"opacity":"0.5"},250);
 			}, function(){
-				$("#box").stop().animate({"opacity":"0.1"});
-			});
-			
-			$(".first-l").hover(function(){
-				$("#box").css({"background":"url(http://i.imgur.com/b3Liy1m.png)"});
-			}, function(){
-				$("#box").css({"background":"url(https://i.imgur.com/gVIQ85Z.png)"});
+				$("#box").stop().animate({"opacity":"0.1"},250,function(){$("#box").css({"background":"url(https://i.imgur.com/gVIQ85Z.png)"});});
 			});
 
-			$(".second-l").hover(function(){
+			$(".second-l a").hover(function(){
 				$("#box").css({"background":"url(http://i.imgur.com/caFrb4l.png)"});
+				$("#box").stop().animate({"opacity":"0.5"},250);
 			}, function(){
-				$("#box").css({"background":"url(https://i.imgur.com/gVIQ85Z.png)"});
+				$("#box").stop().animate({"opacity":"0.1"},250,function(){$("#box").css({"background":"url(https://i.imgur.com/xdYMwTz.png)"});});
 			});
 		};
 	</script>
