@@ -5,8 +5,10 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<style type="text/css">
 		div#box{
-			opacity: 0.1;
+			opacity: 0;
 			top: 300px;
+			left: 50px;
+			border-radius: 20px;
 			position: absolute;
 			width: 200px;
 			height: 200px;
@@ -79,12 +81,16 @@
 				$("#box").stop().animate({"opacity":"0.7","font-size":"25px"},250);
 			}
 			function boxFadeOut(){
+<<<<<<< HEAD
 				$("#box").stop().animate({"opacity":"0.1","font-size":"20px"},250,function(){$("#box").css({"background":"url(https://i.imgur.com/gVIQ85Z.png)"});});
+=======
+				$("#box").stop().animate({"opacity":"0"},250,function(){$("#box").css({"background":"url(https://i.imgur.com/gVIQ85Z.png)"});});
+>>>>>>> origin/master
 			}
 
 			$(".first-l a").hover(function(){boxBgChange("https://i.imgur.com/b3Liy1m.png");}, function(){boxFadeOut();});
 			$(".second-l a").hover(function(){boxBgChange("https://i.imgur.com/xdYMwTz.png");}, function(){boxFadeOut();});
-			$(".third-l a").hover(function(){boxBgChange("https://i.imgur.com/IEXCPL1.png)");}, function(){boxFadeOut();});
+			$(".third-l a").hover(function(){boxBgChange("https://i.imgur.com/IEXCPL1.png");}, function(){boxFadeOut();});
 		};
 	</script>
 	<div id="box"></div>
