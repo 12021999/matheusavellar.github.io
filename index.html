@@ -4,22 +4,31 @@
 	<meta name="description" content="Oh fancy! A description! Let's see.. Uhm it's basically the backbone?">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<style type="text/css">
-		div#spine{
+		div#box{
+			opacity: 0.1;
+			top: 300px;
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			background: url(https://i.imgur.com/gVIQ85Z.png);
+			background-color: #0A0A0A;
+		}
+		div#spine {
 			height: 300%;
 			width: 50%;
 		}
-		div#spine.left{
+		div#spine.left {
 			box-shadow: 3px 0px 0px 0px #FFF;
 			float: left;
 		}
-		div#spine.right{
+		div#spine.right {
 			float: right;
 		}
 		a {
 			text-decoration: none;
 			color: #eee;
 		}
-		ul.right{
+		ul.right {
 			-webkit-padding-start: 0;
 		}
 		li {
@@ -37,13 +46,53 @@
 		li.first-r {width: 30%;}
 		li.second-r {width: 70%;}
 		li.third-r {width: 45%;}
-		.left-li{text-align: left;}
-		.right-li{text-align: right;}
-		.nothing{opacity: 0;}
+		.left-li {text-align: left;}
+		.right-li {text-align: right;}
+		.nothing {opacity: 0;}
 	</style>
-	<style type="text/css"></style>
 </head>
 <body bgcolor="#0A0A0A">
+	<script>
+		window.onload = function() {
+			function getScrollTop() {
+				if (typeof window.pageYOffset !== 'undefined' ) {
+					return window.pageYOffset; // Most browsers
+				}
+				var d = document.documentElement;
+				if (d.clientHeight) {
+					return d.scrollTop; // IE in standards mode
+				}
+				return document.body.scrollTop; // IE in quirks mode
+			}
+			window.onscroll = function() {
+				var box = document.getElementById('box');
+				var scroll = getScrollTop();
+				if (scroll <= 28) {
+					box.style.top = "300px";
+				}else{
+					box.style.top = (scroll + 300) + "px";
+				}
+			};
+			
+			$(".left-li").hover(function(){
+				$("#box").stop().animate({"opacity":"0.5"});
+			}, function(){
+				$("#box").stop().animate({"opacity":"0.1"});
+			});
+			
+			$(".first-l").hover(function(){
+				$("#box").css({"background":"url(http://i.imgur.com/b3Liy1m.png)"});
+			}, function(){
+				$("#box").css({"background":"url(https://i.imgur.com/gVIQ85Z.png)"});
+			});
+
+			$(".second-l").hover(function(){
+				$("#box").css({"background":"url(http://i.imgur.com/caFrb4l.png)"});
+			}, function(){
+				$("#box").css({"background":"url(https://i.imgur.com/gVIQ85Z.png)"});
+			});
+		};
+	</script>
 	<div>
 		<div id="spine" class="left">
 			<ul>
