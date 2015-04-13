@@ -78,15 +78,15 @@
 			
 			function boxBgChange(url){
 				$("#box").css({"background":"url(" + url + ")"});
-				$("#box").stop().animate({"opacity":"0.7","font-size":"25px"},250);
+				$("#box").stop().animate({"opacity":"0.7"},250);
 			}
 			function boxFadeOut(){
-				$("#box").stop().animate({"opacity":"0","font-size":"20px"},250,function(){$("#box").css({"background":"url(https://i.imgur.com/gVIQ85Z.png)"});});
+				$("#box").stop().animate({"opacity":"0"},250,function(){$("#box").css({"background":"url(https://i.imgur.com/gVIQ85Z.png)"});});
 			}
 
-			$(".first-l a").hover(function(){boxBgChange("https://i.imgur.com/b3Liy1m.png");}, function(){boxFadeOut();});
-			$(".second-l a").hover(function(){boxBgChange("https://i.imgur.com/xdYMwTz.png");}, function(){boxFadeOut();});
-			$(".third-l a").hover(function(){boxBgChange("https://i.imgur.com/IEXCPL1.png");}, function(){boxFadeOut();});
+			$(".first-l a").hover(function(){boxBgChange("https://i.imgur.com/b3Liy1m.png"); $(".first-l  a").stop().animate({"font-size":"25px"},250);}, function(){boxFadeOut(); $(".first-l  a").stop().animate({"font-size":"20px"},250);});
+			$(".second-l a").hover(function(){boxBgChange("https://i.imgur.com/xdYMwTz.png"); $(".second-l  a").stop().animate({"font-size":"25px"},250);}, function(){boxFadeOut(); $(".second-l  a").stop().animate({"font-size":"20px"},250);});
+			$(".third-l a").hover(function(){boxBgChange("https://i.imgur.com/IEXCPL1.png"); $(".third-l  a").stop().animate({"font-size":"25px"},250);}, function(){boxFadeOut(); $(".third-l  a").stop().animate({"font-size":"20px"},250);});
 		};
 	</script>
 	<div id="box"></div>
