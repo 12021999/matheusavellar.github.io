@@ -47,10 +47,6 @@ div#multiuse {
 	right: 5px;
 	position: absolute;
 }
-a.lang {
-	text-decoration: none;
-	color: #fff;
-}
 .spinner {
 	width: 100px;
 	height: 100px;
@@ -75,4 +71,12 @@ a.lang {
 	transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
 	-webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
 	}
+}
+
+a {
+	text-decoration: none;
+	color: #eee;
+}
+a:hover {
+	color: #009cdd;
 }

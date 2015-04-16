@@ -3,6 +3,8 @@
 	<title>Backbone</title>
 	<meta name="description" content="Oh fancy! A description! Let's see.. Uhm it's basically the backbone?">
 	<link rel="stylesheet" href="https://rawgit.com/Tetheu98/tetheu98.github.io/master/seeessess.css" type="text/css">
+	<link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
+	<link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<style type="text/css">
 		div#box{
@@ -32,10 +34,6 @@
 			margin-top: -8px;
 			border-radius: 0px 0px 25px 25px;
 		}
-		a {
-			text-decoration: none;
-			color: #eee;
-		}
 		p.sub-desc {
 			font-size: 16px;
 			-webkit-margin-before: 5px;
@@ -51,9 +49,6 @@
 			text-align: left;
 			display: block;
 			box-shadow: rgb(255, 255, 255) 0px 1px 0px 0px;
-		}
-		li a:hover{
-			color: #009cdd !important;
 		}
 		li.first-l {margin-left: 5%;}
 		li.second-l {margin-left: 60%;}
@@ -82,7 +77,8 @@
 			window.onscroll = function() {
 				var box = document.getElementById('box');
 				var scroll = getScrollTop();
-				if (scroll <= 28) {
+				var curHeight = $("body").css("height").indexOf("px");
+				if (scroll <= 28 && curHeight <= 690) {
 					box.style.top = "500px";
 				}else{
 					box.style.top = (scroll + 500) + "px";
