@@ -31,15 +31,6 @@ div#buttons-ripoff {
 	margin: 30px;
 }
 
-div#break{
-	width: 75%;
-	height: 1px;
-	-webkit-box-shadow: 6px 6px 0px 0px #444;
-	-moz-box-shadow: 6px 6px 0px 0px #444;
-	margin-left: 12.5%;
-	box-shadow: 6px 6px 0px 0px #444;
-}
-
 div.bcs-header{
 	height: 50px;
 	padding: 25px 25px 550px 25px;

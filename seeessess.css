@@ -10,6 +10,9 @@ div#title {
 	font-weight: bold;
 	text-transform: lowercase;
 }
+#title.regular {
+	text-transform: none !important;
+}
 div#subtitle {
 	font-size: 22px;
 	margin: 15px;
@@ -43,6 +46,16 @@ div#multiuse {
 	text-align: center;
 	border-radius: 25px 25px 0px 0px;
 }
+
+div#break {
+	width: 75%;
+	height: 1px;
+	-webkit-box-shadow: 6px 6px 0px 0px #444;
+	-moz-box-shadow: 6px 6px 0px 0px #444;
+	margin-left: 12.5%;
+	box-shadow: 6px 6px 0px 0px #444;
+}
+
 #top .version {
 	right: 5px;
 	position: absolute;
