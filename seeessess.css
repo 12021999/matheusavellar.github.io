@@ -1,5 +1,8 @@
-div{
+body {
 	font-family: 'Open Sans', sans-serif;
+}
+
+div{
 	color: #eeeeee;
 }
 div#right {
