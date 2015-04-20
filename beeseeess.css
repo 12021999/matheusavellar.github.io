@@ -118,7 +118,7 @@ a.link-ripoff {
 
 a.side-ripoff {
 	border: 1px solid #fff;
-	background-color: #000;
+	background-color: rgba(0, 0, 0, 0);
 	color: #fff;
 }
 a.side-ripoff.left:hover, a.side-ripoff.right:hover {
