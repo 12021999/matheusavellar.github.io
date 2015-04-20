@@ -4,6 +4,7 @@ body {
 	background-position: center center;
 	background-attachment: fixed;
 	background-color: #000;
+	min-width: 440px;
 }
 
 div#header-ripoff {
@@ -46,6 +47,11 @@ div.bcs-footer-comparison{
 
 div.bcs-info-comparison{
 	background: url(https://i.imgur.com/ux0WN7z.png?1);
+	width: 816px;
+	height: 545px;
+}
+div.bcs-useless-comparison{
+	background: url(https://i.imgur.com/nVn1SmF.png);
 	width: 816px;
 	height: 545px;
 }
