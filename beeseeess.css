@@ -116,6 +116,13 @@ a.link-ripoff {
 	border: 1px solid #3498db;
 	background: #3498db;
 }
+a.link-ripoff:hover{
+	border: 1px solid #1D6FA6;
+}
+a.link-ripoff:active {
+	background: #1D6FA6;
+	border: 1px solid #16527B;
+}
 
 a.side-ripoff {
 	border: 1px solid #fff;
@@ -125,9 +132,6 @@ a.side-ripoff {
 a.side-ripoff.left:hover, a.side-ripoff.right:hover {
 	background-color:#fff;
 	color: #0A0A0A;
-}
-a.link-ripoff:hover{
-	border: 1px solid #1D6FA6;
 }
 
 b.bcs-strong {
