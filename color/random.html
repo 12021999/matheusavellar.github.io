@@ -53,7 +53,7 @@
 			tries++;
 			$(".currentColor").text("Current color: " + bg_colour);
 			$(".triesCount").text("Tries: " + tries);
-			if (bg_colour == "#ffffff" || bg_colour == "#000000" || bg_colour.indexOf("#") != -1){
+			if (bg_colour == "#ffffff" || bg_colour == "#000000"){
 				$("#title").text(bg_colour + " ~ Attempted " + tries + " times");
 				clearInterval(tillBW);
 			}
