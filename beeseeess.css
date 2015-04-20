@@ -44,7 +44,6 @@ div.bcs-footer-comparison{
 	width: 399px;
 	height: 108px;
 }
-
 div.bcs-info-comparison{
 	background: url(https://i.imgur.com/ux0WN7z.png?1);
 	width: 816px;
@@ -54,6 +53,10 @@ div.bcs-useless-comparison{
 	background: url(https://i.imgur.com/8CKtJRf.png);
 	width: 327px;
 	height: 93px;
+}
+
+div.bcs-pic {
+	border: 1px solid #C2C2C2;
 }
 
 div.end-nothing {
