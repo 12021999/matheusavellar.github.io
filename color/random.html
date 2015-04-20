@@ -1,0 +1,71 @@
+<html>
+<head>
+	<!--
+		Color script from Matt Malin (matt@randomcolour.com)
+	-->
+	<title>Random Color Hex</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
+	<link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
+	<link rel="stylesheet" href="https://rawgit.com/Tetheu98/tetheu98.github.io/master/seeessess.css" type="text/css">
+	<style>
+		div#title {
+			font-size: 85px;
+			font-weight: bold;
+			text-shadow: 6px 6px 0 #444;
+			margin-left: 75px;
+			color: #fff;
+			text-transform: none;
+		}
+		div#top-left {
+			width: 240px;
+			height: 65px;
+			background-color: #0a0a0a;
+			padding: 20px;
+			border-radius: 21px;
+			opacity: 0.5;
+		}
+		div#top-left:hover {
+			opacity: 1;
+		}
+		p {
+			font-weight: bold;
+			color: #c42e3b;
+			background-color: #eee;
+			width: 180px;
+			height: 40px;
+		}
+		a.z {
+			font-weight: bold;
+			background-color: #0a0a0a;
+		}
+	</style>
+	<script type="text/javascript" src="https://rawgit.com/Tetheu98/tetheu98.github.io/master/version.js"></script>
+</head>
+<body>
+	<script>
+		var tries = 0;
+		var tillBW = setInterval(function(){
+			var bg_colour = Math.floor(Math.random() * 16777215).toString(16);
+			bg_colour = "#" + ("000000" + bg_colour).slice(-6);
+			document.bgColor = bg_colour;
+			tries++;
+			$(".currentColor").text("Current color: " + bg_colour);
+			$(".triesCount").text("Tries: " + tries);
+			if (bg_colour == "#ffffff" || bg_colour == "#000000" || bg_colour.indexOf("#") != -1){
+				$("#title").text(bg_colour + " ~ Attempted " + tries + " times");
+				clearInterval(tillBW);
+			}
+		},10);
+	</script>
+	<div id="top-left">
+		<a href="/">⏎ Back to root</a>
+		<br>
+		<a class="z currentColor"></a>
+		<br>
+		<a class="z triesCount">Tries: 0</a>
+	</div>
+	<div id="title">Looking for Black or White. . .</div>
+</body>
+</html>

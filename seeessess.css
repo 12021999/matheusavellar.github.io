@@ -1,10 +1,8 @@
 body {
 	font-family: 'Open Sans', sans-serif;
+	color: #eee;
 }
 
-div{
-	color: #eeeeee;
-}
 div#right {
 	margin-left: 60px;
 }

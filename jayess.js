@@ -18,5 +18,5 @@ function beforeStart(){
 	if (window.location.href.indexOf("pt") != -1){isPt = true;}
 	if (window.location.href.indexOf("mobile") != -1){isMob = true;}
 	if (BD.OS.indexOf("iPhone") != -1 && !isMob){window.location.assign("/mobile");}
-	if (localStorage.getItem('betaPreviousColor')){fadeStuff();}else{setTimeout(function(){fadeStuff();},3000);}
+	fadeStuff();
 }
