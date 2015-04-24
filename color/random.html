@@ -83,6 +83,7 @@
 			if (bg_colour == "#ffffff" || bg_colour == "#000000"){
 				$("#title").text(bg_colour + " ~ Attempted " + tries + " times");
 				clearInterval(tillBW);
+				clearInterval(elapsedTime);
 			}
 		},10);
 		var elapsedTime = setInterval(function(){
