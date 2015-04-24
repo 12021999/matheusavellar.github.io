@@ -1,0 +1,123 @@
+<html>
+<head>
+	<title>C:\Windows\system32\cmd.exe</title>
+	<meta name="description" content="A résumé">
+	<link rel="stylesheet" href="https://rawgit.com/Tetheu98/tetheu98.github.io/master/seeessess.css" type="text/css">
+	<link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
+	<link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<style type="text/css">
+		body {
+			background-color: #000;
+			font-family: "Consolas", "Lucida Console", "Courier New";
+			color: #ccc;
+			font-weight: bold;
+			min-width: 950px;
+		}
+		div#marginLeft {
+			float: left;
+			padding-left: 10px;
+			height: 100%;
+		}
+		div#bottom-web {
+			height: 63%;
+			border-top: 8px solid #009cdd;
+			width: 100%;
+			background-color: #fff;
+			bottom: 8px;
+			margin: -8px;
+			position: absolute;
+			color: #000;
+			font-weight: normal;
+			display: none;
+		}
+		.blinker.dos {
+			margin-left: -5px;
+			color: #ccc;
+		}
+		a, a:hover {
+			font-weight: none;
+			color: #000;
+		}
+	</style>
+</head>
+<body onLoad="type(lines[0].txt,0,150);">
+	<script>
+		var lines = [
+			{
+				"txt":"title DOS-RESUME  ",
+				"foo": function(){
+					document.title = "DOS-RESUME";
+					$("span.bef").append(" title DOS-RESUME <br><br>");
+					$("span.text").text("C:\\Users\\Matheus> ");
+				},
+				"time":75
+			},
+			{
+				"txt":"color 02  ",
+				"foo": function(){
+					$("body").css({"color":"#008000"});
+					$("span.bef").append("C:\\Users\\Matheus> color 02 <br><br>");
+					$("span.text").text("C:\\Users\\Matheus> ");
+				},
+				"time":75
+			},
+			{
+				"txt":"@echo off  ",
+				"foo": function(){
+					$("span.bef").append("C:\\Users\\Matheus> @echo off <br>");
+					$("span.text").text(" ");
+				},
+				"time":75
+			},
+			{
+				"txt":"Honestly though, this is very ugly  ",
+				"foo": function(){
+					$("span.bef").append("Honestly though, this is very ugly<br>'Honestly' is not recognized as an internal or external command, operable program or batch file. <br><br>");
+					$("span.text").text("");
+				},
+				"time":75
+			}
+		];
+
+		function type(str,index,time){
+			$(".text").text($(".text").text() + str[0]);
+			if (str.length > 1){
+				var left = str.slice(1,str.length);
+				setTimeout(function(){type(left,index,lines[index].time);},time);
+			}else{
+				lines[index].foo();
+				if (index < lines.length){
+					var nextIn = index + 1;
+					var next = lines[nextIn].txt;
+					setTimeout(function(){type(next,nextIn);},300);
+				}
+			}
+		}
+
+		var blinkChar = "_";
+		function blink(){
+			if ($(".blinker").text() == blinkChar){
+				$(".blinker").text("");
+			}else{
+				$(".blinker").text(blinkChar);
+			}
+			setTimeout(blink, 500);
+		}
+		blink();
+	</script>
+	<div id="marginLeft"></div>
+	<span class="prev">
+		Microsoft Windows [version 6.1.7601]
+		<br>
+		Copyright (c) 2009 Microsoft Corporation. All rights reserved.
+		<br>
+		<br>
+		C:\Users\Matheus&gt;
+	</span>
+	<span class="bef"></span>
+	<span class="text"></span>
+	<span class="blinker dos">_</span>
+	</div>
+</body>
+</html>
