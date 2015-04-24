@@ -54,9 +54,12 @@
 			width: 180px;
 			height: 40px;
 		}
-		a.z {
+		a {
 			font-weight: bold;
 			background-color: #0a0a0a;
+		}
+		a.z:hover{
+			color: #eee;
 		}
 	</style>
 	<script type="text/javascript" src="https://rawgit.com/Tetheu98/tetheu98.github.io/master/version.js"></script>
@@ -64,6 +67,7 @@
 <body>
 	<script>
 		var tries = 0;
+		var time = 0;
 		var tillBW = setInterval(function(){
 			var bg_colour = Math.floor(Math.random() * 16777215).toString(16);
 			bg_colour = "#" + ("000000" + bg_colour).slice(-6);
@@ -72,12 +76,19 @@
 			$(".currentColor").text("Current color: " + bg_colour);
 			$(".triesCount").text("Tries: " + tries);
 			$("#top-right").prepend("<span>" + bg_colour + "</span><br>");
-			if ($("#top-right").children().length >= 512){$("#top-right").children().last().remove();$("#top-right").children().last().remove();}
+			if ($("#top-right").children().length >= 512){
+				$("#top-right").children().last().remove();
+				$("#top-right").children().last().remove();
+			}
 			if (bg_colour == "#ffffff" || bg_colour == "#000000"){
 				$("#title").text(bg_colour + " ~ Attempted " + tries + " times");
 				clearInterval(tillBW);
 			}
 		},10);
+		var elapsedTime = setInterval(function(){
+			time++;
+			$(".elapsedCount").text("Elapsed time (seconds): " + time);
+		},1000);
 	</script>
 	<div id="top-left">
 		<a href="/">⏎ Back to root</a>
@@ -85,6 +96,8 @@
 		<a class="z currentColor"></a>
 		<br>
 		<a class="z triesCount">Tries: 0</a>
+		<br>
+		<a class="z elapsedCount">Elapsed time (seconds): 0</a>
 	</div>
 	<div id="top-right"></div>
 	<div id="title"></div>
