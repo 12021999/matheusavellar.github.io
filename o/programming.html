@@ -7,33 +7,25 @@
 	<link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
 	<link rel="stylesheet" href="https://rawgit.com/Tetheu98/tetheu98.github.io/master/seeessess.css" type="text/css">
 	<style>
-		body {
-			min-width: 800px;
-		}
-		.start {
-			-webkit-margin-after: 1em;
-		}
-		ul, li {
-			list-style-type: none;
-		}
+		body {min-width: 800px;}
+		.start {-webkit-margin-after: 1em;}
+		ul, li {list-style-type: none;}
 		li, p {
 			margin-left: 35px;
 			margin-top: 10px;
 			font-size: 22px;
 		}
-		#subtitle {
-			font-size: 30px !important;
+		li span {
+			opacity: 0.1;
+			padding-left: 25px;
 		}
-		#subtitle.tags {
-			float: right;
-		}
+		#subtitle {font-size: 30px !important;}
+		#subtitle.tags {float: right;}
 		a.ext {
 			background-color: rgba(255, 255, 255, 0.15);
 			border-radius: 30px;
 			box-shadow: 1px 1px 1px;
-			padding-right: 10px;
-			padding-left: 10px;
-			padding-bottom: 2px;
+			padding: 0px 8px 2px 10px;
 		}
 		a.btn {
 			font-size: 17px;
@@ -58,10 +50,11 @@
 	<script>
 		function enablePlanning(){
 			if ($("li .planning").css("opacity") != 0){
-				$("li .planning").animate({"opacity":"0"});
+				$("li .planning, li .h").animate({"opacity":"0"});
 				$("a.btn").text("Show planning");
 			}else{
 				$("li .planning").animate({"opacity":"1"});
+				$("li .h").animate({"opacity":"0.1"});
 				$("a.btn").text("Hide planning");
 			}
 		}
@@ -80,68 +73,175 @@
 		<li class="start">
 			<ul>
 				<div id="subtitle">Programming Languages
-					<li><a class="ext known" href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">
-										.js
-					</a></li>
-					<li><a class="ext learning" href="http://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
-										.py
-					</a></li>
-					<li><a class="ext learning" href="http://en.wikipedia.org/wiki/C_Sharp_(programming_language)" target="_blank">
-										.cs
-					</a></li>
-					<li><a class="ext learning" href="http://en.wikipedia.org/wiki/Batch_file" target="_blank">
-										.bat
-					</a></li>
-					<li><a class="ext learning" href="http://en.wikipedia.org/wiki/PHP" target="_blank">
-										.php
-					</a></li>
-					<li><a class="ext planning" href="http://en.wikipedia.org/wiki/Ruby_(programming_language)" target="_blank">
-										.rb
-					</a></li>
-					<li><a class="ext planning" href="http://en.wikipedia.org/wiki/List_of_programming_languages" target="_blank">
-										.*
-					</a></li>
+					<li>
+						<a class="ext known" href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">
+							.js
+						</a>
+						<span>
+							JavaScript
+						</span>
+					</li>
+					<li>
+						<a class="ext learning" href="http://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+							.py
+						</a>
+						<span>
+							Python
+						</span>
+					</li>
+					<li>
+						<a class="ext learning" href="http://en.wikipedia.org/wiki/C_Sharp_(programming_language)" target="_blank">
+							.cs
+						</a>
+						<span>
+							C#
+						</span>
+					</li>
+					<li>
+						<a class="ext learning" href="http://en.wikipedia.org/wiki/Batch_file" target="_blank">
+							.bat
+						</a>
+						<span>
+							Batch
+						</span>
+					</li>
+					<li>
+						<a class="ext learning" href="http://en.wikipedia.org/wiki/PHP" target="_blank">
+							.php
+						</a>
+						<span>
+							PHP: Hypertext Preprocessor
+						</span>
+					</li>
+					<li>
+						<a class="ext planning" href="http://en.wikipedia.org/wiki/Ruby_(programming_language)" target="_blank">
+							.rb
+						</a>
+						<span class="h">
+							Ruby
+						</span>
+					</li>
+					<li>
+						<a class="ext planning" href="http://en.wikipedia.org/wiki/List_of_programming_languages" target="_blank">
+							.java
+						</a>
+						<span class="h">
+							Java
+						</span>
+					</li>
+					<li>
+						<a class="ext planning" href="http://en.wikipedia.org/wiki/C_(programming_language)" target="_blank">
+							.c
+						</a>
+						<span class="h">
+							C
+						</span>
+					</li>
+					<li>
+						<a class="ext planning" href="http://en.wikipedia.org/wiki/C%2B%2B" target="_blank">
+							.cc
+						</a>
+						<span class="h">
+							C++
+						</span>
+					</li>
+					<li>
+						<a class="ext planning" href="http://en.wikipedia.org/wiki/Objective-C" target="_blank">
+							.mm
+						</a>
+						<span class="h">
+							Objective-C
+						</span>
+					</li>
+					<li>
+						<a class="ext planning" href="http://en.wikipedia.org/wiki/Objective-C" target="_blank">
+							.sql
+					</a>
+						<span class="h">
+							Structured Query Language
+						</span>
+					</li>
 				</div>
   			</ul>
   			<ul>
 				<div id="subtitle">Stylesheet Languages
-					<li><a class="ext known" href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank">
-										.css
-					</a></li>
+					<li>
+						<a class="ext known" href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank">
+							.css
+						</a>
+						<span>
+							Cascading Style Sheets
+						</span>
+					</li>
 				</div>
   			</ul>
   			<ul>
 				<div id="subtitle">Markup Languages
-					<li><a class="ext known" href="http://en.wikipedia.org/wiki/HTML" target="_blank">
-										.html
-					</a></li>
-					<li><a class="ext planning" href="http://en.wikipedia.org/wiki/HTML" target="_blank">
-										.xhtml
-					</a></li>
+					<li>
+						<a class="ext known" href="http://en.wikipedia.org/wiki/HTML" target="_blank">
+							.html
+						</a>
+						<span>
+							Hyper Text Markup Language
+						</span>
+					</li>
+					<li>
+						<a class="ext planning" href="http://en.wikipedia.org/wiki/HTML" target="_blank">
+							.xhtml
+						</a>
+						<span  class="h">
+							Extensive Hyper Text Markup Language
+						</span>
+					</li>
 				</div>
   			</ul>
   			<ul>
 				<div id="subtitle">Others
-					<li><a class="ext known" href="http://en.wikipedia.org/wiki/jQuery" target="_blank">
-										.js (lib)
-					</a></li>
-					<li><a class="ext known" href="http://en.wikipedia.org/wiki/JSON" target="_blank">
-										.json
-					</a></li>
+					<li>
+						<a class="ext known" href="http://en.wikipedia.org/wiki/jQuery" target="_blank">
+							jQuery
+						</a>
+						<span>
+							jQuery
+						</span>
+					</li>
+					<li>
+						<a class="ext known" href="http://en.wikipedia.org/wiki/JSON" target="_blank">
+							.json
+						</a>
+						<span>
+							JavaScript Object Notation
+						</span>
+					</li>
 				</div>
   			</ul>
 			<br>
   			<ul>
-				<div id="subtitle">Unavailable to me (permanently, or currently), but I might learn anyways
-					<li><a class="ext dead" href="http://en.wikipedia.org/wiki/JavaScript_Style_Sheets" target="_blank">
-										.js (JSSS)
-					</a></li>
-					<li><a class="ext dead" href="http://en.wikipedia.org/wiki/Nu_(programming_language)" target="_blank">
-										.nu
-					</a></li>
-					<li><a class="ext dead" href="http://en.wikipedia.org/wiki/Pizza_(programming_language)" target="_blank">
-										PIZZA
-					</a></li>
+				<div id="subtitle">Unavailable to me currently, but I might learn at some point
+					<li>
+						<a class="ext dead" href="http://en.wikipedia.org/wiki/JavaScript_Style_Sheets" target="_blank">
+							.js (JSSS)
+						</a>
+						<span>
+							JavaScript Style Sheets
+						</span>
+					</li>
+					<li>
+						<a class="ext dead" href="http://en.wikipedia.org/wiki/Nu_(programming_language)" target="_blank">
+							.nu
+						</a>
+						<span>
+							Nu
+						</span>
+					</li>
+					<li>
+						<a class="ext dead" href="http://en.wikipedia.org/wiki/Pizza_(programming_language)" target="_blank">
+							PIZZA
+						</a>
+						<span>
+							Pizza
+						</span>
+					</li>
 				</div>
   			</ul>
 		</li>
