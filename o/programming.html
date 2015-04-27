@@ -1,0 +1,147 @@
+<html>
+<head>
+	<title>Programming Stuff</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script type="text/javascript" src="https://rawgit.com/Tetheu98/tetheu98.github.io/master/version.js"></script>
+	<link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
+	<link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
+	<link rel="stylesheet" href="https://rawgit.com/Tetheu98/tetheu98.github.io/master/seeessess.css" type="text/css">
+	<style>
+		body {
+			min-width: 800px;
+		}
+		.start {
+			-webkit-margin-after: 1em;
+		}
+		ul, li {
+			list-style-type: none;
+		}
+		li, p {
+			margin-left: 35px;
+			margin-top: 10px;
+			font-size: 22px;
+		}
+		#subtitle {
+			font-size: 30px !important;
+		}
+		#subtitle.tags {
+			float: right;
+		}
+		a.ext {
+			background-color: rgba(255, 255, 255, 0.15);
+			border-radius: 30px;
+			box-shadow: 1px 1px 1px;
+			padding-right: 10px;
+			padding-left: 10px;
+			padding-bottom: 2px;
+		}
+		a.btn {
+			font-size: 17px;
+			text-decoration: none;
+			font-weight: bold;
+			color: #3498DB;
+			border: #D3D3D3 1px solid;
+			padding: 2px 10px 4px 10px;
+			cursor: pointer;
+			margin: 20px;
+			float: right;
+		}
+		a.btn:hover {background-color: #fff;}
+		a.known {color: #6AB8CA;}
+		a.learning {color: #90AD2F;}
+		a.planning {color: #CAB66A;}
+		a.dead {color: #CB4949;}
+		div#subtitle {text-shadow: 1px 1px 1px #000;}
+	</style>
+</head>
+<body bgcolor="#404040">
+	<script>
+		function enablePlanning(){
+			if ($("li .planning").css("opacity") != 0){
+				$("li .planning").animate({"opacity":"0"});
+				$("a.btn").text("Show planning");
+			}else{
+				$("li .planning").animate({"opacity":"1"});
+				$("a.btn").text("Hide planning");
+			}
+		}
+	</script>
+	<a href="/">⏎ Back to root</a>
+	<a class="btn" onclick="enablePlanning();">Hide planning</a>
+	<div id="right">
+		<div id="title">
+			<span>Programming Stuff</span>
+		</div>
+		<div id="subtitle" class="tags">
+			<p><a class="ext known">Known</a></p>
+			<p><a class="ext learning">Learning</a></p>
+			<p><a class="ext planning">Planning on learning</a></p>
+		</div>
+		<li class="start">
+			<ul>
+				<div id="subtitle">Programming Languages
+					<li><a class="ext known" href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">
+										.js
+					</a></li>
+					<li><a class="ext learning" href="http://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">
+										.py
+					</a></li>
+					<li><a class="ext learning" href="http://en.wikipedia.org/wiki/C_Sharp_(programming_language)" target="_blank">
+										.cs
+					</a></li>
+					<li><a class="ext learning" href="http://en.wikipedia.org/wiki/Batch_file" target="_blank">
+										.bat
+					</a></li>
+					<li><a class="ext planning" href="http://en.wikipedia.org/wiki/Ruby_(programming_language)" target="_blank">
+										.rb
+					</a></li>
+					<li><a class="ext planning" href="http://en.wikipedia.org/wiki/List_of_programming_languages" target="_blank">
+										.*
+					</a></li>
+				</div>
+  			</ul>
+  			<ul>
+				<div id="subtitle">Stylesheet Languages
+					<li><a class="ext known" href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank">
+										.css
+					</a></li>
+				</div>
+  			</ul>
+  			<ul>
+				<div id="subtitle">Markup Languages
+					<li><a class="ext known" href="http://en.wikipedia.org/wiki/HTML" target="_blank">
+										.html
+					</a></li>
+					<li><a class="ext planning" href="http://en.wikipedia.org/wiki/HTML" target="_blank">
+										.xhtml
+					</a></li>
+				</div>
+  			</ul>
+  			<ul>
+				<div id="subtitle">Others
+					<li><a class="ext known" href="http://en.wikipedia.org/wiki/HTML" target="_blank">
+										.js (lib)
+					</a></li>
+					<li><a class="ext known" href="http://en.wikipedia.org/wiki/JSON" target="_blank">
+										.json
+					</a></li>
+				</div>
+  			</ul>
+			<br>
+  			<ul>
+				<div id="subtitle">Unavailable to me (permanently, or currently), but I might learn anyways
+					<li><a class="ext dead" href="http://en.wikipedia.org/wiki/JavaScript_Style_Sheets" target="_blank">
+										.js (JSSS)
+					</a></li>
+					<li><a class="ext dead" href="http://en.wikipedia.org/wiki/Nu_(programming_language)" target="_blank">
+										.nu
+					</a></li>
+					<li><a class="ext dead" href="http://en.wikipedia.org/wiki/Pizza_(programming_language)" target="_blank">
+										PIZZA
+					</a></li>
+				</div>
+  			</ul>
+		</li>
+	</div>
+</body>
+</html>
