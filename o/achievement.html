@@ -30,9 +30,7 @@
             transition: width 0.3s;
             transition-timing-function: ease;
 	    }
-	    li:hover {
-            width: 500px;
-        }
+/*	    li:hover {  width: 500px;   }*/
 	    span.title {
             position: relative;
             text-align: center;
@@ -54,12 +52,18 @@
             position: absolute;
             margin: 10px 0px 0px 15px;
         }
+        i.level-ggeasy {    background-color: #CD7F32;  }
         i.level-bronze {    background-color: #CD7F32;  }
         i.level-silver {    background-color: #C0C0C0;  }
         i.level-gold   {    background-color: #F4C712;  }
 	</style>
 </head>
 <body>
+    <script type="text/javascript">
+        window.onresize = function(){
+            
+        }
+    </script>
     <div id="title">Life Achievements</div>
     <div id="ach">
         <ul>
@@ -84,14 +88,20 @@
             <li>
                 <div class="z"></div>
                 <i class="level level-bronze"></i>
-                <span class="title">Evolution, I suppose</span>
-                <span class="description">Basics of JavaScript / HTML / CSS</span>
+                <span class="title">That's like... 3 times 5</span>
+                <span class="description">15 years have passed already</span>
             </li>
             <li>
                 <div class="z"></div>
                 <i class="level level-bronze"></i>
-                <span class="title">That's like... 3 times 5</span>
-                <span class="description">15 years have passed already</span>
+                <span class="title">Evolution, I suppose</span>
+                <span class="description">Basics of JavaScript / HTML / CSS learned</span>
+            </li>
+            <li>
+                <div class="z"></div>
+                <i class="level level-bronze"></i>
+                <span class="title">Almost a pro. Kinda.</span>
+                <span class="description">Extensive knowledge of JavaScript acquired</span>
             </li>
         </ul>
     </div>
