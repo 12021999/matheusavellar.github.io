@@ -9,7 +9,6 @@ div#right {
 div#title {
 	font-size: 85px;
 	font-weight: bold;
-	text-transform: lowercase;
 }
 #title.regular {
 	text-transform: none !important;
