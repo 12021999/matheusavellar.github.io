@@ -9,19 +9,53 @@
             font-family: "Open Sans", sans-serif;
             background-color: #040404;
             color: #eee;
-            min-width: 400px;
+            min-width: 850px;
 	    }
 	    div, li, span.description {
 	        display: block;
 	    }
+	    div#ach, div#code {
+	        padding-top: 15px;
+	    }
+	    div#ach, i.level {
+	        position: absolute;
+	    }
 	    div#title {
 	        font-size: 25px;
+	        display: inline;
+	    }
+	    div#title.rt {
+	        float: right;
 	    }
 	    div.z {
             height: 100%;
             width: 15px;
             float: left;
 	    }
+	    
+	    div#code {
+            padding-left: 100%;
+            padding-right: 40px;
+            float: right;
+	    }
+	    div#code li {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            float: left;
+            margin: 5px;
+        }
+        div#code ul {
+            width: 440px;
+        }
+        div#code .title {
+            width: 100%;
+            padding: 35% 0px 0px 0px;
+        }
+        div#code .description {
+            text-align: center;
+        }
+	    
 	    li {
             margin-bottom: 2em;
             background: #525252;
@@ -31,7 +65,6 @@
             transition: width 0.3s;
             transition-timing-function: ease;
 	    }
-/*	    li:hover {  width: 500px;   }*/
 	    span.title {
             position: relative;
             text-align: center;
@@ -40,10 +73,12 @@
             padding: 5px;
             font-size: 17px;
             width: 275px;
+            text-shadow: rgb(68, 68, 68) 1px 1px 0px;
 	    }
 	    span.description {
 	        font-size: 12px;
 	        color: #babaca;
+	        text-shadow: rgb(68, 68, 68) 1px 1px 0px;
 	    }
 	    span.description b {
 	        font-weight: bold;
@@ -58,17 +93,17 @@
             height: 15px;
             display: block;
             border-radius: 50%;
-            position: absolute;
             margin: 10px 0px 0px 15px;
         }
-        i.level-ggeasy {    background-color: #CD7F32;  }
-        i.level-bronze {    background-color: #CD7F32;  }
-        i.level-silver {    background-color: #C0C0C0;  }
-        i.level-gold   {    background-color: #F4C712;  }
+        i.level-ggeasy, li.ggeasy {    background-color: #CD7F32;  }
+        i.level-bronze, li.bronze {    background-color: #CD7F32;  }
+        i.level-silver, li.silver {    background-color: #C0C0C0;  }
+        i.level-gold, li.gold     {    background-color: #F4C712;  }
 	</style>
 </head>
 <body>
-    <div id="title">Life Achievements</div>
+    <div id="title" class="lt">Life Achievements</div>
+    <div id="title" class="rt">Coding Skillz</div>
     <div id="ach">
         <ul>
             <li>
@@ -112,6 +147,42 @@
                 <i class="level level-bronze"></i>
                 <span class="title">A new Era</span>
                 <span class="description">Basics of <b>C#<a> / </a>Python</b> learned</span>
+            </li>
+        </ul>
+    </div>
+    <div id="code">
+        <ul>
+            <li class="gold">
+                <span class="title">JavaScript</span>
+                <span class="description">.js</span>
+            </li>
+            <li class="silver">
+                <span class="title">CSS</span>
+                <span class="description">.css</span>
+            </li>
+            <li class="silver">
+                <span class="title">HTML</span>
+                <span class="description">.html</span>
+            </li>
+            <li class="silver">
+                <span class="title">JSON</span>
+                <span class="description">.json</span>
+            </li>
+            <li class="bronze">
+                <span class="title">Batch</span>
+                <span class="description">.bat</span>
+            </li>
+            <li class="bronze">
+                <span class="title">C#</span>
+                <span class="description">.cs</span>
+            </li>
+            <li class="bronze">
+                <span class="title">Python</span>
+                <span class="description">.py</span>
+            </li>
+            <li class="bronze">
+                <span class="title">PHP</span>
+                <span class="description">.php</span>
             </li>
         </ul>
     </div>
