@@ -61,7 +61,8 @@
         }
         div#panes ul li.main:nth-child(2) {  background-color: #17ab8e;  } /* Epitelial */
         div#panes ul li.main:nth-child(5) {  background-color: #c0392b;  } /* Muscular */
-        div#panes ul li.main:nth-child(4) {  background-color: #27ae60;  } /* Nervoso */
+        div#panes ul li.main:nth-child(4) {  background-color: #27ae60;    /* Nervoso */
+                                             height: 650px;  }
         div#panes ul li.main:nth-child(3) {  background-color: #7f8c8d;    /* Conjuntivo */
                                              min-height: 1100px;  }
         h2 {
@@ -84,6 +85,20 @@
         }
         div.epit {
             background-image: url(https://i.imgur.com/fbYzyYS.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 45%;
+            width: 50%;
+            margin-left: 30%;
+        }
+        div.nervContainer {
+            width: 100%;
+            height: 75%;
+            margin-top: 20px;
+            position: absolute;
+        }
+        div.nerv {
+            background-image: url(https://i.imgur.com/bu0Af8o.png);
             background-size: contain;
             background-repeat: no-repeat;
             height: 45%;
@@ -137,7 +152,7 @@
                     <li>
                         Sanguíneo
                         <p>
-                            O tecido conjuntivo sanguíneo é compost de duas partes: A "sólida" e a "líquida". A parte "sólida" é formada pelos leucócitos, hemácias e plaquetas, cada qual tendo a sua prórpia função. A parte "líquida", chamada plasma, é formada por 90% água. Os 10% restantes são substâncias inorgânicas, transportadas pelo corpo.
+                            O tecido conjuntivo sanguíneo é composto de duas partes: A "sólida" e a "líquida". A parte "sólida" é formada pelos leucócitos, hemácias e plaquetas, cada qual tendo a sua prórpia função. A parte "líquida", chamada plasma, é formada por 90% água. Os 10% restantes são substâncias inorgânicas, transportadas pelo corpo.
                         </p>
                     </li>
                     <li>
@@ -155,7 +170,7 @@
                     <li>
                         Frouxo
                         <p>
-                            O tecido conjuntivo frouxo tem a função de preencher os espaços "vazios", não ocupados por outros tecidos, e por isso é o tecido de maior distribuição pelo corpo.
+                            O tecido conjuntivo frouxo tem a função de preencher os espaços "vazios", não ocupados por outros tecidos, e por isso é o tecido de maior distribuição pelo corpo. Ele por si só não possui vasos sanguíneos ou nervos, mas sim os involve.
                         </p>
                     </li>
                 </ul>
@@ -163,8 +178,13 @@
             <li class="main">
                 <h2>Tecido Nervoso</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    O tecido nervoso é composto por diferentes tipos de células nervosas (conhecidas como Neurônios), porém todas quais possuem um axônio, parte da célula nervosa que envia impulsos do corpo para o cérebro, e vice-versa.
+                    <br />
+                    A função principal do tecido nervoso é, em suma, carregar os sinais elétricos pelo sistema nervoso, formando a comunicação do corpo. 
                 </p>
+                <div class="nervContainer">
+                    <div class="nerv"></div>
+                </div>
             </li>
             <li class="main">
                 <h2>Tecido Muscular</h2>
