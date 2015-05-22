@@ -48,111 +48,83 @@ var pasN = 0;
 var play = new Image();
 var playDefault = new Image();
 playDefault.src = "Images/Buttons/playDefault.png";
-playDefault.load();
 var playSelected = new Image();
 playSelected.src = "Images/Buttons/playSelected.png";
-playSelected.load();
 var creditoDefault = new Image();
 creditoDefault.src = "Images/Buttons/creditoDefault.png";
-creditoDefault.load();
 var creditoSelected = new Image();
 creditoSelected.src = "Images/Buttons/creditoSelected.png";
-creditoSelected.load();
 var creditoLocked = new Image();
 creditoLocked.src = "Images/Buttons/creditoLocked.png";
-creditoLocked.load();
 var menu = new Image();
 var menuDefault = new Image();
 menuDefault.src = "Images/Buttons/menuDefault.png";
-menuDefault.load();
 var menuSelected = new Image();
 menuSelected.src = "Images/Buttons/menuSelected.png";
-menuSelected.load();
 var pauseDefault = new Image();
 pauseDefault.src = "Images/Buttons/pauseDefault.png";
-pauseDefault.load();
 var pauseSelected = new Image();
 pauseSelected.src = "Images/Buttons/pauseSelected.png";
-pauseSelected.load();
 
 //Grupo de aldeoes
 var galera = new Image();
 galera.src = "Images/Player/Galera" + galN + ".png";
-galera.load();
 
 //Nuvens, chao
 var clouds = new Image();
 clouds.src = "Images/BG/clouds.png";
-clouds.load();
 var ground = new Image();
 
 //Plano de fundo do menu
 var menuBG = new Image();
 menuBG.src = "Images/MenuBG.png";
-menuBG.load();
 
 //Imagens dos creditos
 var Atila = new Image();
 Atila.src = "Images/Credits/Atila1.png";
-Atila.load();
 var AtilaNome = new Image();
 AtilaNome.src = "Images/Credits/AtilaNome.png";
-AtilaNome.load();
 var Avellar = new Image();
 Avellar.src = "Images/Credits/Avellar1.png";
-Avellar.load();
 var AvellarNome = new Image();
 AvellarNome.src = "Images/Credits/AvellarNome.png";
-AvellarNome.load();
 var Camila = new Image();
 Camila.src = "Images/Credits/Camila1.png";
-Camila.load();
 var CamilaNome = new Image();
 CamilaNome.src = "Images/Credits/CamilaNome.png";
-CamilaNome.load();
 var Sara = new Image();
 Sara.src = "Images/Credits/Sara1.png";
-Sara.load();
 var SaraNome = new Image();
 SaraNome.src = "Images/Credits/SaraNome.png";
-SaraNome.load();
 var vacaS = new Image();
 vacaS.src = "Images/Credits/vacaS.png";
-vacaS.load();
 var EasterNome = new Image();
 EasterNome.src = "Images/Credits/EasterNome.png";
-EasterNome.load();
 
     ///////////////JOGO\\\\\\\\\\\\\\\
 
 
 var hit = new Audio();
 hit.src = "Audio/Punch.mp3";
-hit.load();
 var happy = new Audio();
 happy.src = "Audio/Spring_In_My_Step.mp3";
-happy.load();
 
 //Player
 var playerSprite = new Image();
 playerSprite.src = "Images/Player/player1Sprite1.png";
-playerSprite.load();
 var playerVida = new Image();
 
 //Press space
 var space = new Image();
 space.src = "Images/Space.png";
-space.load();
 
 //Tela de morte
 var black = new Image();
 black.src = "Images/black.png";
-black.load();
 
 //Sol e obstaculos
 var sol = new Image();
 sol.src = "Images/sol.png";
-sol.load();
 var obs = new Image();
 var obs2 = new Image();
 var obs3 = new Image();
@@ -162,15 +134,12 @@ var spec = new Image();
 //Moedinha
 var coin = new Image();
 coin.src = "Images/coin.png";
-coin.load();
 
 //Pontos
 var pt = new Image();
 var pt2 = new Image();
 pt.src = "Images/pt.png";
-pt.load();
 pt2.src = "Images/pts.png";
-pt2.load();
 pts = {x:canvas.width/2 - 45,y:canvas.height/2 - 50,h:53,w:180};
 
 //Variaveis pro menu
@@ -230,7 +199,6 @@ var menuBP = {x:0,y:5,w:57,h:36};
 //Mute
 var mute = {img:new Image(),x:25,y:375,w:35,h:35};
 mute.img.src = "Images/Buttons/soundOn.png";
-mute.img.load();
 
 //Botao de Pausa
 var pauseBPY = 5;
@@ -252,11 +220,9 @@ var dinoUnitH = 65;
 var dinoUnitSRC = 1 + Math.floor(Math.random() * 6);
 var dinoUnit = new Image();
 dinoUnit.src = "Images/Dino/dinoUnit" + dinoUnitSRC + ".png";
-dinoUnit.load();
 
 var menuT = {i:new Image(),x:200,y:500,w:387,h:137,s:7.1};
 menuT.i.src = "Images/Logo/Logo.png";
-menuT.i.load();
 
 var creditoX = 400;
 var creditoY = 150;
@@ -302,9 +268,7 @@ var playRC = "Default";
 
 var playBG = {img: new Image(),img2: new Image(),x:0,y:20,w:8235,h:450,x2:8235};
 playBG.img.src = "Images/Loop/Loop_Campo.png";
-playBG.img.load();
 playBG.img2.src = "Images/Loop/Loop_Campo.png";
-playBG.img2.load();
 
 var BGspeed = 10;
 
@@ -346,35 +310,35 @@ var fundoPlay2 = new Image();
 
 var ranN = Math.floor(Math.random() * 400);
 if (ranN <= 66) {
-    obs.src = "Images/Obs/rockCampo.png";
-    fundoPlay.src = "Images/BG/fundoPlayCampo.png";
-    fundoPlay2.src = "Images/BG/fundoPlayCampo.png";
-    ground.src = "Images/BG/groundCampo.png";
+obs.src = "Images/Obs/rockCampo.png";
+fundoPlay.src = "Images/BG/fundoPlayCampo.png";
+fundoPlay2.src = "Images/BG/fundoPlayCampo.png";
+ground.src = "Images/BG/groundCampo.png";
 } else if (ranN >= 67 && ranN <= 132) {
-    obs.src = "Images/Obs/rockCampo2.png";
-    fundoPlay.src = "Images/BG/fundoPlayCampo.png";
-    fundoPlay2.src = "Images/BG/fundoPlayCampo.png";
-    ground.src = "Images/BG/groundCampo.png";
+obs.src = "Images/Obs/rockCampo2.png";
+fundoPlay.src = "Images/BG/fundoPlayCampo.png";
+fundoPlay2.src = "Images/BG/fundoPlayCampo.png";
+ground.src = "Images/BG/groundCampo.png";
 } else if (ranN >= 133 && ranN <= 198) {
-    obs.src = "Images/Obs/rockFloresta.png";
-    fundoPlay.src = "Images/BG/fundoPlayCampo.png";
-    fundoPlay2.src = "Images/BG/fundoPlayCampo.png";
-    ground.src = "Images/BG/groundCampo.png";
+obs.src = "Images/Obs/rockFloresta.png";
+fundoPlay.src = "Images/BG/fundoPlayCampo.png";
+fundoPlay2.src = "Images/BG/fundoPlayCampo.png";
+ground.src = "Images/BG/groundCampo.png";
 } else if (ranN >= 199 && ranN <= 264) {
-    obs.src = "Images/Obs/rockDeserto.png";
-    fundoPlay.src = "Images/BG/fundoPlayDeserto.png";
-    fundoPlay2.src = "Images/BG/fundoPlayDeserto.png";
-    ground.src = "Images/BG/groundDeserto.png";
+obs.src = "Images/Obs/rockDeserto.png";
+fundoPlay.src = "Images/BG/fundoPlayDeserto.png";
+fundoPlay2.src = "Images/BG/fundoPlayDeserto.png";
+ground.src = "Images/BG/groundDeserto.png";
 } else if (ranN >= 265 && ranN <= 330) {
-    obs.src = "Images/Obs/rockNeve.png";
-    fundoPlay.src = "Images/BG/fundoPlayNeve.png";
-    fundoPlay2.src = "Images/BG/fundoPlayNeve.png";
-    ground.src = "Images/BG/groundNeve.png";
+obs.src = "Images/Obs/rockNeve.png";
+fundoPlay.src = "Images/BG/fundoPlayNeve.png";
+fundoPlay2.src = "Images/BG/fundoPlayNeve.png";
+ground.src = "Images/BG/groundNeve.png";
 } else if (ranN >= 330 && ranN <= 400) {
-    obs.src = "Images/Obs/rockFloresta.png";
-    fundoPlay.src = "Images/BG/fundoPlayCampo.png";
-    fundoPlay2.src = "Images/BG/fundoPlayCampo.png";
-    ground.src = "Images/BG/groundCampo.png";
+obs.src = "Images/Obs/rockFloresta.png";
+fundoPlay.src = "Images/BG/fundoPlayCampo.png";
+fundoPlay2.src = "Images/BG/fundoPlayCampo.png";
+ground.src = "Images/BG/groundCampo.png";
 }
 
 var obsS = -1 * BGspeed;
