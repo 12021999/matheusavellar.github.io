@@ -1,781 +1,781 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="author" content="Matheus Avellar, Atila, Sara Lêdo, Camila Pimentel">
-	<title>Cow Run - Beta v1.2</title>
-	<link rel="icon" href="Images/Logo/Icon.png" type="image/png">
-	<link rel="shortcut icon" href="Images/Logo/Icon.png" type="image/png"></link>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="author" content="Matheus Avellar, Atila, Sara Lêdo, Camila Pimentel">
+    <title>Cow Run - Beta v1.2</title>
+    <link rel="icon" href="Images/Logo/Icon.png" type="image/png">
+    <link rel="shortcut icon" href="Images/Logo/Icon.png" type="image/png"></link>
 </head>
 <hr>
 <body bgcolor="#B0B0B0" onLoad="loop();" style="cursor: url(Images/Logo/Cursor.png), auto;">
-	<center>
-		<video hidden id="video" src="Video/StopMotion.mp4" controls="true" ></video>
-		<canvas id="myCanvas" width="800" height="450"></canvas>
-	</center>
-	<script src="Scripts/Vars.js"></script>
-	<script src="Scripts/Core.js"></script>
-	<script>
-		var video = document.getElementById("video");
-		var scene = new Video(video);
-		var Version = "CowRun - Beta v1.2";
+    <center>
+        <video hidden id="video" src="Video/StopMotion.mp4" controls="true"></video>
+        <canvas id="myCanvas" width="800" height="450"></canvas>
+    </center>
+    <script src="Scripts/Vars.js"></script>
+    <script src="Scripts/Core.js"></script>
+    <script>
+        var video = document.getElementById("video");
+        var scene = new Video(video);
+        var Version = "CowRun - Beta v1.2";
 
-		function input() {
-			var _keyDown = function(e) {
-				switch (e.keyCode) {
-					case 32:
-						cowN = 2;player_jump = true;
-						if (!lockGame) {gameStart = true;}
-						break;
-					case 80:
-						if (pasN >= 10) {pause = !pause;pasN = 0;}
-						break;
-				}
-			}
-			var _keyUp = function(e) {if (e.keyCode==32){cowN = 1;player_jump = false;}}
-			var _mouseMove = function(e) {mouseX = e.offsetX;mouseY = e.offsetY;}
-			var _mouseUp = function(e) {mouse_pressed = false;}
-			var _mouseDown = function(e) {mouse_pressed = true;}
-			document.addEventListener("mousemove", _mouseMove, false);
-			document.addEventListener("mouseup", _mouseUp, false);
-			document.addEventListener("mousedown", _mouseDown, false);
-			document.addEventListener("keydown", _keyDown, true);
-			document.addEventListener("keyup", _keyUp, true);
-		}
+        function input() {
+            var _keyDown = function(e) {
+                switch (e.keyCode) {
+                    case 32:
+                        cowN = 2;player_jump = true;
+                        if (!lockGame) {gameStart = true;}
+                        break;
+                    case 80:
+                        if (pasN >= 10) {pause = !pause;pasN = 0;}
+                        break;
+                }
+            }
+            var _keyUp = function(e) {if (e.keyCode==32){cowN = 1;player_jump = false;}}
+            var _mouseMove = function(e) {mouseX = e.offsetX;mouseY = e.offsetY;}
+            var _mouseUp = function(e) {mouse_pressed = false;}
+            var _mouseDown = function(e) {mouse_pressed = true;}
+            document.addEventListener("mousemove", _mouseMove, false);
+            document.addEventListener("mouseup", _mouseUp, false);
+            document.addEventListener("mousedown", _mouseDown, false);
+            document.addEventListener("keydown", _keyDown, true);
+            document.addEventListener("keyup", _keyUp, true);
+        }
 
-		function drawPlayer() {
-			context.drawImage(playerSprite, player.x, player.y, player.w, player.h);
-			if (hurt) {
-				ifInvis = "Invis";
-			} else if (!hurt) {
-				ifInvis = "";
-			}
+        function drawPlayer() {
+            context.drawImage(playerSprite, player.x, player.y, player.w, player.h);
+            if (hurt) {
+                ifInvis = "Invis";
+            } else if (!hurt) {
+                ifInvis = "";
+            }
 
-			if (!player_jumpS) {
-				if (!lockCoin) {
-					playerSprite.src = "Images/Player/player" + (player_ran + 1) + ifInvis + "Sprite" + plN + ".png";
-				}
-			}else if (player_jumpS) {
-				playerSprite.src = "Images/Player/player" + (player_ran + 1) + ifInvis + "Sprite1.png";
-			}
-			if (lockCoin) {
-				player.w = 78;
-				player.h = 52;
-				playerSprite.src = "Images/Credits/vacaS.png";
-			}else{
-				player.w = 34;
-				player.h = 50;
-			}
-			
-			pplN++
-			if (pplN >= 2) {
-				pplN = 0;
-				plN++;
-			if (plN >= 4) {
-					plN = 1;
-				}
-			}
-		}
+            if (!player_jumpS) {
+                if (!lockCoin) {
+                    playerSprite.src = "Images/Player/player" + (player_ran + 1) + ifInvis + "Sprite" + plN + ".png";
+                }
+            }else if (player_jumpS) {
+                playerSprite.src = "Images/Player/player" + (player_ran + 1) + ifInvis + "Sprite1.png";
+            }
+            if (lockCoin) {
+                player.w = 78;
+                player.h = 52;
+                playerSprite.src = "Images/Credits/vacaS.png";
+            }else{
+                player.w = 34;
+                player.h = 50;
+            }
+            
+            pplN++
+            if (pplN >= 2) {
+                pplN = 0;
+                plN++;
+            if (plN >= 4) {
+                    plN = 1;
+                }
+            }
+        }
 
-		function drawEnemy() {
-			if (gameStart) {
-				obsS = -1 * BGspeed;
-				oobs.x += obsS;
-				oobs2.x += obsS;
-				oobs3.x += obsS;
-				ospec.x += obsS + 10;
-				if (ospec.x + ospec.w <= canvas.width) {ospec.x = 0}
-				if (oobs.x <= oobs.w * -1) {
-					oobs.x = canvas.width + Math.floor(Math.random() * 1000);
-				}
-				if (oobs2.x <= oobs2.w * -1) {
-					oobs2.x = canvas.width + Math.floor(Math.random() * 1000);
-				}
-				if (oobs3.x <= oobs3.w * -1) {
-					oobs3.x = canvas.width + Math.floor(Math.random() * 1000);
-				}
+        function drawEnemy() {
+            if (gameStart) {
+                obsS = -1 * BGspeed;
+                oobs.x += obsS;
+                oobs2.x += obsS;
+                oobs3.x += obsS;
+                ospec.x += obsS + 10;
+                if (ospec.x + ospec.w <= canvas.width) {ospec.x = 0}
+                if (oobs.x <= oobs.w * -1) {
+                    oobs.x = canvas.width + Math.floor(Math.random() * 1000);
+                }
+                if (oobs2.x <= oobs2.w * -1) {
+                    oobs2.x = canvas.width + Math.floor(Math.random() * 1000);
+                }
+                if (oobs3.x <= oobs3.w * -1) {
+                    oobs3.x = canvas.width + Math.floor(Math.random() * 1000);
+                }
 
-				switch (map) {
-					case "Campo":
-						obs.src = "Images/Obs/rockCampo.png";
-						obs2.src = "Images/Obs/rockCampo2.png";
-						obs3.src = "Images/Obs/lake.png";
-						oobs.w = 52;
-						oobs2.w = 52;
-						oobs3.w = 96;
-						oobs.h = 48;
-						oobs2.h = 48;
-						oobs3.h = 28;
-						oobs3.y = 350;
-						BGspeed = 10;
-						pl_jump.d = 17;
-						context.drawImage(obs, oobs.x, oobs.y, oobs.w, oobs.h);
-						context.drawImage(obs2, oobs2.x, oobs2.y, oobs2.w, oobs2.h);
-						context.drawImage(obs3, oobs3.x, oobs3.y, oobs3.w, oobs3.h);
-						break;
+                switch (map) {
+                    case "Campo":
+                        obs.src = "Images/Obs/rockCampo.png";
+                        obs2.src = "Images/Obs/rockCampo2.png";
+                        obs3.src = "Images/Obs/lake.png";
+                        oobs.w = 52;
+                        oobs2.w = 52;
+                        oobs3.w = 96;
+                        oobs.h = 48;
+                        oobs2.h = 48;
+                        oobs3.h = 28;
+                        oobs3.y = 350;
+                        BGspeed = 10;
+                        pl_jump.d = 17;
+                        context.drawImage(obs, oobs.x, oobs.y, oobs.w, oobs.h);
+                        context.drawImage(obs2, oobs2.x, oobs2.y, oobs2.w, oobs2.h);
+                        context.drawImage(obs3, oobs3.x, oobs3.y, oobs3.w, oobs3.h);
+                        break;
 
-					case "Deserto":
-						obs.src = "Images/Obs/rockDeserto.png";
-						obs2.src = "Images/Obs/rockCampo.png";
-						obs3.src = "Images/Obs/rockCampo2.png";
-						spec.src = "Images/Obs/cacto.png";
-						oobs.w = 52;
-						oobs2.w = 52;
-						oobs3.w = 52;
-						oobs.h = 48;
-						oobs2.h = 48;
-						oobs3.h = 48;
-						oobs3.y = 315;
-						BGspeed = 12;
-						context.drawImage(spec, ospec.x, ospec.y, ospec.w, ospec.h);
-						context.drawImage(obs, oobs.x, oobs.y, oobs.w, oobs.h);
-						context.drawImage(obs2, oobs2.x, oobs2.y, oobs2.w, oobs2.h);
-						context.drawImage(obs3, oobs3.x, oobs3.y, oobs3.w, oobs3.h);
-						break;
+                    case "Deserto":
+                        obs.src = "Images/Obs/rockDeserto.png";
+                        obs2.src = "Images/Obs/rockCampo.png";
+                        obs3.src = "Images/Obs/rockCampo2.png";
+                        spec.src = "Images/Obs/cacto.png";
+                        oobs.w = 52;
+                        oobs2.w = 52;
+                        oobs3.w = 52;
+                        oobs.h = 48;
+                        oobs2.h = 48;
+                        oobs3.h = 48;
+                        oobs3.y = 315;
+                        BGspeed = 12;
+                        context.drawImage(spec, ospec.x, ospec.y, ospec.w, ospec.h);
+                        context.drawImage(obs, oobs.x, oobs.y, oobs.w, oobs.h);
+                        context.drawImage(obs2, oobs2.x, oobs2.y, oobs2.w, oobs2.h);
+                        context.drawImage(obs3, oobs3.x, oobs3.y, oobs3.w, oobs3.h);
+                        break;
 
-					case "Floresta":
-						obs.src = "Images/Obs/rockFloresta.png";
-						obs2.src = "Images/Obs/rockCampo.png";
-						obs3.src = "Images/Obs/rockCampo2.png";
-						spec.src = "Images/Obs/woods.png";
-						oobs.w = 52;
-						oobs2.w = 52;
-						oobs3.w = 52;
-						oobs.h = 48;
-						oobs2.h = 48;
-						oobs3.h = 48;
-						BGspeed = 14;
-						context.drawImage(spec, ospec.x, ospec.y, ospec.w, ospec.h);
-						context.drawImage(obs, oobs.x, oobs.y, oobs.w, oobs.h);
-						context.drawImage(obs2, oobs2.x, oobs2.y, oobs2.w, oobs2.h);
-						context.drawImage(obs3, oobs3.x, oobs3.y, oobs3.w, oobs3.h);
-						break;
+                    case "Floresta":
+                        obs.src = "Images/Obs/rockFloresta.png";
+                        obs2.src = "Images/Obs/rockCampo.png";
+                        obs3.src = "Images/Obs/rockCampo2.png";
+                        spec.src = "Images/Obs/woods.png";
+                        oobs.w = 52;
+                        oobs2.w = 52;
+                        oobs3.w = 52;
+                        oobs.h = 48;
+                        oobs2.h = 48;
+                        oobs3.h = 48;
+                        BGspeed = 14;
+                        context.drawImage(spec, ospec.x, ospec.y, ospec.w, ospec.h);
+                        context.drawImage(obs, oobs.x, oobs.y, oobs.w, oobs.h);
+                        context.drawImage(obs2, oobs2.x, oobs2.y, oobs2.w, oobs2.h);
+                        context.drawImage(obs3, oobs3.x, oobs3.y, oobs3.w, oobs3.h);
+                        break;
 
-					case "Praia":
-						obs.src = "Images/Obs/rockDeserto.png";
-						obs2.src = "Images/Obs/rockCampo.png";
-						obs3.src = "Images/Obs/rockCampo2.png";
-						spec.src = "Images/Obs/cocos.png";
-						oobs.w = 52;
-						oobs2.w = 52;
-						oobs3.w = 52;
-						oobs.h = 48;
-						oobs2.h = 48;
-						oobs3.h = 48;
-						BGspeed = 16;
-						context.drawImage(spec, ospec.x, ospec.y, ospec.w, ospec.h);
-						context.drawImage(obs, oobs.x, oobs.y, oobs.w, oobs.h);
-						context.drawImage(obs2, oobs2.x, oobs2.y, oobs2.w, oobs2.h);
-						context.drawImage(obs3, oobs3.x, oobs3.y, oobs3.w, oobs3.h);
-						break;
+                    case "Praia":
+                        obs.src = "Images/Obs/rockDeserto.png";
+                        obs2.src = "Images/Obs/rockCampo.png";
+                        obs3.src = "Images/Obs/rockCampo2.png";
+                        spec.src = "Images/Obs/cocos.png";
+                        oobs.w = 52;
+                        oobs2.w = 52;
+                        oobs3.w = 52;
+                        oobs.h = 48;
+                        oobs2.h = 48;
+                        oobs3.h = 48;
+                        BGspeed = 16;
+                        context.drawImage(spec, ospec.x, ospec.y, ospec.w, ospec.h);
+                        context.drawImage(obs, oobs.x, oobs.y, oobs.w, oobs.h);
+                        context.drawImage(obs2, oobs2.x, oobs2.y, oobs2.w, oobs2.h);
+                        context.drawImage(obs3, oobs3.x, oobs3.y, oobs3.w, oobs3.h);
+                        break;
 
-					case "Mar":
-						obs.src = "Images/Obs/rockCampo.png";
-						obs2.src = "Images/Obs/rockCampo.png";
-						obs3.src = "Images/Obs/rockCampo.png";
-						oobs.w = 52;
-						oobs2.w = 52;
-						oobs3.w = 52;
-						oobs.h = 48;
-						oobs2.h = 48;
-						oobs3.h = 48;
-						BGspeed = 18;
-						context.drawImage(obs, oobs.x, oobs.y, oobs.w, oobs.h);
-						context.drawImage(obs2, oobs2.x, oobs2.y, oobs2.w, oobs2.h);
-						context.drawImage(obs3, oobs3.x, oobs3.y, oobs3.w, oobs3.h);
-						break;
+                    case "Mar":
+                        obs.src = "Images/Obs/rockCampo.png";
+                        obs2.src = "Images/Obs/rockCampo.png";
+                        obs3.src = "Images/Obs/rockCampo.png";
+                        oobs.w = 52;
+                        oobs2.w = 52;
+                        oobs3.w = 52;
+                        oobs.h = 48;
+                        oobs2.h = 48;
+                        oobs3.h = 48;
+                        BGspeed = 18;
+                        context.drawImage(obs, oobs.x, oobs.y, oobs.w, oobs.h);
+                        context.drawImage(obs2, oobs2.x, oobs2.y, oobs2.w, oobs2.h);
+                        context.drawImage(obs3, oobs3.x, oobs3.y, oobs3.w, oobs3.h);
+                        break;
 
-					case "Neve":
-						obs.src = "Images/Obs/rockNeve.png";
-						obs2.src = "Images/Obs/rockCampo.png";
-						obs3.src = "Images/Obs/rockCampo.png";
-						oobs.w = 52;
-						oobs2.w = 52;
-						oobs3.w = 52;
-						oobs.h = 48;
-						oobs2.h = 48;
-						oobs3.h = 48;
-						BGspeed = 20;
-						context.drawImage(obs, oobs.x, oobs.y, oobs.w, oobs.h);
-						context.drawImage(obs2, oobs2.x, oobs2.y, oobs2.w, oobs2.h);
-						context.drawImage(obs3, oobs3.x, oobs3.y, oobs3.w, oobs3.h);
-						break;
+                    case "Neve":
+                        obs.src = "Images/Obs/rockNeve.png";
+                        obs2.src = "Images/Obs/rockCampo.png";
+                        obs3.src = "Images/Obs/rockCampo.png";
+                        oobs.w = 52;
+                        oobs2.w = 52;
+                        oobs3.w = 52;
+                        oobs.h = 48;
+                        oobs2.h = 48;
+                        oobs3.h = 48;
+                        BGspeed = 20;
+                        context.drawImage(obs, oobs.x, oobs.y, oobs.w, oobs.h);
+                        context.drawImage(obs2, oobs2.x, oobs2.y, oobs2.w, oobs2.h);
+                        context.drawImage(obs3, oobs3.x, oobs3.y, oobs3.w, oobs3.h);
+                        break;
 
-					case "1002":
-						obs.src = "Images/Obs/rockCampo.png";
-						obs2.src = "Images/Obs/rockCampo.png";
-						obs3.src = "Images/Obs/rockCampo.png";
-						spec.src = "Images/Obs/wall.png";
-						oobs.w = 52;
-						oobs2.w = 52;
-						oobs3.w = 52;
-						oobs.h = 48;
-						oobs2.h = 48;
-						oobs3.h = 48;
-						oobs3.y = 350;
-						ospec.w = 2800;
-						ospec.h = 80;
-						BGspeed = 20;
-						context.drawImage(spec, ospec.x, ospec.y, ospec.w, ospec.h);
-						context.drawImage(obs, oobs.x, oobs.y, oobs.w, oobs.h);
-						context.drawImage(obs2, oobs2.x, oobs2.y, oobs2.w, oobs2.h);
-						context.drawImage(obs3, oobs3.x, oobs3.y, oobs3.w, oobs3.h);
-						break;
-				}
-			}
-		}
+                    case "1002":
+                        obs.src = "Images/Obs/rockCampo.png";
+                        obs2.src = "Images/Obs/rockCampo.png";
+                        obs3.src = "Images/Obs/rockCampo.png";
+                        spec.src = "Images/Obs/wall.png";
+                        oobs.w = 52;
+                        oobs2.w = 52;
+                        oobs3.w = 52;
+                        oobs.h = 48;
+                        oobs2.h = 48;
+                        oobs3.h = 48;
+                        oobs3.y = 350;
+                        ospec.w = 2800;
+                        ospec.h = 80;
+                        BGspeed = 20;
+                        context.drawImage(spec, ospec.x, ospec.y, ospec.w, ospec.h);
+                        context.drawImage(obs, oobs.x, oobs.y, oobs.w, oobs.h);
+                        context.drawImage(obs2, oobs2.x, oobs2.y, oobs2.w, oobs2.h);
+                        context.drawImage(obs3, oobs3.x, oobs3.y, oobs3.w, oobs3.h);
+                        break;
+                }
+            }
+        }
 
-		function scoreControl() {
-			if (!lockScore) {
-				if (gameStart) {
-					Score = Math.floor(points);
-					if (!hurt) {
-						points = points + 0.05;
-					}
-					distance = distance + 1;
-				} else if (!gameStart) {
-					visTick++
-					if (visTick >= 10 && visTick <= 20) {
-						context.drawImage(space, spaceX, spaceY, spaceW, spaceH);
-					} else if (visTick >= 20) {
-						visTick = 0;
-					}
-				}
-			}
-			txt = Score;
-			txt2 = lives;
+        function scoreControl() {
+            if (!lockScore) {
+                if (gameStart) {
+                    Score = Math.floor(points);
+                    if (!hurt) {
+                        points = points + 0.05;
+                    }
+                    distance = distance + 1;
+                } else if (!gameStart) {
+                    visTick++
+                    if (visTick >= 10 && visTick <= 20) {
+                        context.drawImage(space, spaceX, spaceY, spaceW, spaceH);
+                    } else if (visTick >= 20) {
+                        visTick = 0;
+                    }
+                }
+            }
+            txt = Score;
+            txt2 = lives;
 
-			playerVida.src = "Images/Player/Vida/life" + lives + ".png";
-			context.drawImage(pt, ptX, ptY, ptW, ptH);
-			context.drawImage(playerVida, 150, canvas.height - 45, 52, 25);
-			drawText(txt_x, txt_y, txt, txt_c, dF);
-		}
+            playerVida.src = "Images/Player/Vida/life" + lives + ".png";
+            context.drawImage(pt, ptX, ptY, ptW, ptH);
+            context.drawImage(playerVida, 150, canvas.height - 45, 52, 25);
+            drawText(txt_x, txt_y, txt, txt_c, dF);
+        }
 
-		function drawMenu() {
-			context.drawImage(fundoPlay, fundoPlayO.x, fundoPlayO.y, fundoPlayO.w / 1.1, fundoPlayO.h / 1.2);
-			context.drawImage(fundoPlay2, fundoPlayO.x + fundoPlayO.w, fundoPlayO.y, fundoPlayO.w / 1.1, fundoPlayO.h / 1.2);
-			context.drawImage(sol, solO.x - 50, solO.y - 25, solO.w, solO.h);
-			context.drawImage(clouds, cloudsO.x, cloudsO.y, cloudsO.w, cloudsO.h);
-			context.drawImage(clouds, cloudsO.x + cloudsO.w, cloudsO.y, cloudsO.w, cloudsO.h);
+        function drawMenu() {
+            context.drawImage(fundoPlay, fundoPlayO.x, fundoPlayO.y, fundoPlayO.w / 1.1, fundoPlayO.h / 1.2);
+            context.drawImage(fundoPlay2, fundoPlayO.x + fundoPlayO.w, fundoPlayO.y, fundoPlayO.w / 1.1, fundoPlayO.h / 1.2);
+            context.drawImage(sol, solO.x - 50, solO.y - 25, solO.w, solO.h);
+            context.drawImage(clouds, cloudsO.x, cloudsO.y, cloudsO.w, cloudsO.h);
+            context.drawImage(clouds, cloudsO.x + cloudsO.w, cloudsO.y, cloudsO.w, cloudsO.h);
 
-			if (!lockCre) {
-				context.drawImage(menuT.i, menuT.x, menuT.y, menuT.w, menuT.h);
-				if (menuT.y >= -1 * menuT.h) {
-					if (menuT.s >= 1) {
-						menuT.s = menuT.s - 0.05;
-						menuT.y = menuT.y - menuT.s;
-					}
-				}
-			}
+            if (!lockCre) {
+                context.drawImage(menuT.i, menuT.x, menuT.y, menuT.w, menuT.h);
+                if (menuT.y >= -1 * menuT.h) {
+                    if (menuT.s >= 1) {
+                        menuT.s = menuT.s - 0.05;
+                        menuT.y = menuT.y - menuT.s;
+                    }
+                }
+            }
 
-			context.drawImage(ground, groundO.x, groundO.y, groundO.w, groundO.h);
-			context.drawImage(dinoUnit, dinoUnitX, dinoUnitY, dinoUnitW, dinoUnitH);
+            context.drawImage(ground, groundO.x, groundO.y, groundO.w, groundO.h);
+            context.drawImage(dinoUnit, dinoUnitX, dinoUnitY, dinoUnitW, dinoUnitH);
 
-			cloudsO.x = cloudsO.x - 0.1;
-			if (cloudsO.x + cloudsO.w <= 0) {
-				cloudsO.x = 0;
-			}
+            cloudsO.x = cloudsO.x - 0.1;
+            if (cloudsO.x + cloudsO.w <= 0) {
+                cloudsO.x = 0;
+            }
 
-			if (!pbSelected) {
-				context.drawImage(playDefault, playRX, playRY, playRW, playRH);
-			} else if (pbSelected) {
-				context.drawImage(playSelected, playRX, playRY, playRW, playRH);
-			}
+            if (!pbSelected) {
+                context.drawImage(playDefault, playRX, playRY, playRW, playRH);
+            } else if (pbSelected) {
+                context.drawImage(playSelected, playRX, playRY, playRW, playRH);
+            }
 
-			if (cbSelected) {
-				context.drawImage(creditoSelected, credRX, credRY, credRW, credRH);
-			} else if (cbLocked) {
-				context.drawImage(creditoLocked, credRX, credRY, credRW, credRH);
-			} else if (!cbSelected && !cbLocked) {
-				context.drawImage(creditoDefault, credRX, credRY, credRW, credRH);
-			}
-		}
+            if (cbSelected) {
+                context.drawImage(creditoSelected, credRX, credRY, credRW, credRH);
+            } else if (cbLocked) {
+                context.drawImage(creditoLocked, credRX, credRY, credRW, credRH);
+            } else if (!cbSelected && !cbLocked) {
+                context.drawImage(creditoDefault, credRX, credRY, credRW, credRH);
+            }
+        }
 
-		function updatePlayer() {
-			lockItself = false;
-			if (!lockCoin) {
-				if (player.y + player.h >= floor) {
-					if (player_jump) {
-						player_jumpS = true;
-					}
-				}
+        function updatePlayer() {
+            lockItself = false;
+            if (!lockCoin) {
+                if (player.y + player.h >= floor) {
+                    if (player_jump) {
+                        player_jumpS = true;
+                    }
+                }
 
-				if (player_jumpS) {
-					if (player_jump) {
-						pl_jump.up--;
-					} else if (!player_jump) {
-						pl_jump.up = pl_jump.up - 4;
-					}
-					player.y -= pl_jump.up
-				}
+                if (player_jumpS) {
+                    if (player_jump) {
+                        pl_jump.up--;
+                    } else if (!player_jump) {
+                        pl_jump.up = pl_jump.up - 4;
+                    }
+                    player.y -= pl_jump.up
+                }
 
-				if (player.y <= 0) {
-					player.y = 0;
-				}
+                if (player.y <= 0) {
+                    player.y = 0;
+                }
 
-				if (player.y + player.h > 365) {
-					player.y = 365 - player.h;
-					if (pl_jump.up <= -1) {
-						player_jumpS = false;
-						pl_jump.up = pl_jump.d;
-					}
-				}
+                if (player.y + player.h > 365) {
+                    player.y = 365 - player.h;
+                    if (pl_jump.up <= -1) {
+                        player_jumpS = false;
+                        pl_jump.up = pl_jump.d;
+                    }
+                }
 
-				if (death) {
-					if (player.x + player.w >= oobs.x && player.y + player.h >= oobs.y + 20 && player.x < oobs.x + oobs.w || player.x + player.w >= oobs2.x && player.y + player.h >= oobs2.y + 10 && player.x < oobs2.x + oobs2.w || player.x + player.w >= oobs3.x && player.y + player.h >= oobs3.y && player.x < oobs3.x + oobs3.w) {
-						player.y = 50;
-						hit.play();
-						player_jumpS = true;
-						death = false;
-						hurt = true;
-						hurtTime = 1;
-						lives = lives - 1;
-						if (lives <= -1) {
-							player.y = floor;
-							lives = 0;
-							scene = "death";
-						}
-					}
-				}
+                if (death) {
+                    if (player.x + player.w >= oobs.x && player.y + player.h >= oobs.y + 20 && player.x < oobs.x + oobs.w || player.x + player.w >= oobs2.x && player.y + player.h >= oobs2.y + 10 && player.x < oobs2.x + oobs2.w || player.x + player.w >= oobs3.x && player.y + player.h >= oobs3.y && player.x < oobs3.x + oobs3.w) {
+                        player.y = 50;
+                        hit.play();
+                        player_jumpS = true;
+                        death = false;
+                        hurt = true;
+                        hurtTime = 1;
+                        lives = lives - 1;
+                        if (lives <= -1) {
+                            player.y = floor;
+                            lives = 0;
+                            scene = "death";
+                        }
+                    }
+                }
 
-				if (hurtTime >= 1) {
-					hurtTime++
-					if (hurtTime >= 75) {
-						hurtTime = 0;
-						death = true;
-						hurt = false;
-					}
-				}
-			}
-		}
+                if (hurtTime >= 1) {
+                    hurtTime++
+                    if (hurtTime >= 75) {
+                        hurtTime = 0;
+                        death = true;
+                        hurt = false;
+                    }
+                }
+            }
+        }
 
-		function updateCowMenu() {
-			CowTimeMenu++;
-			if (CowTimeMenu >= EasterTime) {
-				cowActive = true;
-			}
-		}
+        function updateCowMenu() {
+            CowTimeMenu++;
+            if (CowTimeMenu >= EasterTime) {
+                cowActive = true;
+            }
+        }
 
-		function updateMenu() {
-			context.drawImage(obs, playRX + 100 + ranN, playRY + 154, oobs2.w, oobs2.h);
-			if (cowActive) {
-				if (!lockCow) {
-					context.drawImage(galera, menuPO.x, menuPO.y, menuPO.w, menuPO.h);
-					context.drawImage(galera, menuPO.x - 126, menuPO.y, menuPO.w, menuPO.h);
-					context.drawImage(vacaS, menuPVX, menuPVY, menuPVW, menuPVH);
-					galera.src = "Images/Player/Galera" + galN + ".png";
-					menuPVX = menuPVX + menuPO.s;
-					menuPO.x = menuPVX - 200;
+        function updateMenu() {
+            context.drawImage(obs, playRX + 100 + ranN, playRY + 154, oobs2.w, oobs2.h);
+            if (cowActive) {
+                if (!lockCow) {
+                    context.drawImage(galera, menuPO.x, menuPO.y, menuPO.w, menuPO.h);
+                    context.drawImage(galera, menuPO.x - 126, menuPO.y, menuPO.w, menuPO.h);
+                    context.drawImage(vacaS, menuPVX, menuPVY, menuPVW, menuPVH);
+                    galera.src = "Images/Player/Galera" + galN + ".png";
+                    menuPVX = menuPVX + menuPO.s;
+                    menuPO.x = menuPVX - 200;
 
-					galNL++;
+                    galNL++;
 
-					var ranU = Math.floor(Math.random() * 40);
-					var ranX = -180 + Math.floor(Math.random() * 300);
-					var ranY = -20 + Math.floor(Math.random() * 20);
-					switch (ranU) {
-						case 1:case 2:case 3:case 4:case 5:case 6:
-							drawText(menuPO.x + ranX, menuPO.y + ranY, "UGA!", "#000000", "10px Arial");
-							break;
-					}
+                    var ranU = Math.floor(Math.random() * 40);
+                    var ranX = -180 + Math.floor(Math.random() * 300);
+                    var ranY = -20 + Math.floor(Math.random() * 20);
+                    switch (ranU) {
+                        case 1:case 2:case 3:case 4:case 5:case 6:
+                            drawText(menuPO.x + ranX, menuPO.y + ranY, "UGA!", "#000000", "10px Arial");
+                            break;
+                    }
 
-					if (galNL == 5) {
-						galNL = 0;
-						galN = galN + 1;
-						if (galN >= 5) {
-							galN = 1;
-						}
-						if (menuPO.x - 300 >= canvas.width) {
-							menuPO.x = menuPO.w * -1 - 500;
-						}
+                    if (galNL == 5) {
+                        galNL = 0;
+                        galN = galN + 1;
+                        if (galN >= 5) {
+                            galN = 1;
+                        }
+                        if (menuPO.x - 300 >= canvas.width) {
+                            menuPO.x = menuPO.w * -1 - 500;
+                        }
 
-						if (menuPVX - 300 >= canvas.width) {
-							menuPVX = menuPVW * -1 - 500;
-						}
+                        if (menuPVX - 300 >= canvas.width) {
+                            menuPVX = menuPVW * -1 - 500;
+                        }
 
-					}
+                    }
 
-					if (menuPO.y + menuPO.h >= 200) {
-						if (player_jump) {
-							player_jumpS = true;
-						}
-					}
+                    if (menuPO.y + menuPO.h >= 200) {
+                        if (player_jump) {
+                            player_jumpS = true;
+                        }
+                    }
 
-					if (player_jumpS) {
-						if (player_jump) {
-							pl_jump.up--;
-						} else if (!player_jump) {
-							pl_jump.up = pl_jump.up - 4;
-						}
-						menuPO.y -= pl_jump.up;
-					}
+                    if (player_jumpS) {
+                        if (player_jump) {
+                            pl_jump.up--;
+                        } else if (!player_jump) {
+                            pl_jump.up = pl_jump.up - 4;
+                        }
+                        menuPO.y -= pl_jump.up;
+                    }
 
-					if (menuPO.y <= 0) {
-						menuPO.y = 0;
-					}
+                    if (menuPO.y <= 0) {
+                        menuPO.y = 0;
+                    }
 
-					if (menuPO.y + menuPO.h > 344) {
-						menuPO.y = 344 - menuPO.h;
-						if (pl_jump.up <= -1) {
-							player_jumpS = false;
-							pl_jump.up = pl_jump.d;
-						}
-					}
-				}
-			}
+                    if (menuPO.y + menuPO.h > 344) {
+                        menuPO.y = 344 - menuPO.h;
+                        if (pl_jump.up <= -1) {
+                            player_jumpS = false;
+                            pl_jump.up = pl_jump.d;
+                        }
+                    }
+                }
+            }
 
-			if (mouseX >= 725 && mouseX <= 775 && mouseY >= 375 && mouseY <= 425) {
-				drawSRect(725, 375, 50, 50, "#FFFFFF");
-				drawText(735, 400, "Sair?", "#000000", "10px Arial")
-				if (mouse_pressed) {
-					window.close();
-				}
-			}
-			context.drawImage(mute.img,mute.x,mute.y,mute.w,mute.h);
-			if (sounds.t){mute.img.src = "Images/Buttons/soundOn.png";}
-			if (!sounds.t){mute.img.src = "Images/Buttons/soundOff.png";}
-			if (mouseX >= 25 && mouseX <= 55 && mouseY >= 375 && mouseY <= 405) {
-				if (mouse_pressed && sounds.c >= 5) {
-					sounds.t = !sounds.t;
-					sounds.c = 0;
-				}
-			}
-			if (sounds.t){happy.play();}
-			sounds.c++;
-		}
-		
-		function toggleSound(){
-			if (!sounds.t){
-				hit.pause();
-				hit.volume = 0;
-				happy.pause();
-				happy.volume = 0;
-			}else {
-				hit.volume = 1;
-				happy.volume = 0.5;
-			}
-		}
+            if (mouseX >= 725 && mouseX <= 775 && mouseY >= 375 && mouseY <= 425) {
+                drawSRect(725, 375, 50, 50, "#FFFFFF");
+                drawText(735, 400, "Sair?", "#000000", "10px Arial")
+                if (mouse_pressed) {
+                    window.close();
+                }
+            }
+            context.drawImage(mute.img,mute.x,mute.y,mute.w,mute.h);
+            if (sounds.t){mute.img.src = "Images/Buttons/soundOn.png";}
+            if (!sounds.t){mute.img.src = "Images/Buttons/soundOff.png";}
+            if (mouseX >= 25 && mouseX <= 55 && mouseY >= 375 && mouseY <= 405) {
+                if (mouse_pressed && sounds.c >= 5) {
+                    sounds.t = !sounds.t;
+                    sounds.c = 0;
+                }
+            }
+            if (sounds.t){happy.play();}
+            sounds.c++;
+        }
+        
+        function toggleSound(){
+            if (!sounds.t){
+                hit.pause();
+                hit.volume = 0;
+                happy.pause();
+                happy.volume = 0;
+            }else {
+                hit.volume = 1;
+                happy.volume = 0.5;
+            }
+        }
 
-		function updateMenuButtons() {
-			//PLAY-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-			if (mouseX >= playRX && mouseX <= playRX + playRW && mouseY >= playRY && mouseY <= playRY + playRH) {
-				pbSelected = true;
-				if (mouse_pressed == true) {
-					scene = "fade";
-				}
-			} else {
-				pbSelected = false;
-			}
+        function updateMenuButtons() {
+            //PLAY-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+            if (mouseX >= playRX && mouseX <= playRX + playRW && mouseY >= playRY && mouseY <= playRY + playRH) {
+                pbSelected = true;
+                if (mouse_pressed == true) {
+                    scene = "fade";
+                }
+            } else {
+                pbSelected = false;
+            }
 
-			//CREDITOS-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-			if (mouseX >= credRX && mouseX <= credRX + credRW && mouseY >= credRY && mouseY <= credRY + credRH) {
-				if (!lockCre) {cbSelected = true;}
-				else if (lockCre) {cbLocked = true;}
-				if (mouse_pressed) {
-					cbLocked = true;
-					lockCre = true;
-				}
-			}else {cbSelected = false;}
-			if (cbLocked) {credits();}
-		}
+            //CREDITOS-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+            if (mouseX >= credRX && mouseX <= credRX + credRW && mouseY >= credRY && mouseY <= credRY + credRH) {
+                if (!lockCre) {cbSelected = true;}
+                else if (lockCre) {cbLocked = true;}
+                if (mouse_pressed) {
+                    cbLocked = true;
+                    lockCre = true;
+                }
+            }else {cbSelected = false;}
+            if (cbLocked) {credits();}
+        }
 
-		function credits() {
-			context.drawImage(Sara, creditoX - 135, creditoY, creditoW, creditoH);
-			context.drawImage(SaraNome, creditoNomeX - 220, creditoNomeY + count2, creditoNomeW, creditoNomeH);
-			context.drawImage(Atila, creditoX, creditoNomeY - 25, creditoW, creditoH);
-			context.drawImage(AtilaNome, creditoNomeX - 75, creditoY + count2, creditoNomeW, creditoNomeH);
-			context.drawImage(Avellar, creditoX + creditoS, creditoY, creditoW, creditoH);
-			context.drawImage(AvellarNome, creditoNomeX + 75, creditoNomeY + count2, creditoNomeW, creditoNomeH);
-			context.drawImage(Camila, creditoX + creditoS + creditoS, creditoNomeY - 25, creditoW, creditoH);
-			context.drawImage(CamilaNome, creditoNomeX + 210, creditoY + count2, creditoNomeW, creditoNomeH);
-			count++;
-			if (count >= 25) {
-				count = 0
-				count2 *= -1;
-				if (count2 == 1) {creditoEasterY = creditoEasterY + 2;}
-				else if (count2 == -1) {creditoEasterY = creditoEasterY - 2;}
-				Sara.src = "Images/Credits/Sara" + count2 + ".png";
-				Atila.src = "Images/Credits/Atila" + count2 + ".png";
-				Avellar.src = "Images/Credits/Avellar" + count2 + ".png";
-				Camila.src = "Images/Credits/Camila" + count2 + ".png";
-			}
-			lockCow = true;
-			lockCre = true;
-			context.drawImage(vacaS, creditoEasterX, creditoEasterY, creditoEasterW, creditoEasterH);
-			context.drawImage(EasterNome, creditoEasterX - 50, creditoEasterY + 50, creditoNomeW, creditoNomeH);
-			creditoEasterX += creditoEasterS;
-			if (creditoEasterX >= canvas.width + creditoEasterW){creditoEasterX = -1000;}
-		}
+        function credits() {
+            context.drawImage(Sara, creditoX - 135, creditoY, creditoW, creditoH);
+            context.drawImage(SaraNome, creditoNomeX - 220, creditoNomeY + count2, creditoNomeW, creditoNomeH);
+            context.drawImage(Atila, creditoX, creditoNomeY - 25, creditoW, creditoH);
+            context.drawImage(AtilaNome, creditoNomeX - 75, creditoY + count2, creditoNomeW, creditoNomeH);
+            context.drawImage(Avellar, creditoX + creditoS, creditoY, creditoW, creditoH);
+            context.drawImage(AvellarNome, creditoNomeX + 75, creditoNomeY + count2, creditoNomeW, creditoNomeH);
+            context.drawImage(Camila, creditoX + creditoS + creditoS, creditoNomeY - 25, creditoW, creditoH);
+            context.drawImage(CamilaNome, creditoNomeX + 210, creditoY + count2, creditoNomeW, creditoNomeH);
+            count++;
+            if (count >= 25) {
+                count = 0
+                count2 *= -1;
+                if (count2 == 1) {creditoEasterY = creditoEasterY + 2;}
+                else if (count2 == -1) {creditoEasterY = creditoEasterY - 2;}
+                Sara.src = "Images/Credits/Sara" + count2 + ".png";
+                Atila.src = "Images/Credits/Atila" + count2 + ".png";
+                Avellar.src = "Images/Credits/Avellar" + count2 + ".png";
+                Camila.src = "Images/Credits/Camila" + count2 + ".png";
+            }
+            lockCow = true;
+            lockCre = true;
+            context.drawImage(vacaS, creditoEasterX, creditoEasterY, creditoEasterW, creditoEasterH);
+            context.drawImage(EasterNome, creditoEasterX - 50, creditoEasterY + 50, creditoNomeW, creditoNomeH);
+            creditoEasterX += creditoEasterS;
+            if (creditoEasterX >= canvas.width + creditoEasterW){creditoEasterX = -1000;}
+        }
 
-		function updateBonus() {
-			if (distance >= 3900 && distance <= 4100) {
-				if (!lockCoin) {
-					coinX = coinX + coinS;
-					context.drawImage(coin, coinX, coinY, coinH, coinW);
-					if (map == "Mar" && player.y >= 100){
-						lives = 0;
-						scene = "death";
-					}
-				}
-				if (player.x + player.w >= coinX && player.y + player.h >= coinY && player.x < coinX + coinW && player.y <= coinY + coinH) {
-				lockCoin = true;
-				if (player.y >= 100) {
-					player.y--;
-				}
-			}
-			}else {
-				lockCoin = false;
-			}
-		}
+        function updateBonus() {
+            if (distance >= 3900 && distance <= 4100) {
+                if (!lockCoin) {
+                    coinX = coinX + coinS;
+                    context.drawImage(coin, coinX, coinY, coinH, coinW);
+                    if (map == "Mar" && player.y >= 100){
+                        lives = 0;
+                        scene = "death";
+                    }
+                }
+                if (player.x + player.w >= coinX && player.y + player.h >= coinY && player.x < coinX + coinW && player.y <= coinY + coinH) {
+                lockCoin = true;
+                if (player.y >= 100) {
+                    player.y--;
+                }
+            }
+            }else {
+                lockCoin = false;
+            }
+        }
 
-		function drawMap() {
-			if (fundoPlayO.x <= 5){
-				context.drawImage(fundoPlay, fundoPlayO.x, fundoPlayO.y, fundoPlayO.w / 1.1, fundoPlayO.h / 1.2);
-				context.drawImage(fundoPlay2, fundoPlayO.x + fundoPlayO.w, fundoPlayO.y, fundoPlayO.w / 1.1, fundoPlayO.h / 1.2);
-			}else if (fundoPlayO.x + fundoPlayO.w <= 0){
-				context.drawImage(fundoPlay, fundoPlayO.x, fundoPlayO.y, fundoPlayO.w / 1.1, fundoPlayO.h / 1.2);
-				context.drawImage(fundoPlay2, fundoPlayO.x - fundoPlayO.w, fundoPlayO.y, fundoPlayO.w / 1.1, fundoPlayO.h / 1.2);
-			}
-			context.drawImage(fundoPlay, fundoPlayO.x, fundoPlayO.y, fundoPlayO.w, fundoPlayO.h);
-			context.drawImage(sol, solO.x, solO.y, solO.w, solO.h);
-			context.drawImage(playBG.img, playBG.x, playBG.y, playBG.w, playBG.h);
-			context.drawImage(playBG.img2, playBG.x2, playBG.y, playBG.w, playBG.h);
-		}
+        function drawMap() {
+            if (fundoPlayO.x <= 5){
+                context.drawImage(fundoPlay, fundoPlayO.x, fundoPlayO.y, fundoPlayO.w / 1.1, fundoPlayO.h / 1.2);
+                context.drawImage(fundoPlay2, fundoPlayO.x + fundoPlayO.w, fundoPlayO.y, fundoPlayO.w / 1.1, fundoPlayO.h / 1.2);
+            }else if (fundoPlayO.x + fundoPlayO.w <= 0){
+                context.drawImage(fundoPlay, fundoPlayO.x, fundoPlayO.y, fundoPlayO.w / 1.1, fundoPlayO.h / 1.2);
+                context.drawImage(fundoPlay2, fundoPlayO.x - fundoPlayO.w, fundoPlayO.y, fundoPlayO.w / 1.1, fundoPlayO.h / 1.2);
+            }
+            context.drawImage(fundoPlay, fundoPlayO.x, fundoPlayO.y, fundoPlayO.w, fundoPlayO.h);
+            context.drawImage(sol, solO.x, solO.y, solO.w, solO.h);
+            context.drawImage(playBG.img, playBG.x, playBG.y, playBG.w, playBG.h);
+            context.drawImage(playBG.img2, playBG.x2, playBG.y, playBG.w, playBG.h);
+        }
 
-		function buttonsPlay() {
-			pasN++;
-			if (mouseX >= pauseBPX && mouseX <= pauseBPX + pauseBPW && mouseY >= pauseBPY && mouseY <= pauseBPY + pauseBPH) {
-				if (!pause) {
-					pauseSelected.src = "Images/Buttons/pauseSelected.png";
-					context.drawImage(pauseSelected, pauseBPX, pauseBPY, pauseBPW, pauseBPH);
-					if (mouse_pressed) {
-						if (pasN >= 10) {
-							pause = !pause;
-							pasN = 0;
-						}
-					}
-				} else if (pause) {
-					pauseSelected.src = "Images/Buttons/pausePlaySelected.png";
-					context.drawImage(pauseSelected, pauseBPX, pauseBPY, pauseBPW, pauseBPH);
-					if (mouse_pressed) {
-						if (pasN >= 10) {
-							pause = !pause;
-							pasN = 0;
-						}
-					}
-				}
-			} else {
-				if (!pause) {
-					pauseDefault.src = "Images/Buttons/pauseDefault.png";
-					context.drawImage(pauseDefault, pauseBPX, pauseBPY, pauseBPW, pauseBPH);
-				} else if (pause) {
-					pauseDefault.src = "Images/Buttons/pausePlayDefault.png";
-					context.drawImage(pauseDefault, pauseBPX, pauseBPY, pauseBPW, pauseBPH);
-				}
-			}
-		}
+        function buttonsPlay() {
+            pasN++;
+            if (mouseX >= pauseBPX && mouseX <= pauseBPX + pauseBPW && mouseY >= pauseBPY && mouseY <= pauseBPY + pauseBPH) {
+                if (!pause) {
+                    pauseSelected.src = "Images/Buttons/pauseSelected.png";
+                    context.drawImage(pauseSelected, pauseBPX, pauseBPY, pauseBPW, pauseBPH);
+                    if (mouse_pressed) {
+                        if (pasN >= 10) {
+                            pause = !pause;
+                            pasN = 0;
+                        }
+                    }
+                } else if (pause) {
+                    pauseSelected.src = "Images/Buttons/pausePlaySelected.png";
+                    context.drawImage(pauseSelected, pauseBPX, pauseBPY, pauseBPW, pauseBPH);
+                    if (mouse_pressed) {
+                        if (pasN >= 10) {
+                            pause = !pause;
+                            pasN = 0;
+                        }
+                    }
+                }
+            } else {
+                if (!pause) {
+                    pauseDefault.src = "Images/Buttons/pauseDefault.png";
+                    context.drawImage(pauseDefault, pauseBPX, pauseBPY, pauseBPW, pauseBPH);
+                } else if (pause) {
+                    pauseDefault.src = "Images/Buttons/pausePlayDefault.png";
+                    context.drawImage(pauseDefault, pauseBPX, pauseBPY, pauseBPW, pauseBPH);
+                }
+            }
+        }
 
-		function updatePlay() {
-			solO.x = solO.x + solO.s;
-			if (solO.x <= canvas.width) {
-				if (distance <= 1000) {
-					playBG.img.src = "Images/Loop/Loop_Campo.png";
-					playBG.img2.src = "Images/Loop/Loop_Campo.png";
-					fundoPlay.src = "Images/Loop/fundoPlayCampo.png";
-					map = "Campo";
-					drawMap();
-				} else if (distance >= 1000 && distance <= 2000) {
-					playBG.img.src = "Images/Loop/Loop_Deserto.png";
-					playBG.img2.src = "Images/Loop/Loop_Deserto.png";
-					fundoPlay.src = "Images/Loop/fundoPlayDeserto.png";
-					map = "Deserto";
-					fundoPlayO.w = 1575;
-					drawMap();
-				} else if (distance >= 2000 && distance <= 3000) {
-					playBG.img.src = "Images/Loop/Loop_Floresta.png";
-					playBG.img2.src = "Images/Loop/Loop_Floresta.png";
-					fundoPlay.src = "Images/Loop/fundoPlayCampo.png";
-					map = "Floresta";
-					fundoPlayO.w = 957;
-					drawMap();
-				} else if (distance >= 3000 && distance <= 4000) {
-					playBG.img.src = "Images/Loop/Loop_Praia.png";
-					playBG.img2.src = "Images/Loop/Loop_Praia.png";
-					fundoPlay.src = "Images/Loop/fundoPlayPraia.png";
-					map = "Praia";
-					fundoPlayO.w = 1569;
-					drawMap();
-				} else if (distance >= 4000 && distance <= 4100) {
-					playBG.img.src = "Images/Loop/Loop_Mar.png";
-					playBG.img2.src = "Images/Loop/Loop_Mar.png";
-					fundoPlay.src = "Images/Loop/fundoPlayMar.png";
-					map = "Mar";
-					fundoPlayO.w = 1482;
-					drawMap();
-				} else if (distance >= 4100) {
-					playBG.img.src = "Images/Loop/Loop_Neve.png";
-					playBG.img2.src = "Images/Loop/Loop_Neve.png";
-					fundoPlay.src = "Images/Loop/fundoPlayNeve.png";
-					map = "Neve";
-					fundoPlayO.w = 1547;
-					drawMap();
-				}
-			} else if (solO.x >= canvas.width) {
-				playBG.img.src = "Images/Loop/Loop_1002.png";
-				playBG.img2.src = "Images/Loop/Loop_1002.png";
-				fundoPlay.src = "Images/Loop/fundoPlay1002.png";
-				map = "1002";
-				fundoPlayO.w = 1547;
-				drawMap();
-			}
+        function updatePlay() {
+            solO.x = solO.x + solO.s;
+            if (solO.x <= canvas.width) {
+                if (distance <= 1000) {
+                    playBG.img.src = "Images/Loop/Loop_Campo.png";
+                    playBG.img2.src = "Images/Loop/Loop_Campo.png";
+                    fundoPlay.src = "Images/Loop/fundoPlayCampo.png";
+                    map = "Campo";
+                    drawMap();
+                } else if (distance >= 1000 && distance <= 2000) {
+                    playBG.img.src = "Images/Loop/Loop_Deserto.png";
+                    playBG.img2.src = "Images/Loop/Loop_Deserto.png";
+                    fundoPlay.src = "Images/Loop/fundoPlayDeserto.png";
+                    map = "Deserto";
+                    fundoPlayO.w = 1575;
+                    drawMap();
+                } else if (distance >= 2000 && distance <= 3000) {
+                    playBG.img.src = "Images/Loop/Loop_Floresta.png";
+                    playBG.img2.src = "Images/Loop/Loop_Floresta.png";
+                    fundoPlay.src = "Images/Loop/fundoPlayCampo.png";
+                    map = "Floresta";
+                    fundoPlayO.w = 957;
+                    drawMap();
+                } else if (distance >= 3000 && distance <= 4000) {
+                    playBG.img.src = "Images/Loop/Loop_Praia.png";
+                    playBG.img2.src = "Images/Loop/Loop_Praia.png";
+                    fundoPlay.src = "Images/Loop/fundoPlayPraia.png";
+                    map = "Praia";
+                    fundoPlayO.w = 1569;
+                    drawMap();
+                } else if (distance >= 4000 && distance <= 4100) {
+                    playBG.img.src = "Images/Loop/Loop_Mar.png";
+                    playBG.img2.src = "Images/Loop/Loop_Mar.png";
+                    fundoPlay.src = "Images/Loop/fundoPlayMar.png";
+                    map = "Mar";
+                    fundoPlayO.w = 1482;
+                    drawMap();
+                } else if (distance >= 4100) {
+                    playBG.img.src = "Images/Loop/Loop_Neve.png";
+                    playBG.img2.src = "Images/Loop/Loop_Neve.png";
+                    fundoPlay.src = "Images/Loop/fundoPlayNeve.png";
+                    map = "Neve";
+                    fundoPlayO.w = 1547;
+                    drawMap();
+                }
+            } else if (solO.x >= canvas.width) {
+                playBG.img.src = "Images/Loop/Loop_1002.png";
+                playBG.img2.src = "Images/Loop/Loop_1002.png";
+                fundoPlay.src = "Images/Loop/fundoPlay1002.png";
+                map = "1002";
+                fundoPlayO.w = 1547;
+                drawMap();
+            }
 
-			playBG.x = playBG.x - BGspeed;
-			playBG.x2 = playBG.x2 - BGspeed;
+            playBG.x = playBG.x - BGspeed;
+            playBG.x2 = playBG.x2 - BGspeed;
 
-			if (playBG.x + playBG.w <= 0) {
-				playBG.x = playBG.x2 + playBG.w;
-			}
-			if (playBG.x2 + playBG.w <= 0) {
-				playBG.x2 = playBG.x + playBG.w;
-			}
-		}
+            if (playBG.x + playBG.w <= 0) {
+                playBG.x = playBG.x2 + playBG.w;
+            }
+            if (playBG.x2 + playBG.w <= 0) {
+                playBG.x2 = playBG.x + playBG.w;
+            }
+        }
 
-		function gameOver() {
-			lockScore = true;
-			context.drawImage(black, 0, 0, canvas.width, canvas.height);
-			//Fantasminha subindo------
-			if (lives <= 0) {
-				morteSla2++;
-				if (morteSla2 <= 5) {
-					playerSprite.src = "Images/morte.png";
-				} else if (morteSla2 >= 6) {
-					playerSprite.src = "Images/morte2.png";
-					if (morteSla2 >= 10) {
-						morteSla2 = 0;
-					}
-				}
-				player.w = 36;
-				player.h = 37;
-				context.drawImage(playerSprite, player.x, player.y, player.w, player.h);
-				if (player.y + player.h >= 0) {
-					player.y = player.y - 7;
-					ghostAnim = true;
-				}
-			//------------------------
-			}
+        function gameOver() {
+            lockScore = true;
+            context.drawImage(black, 0, 0, canvas.width, canvas.height);
+            //Fantasminha subindo------
+            if (lives <= 0) {
+                morteSla2++;
+                if (morteSla2 <= 5) {
+                    playerSprite.src = "Images/morte.png";
+                } else if (morteSla2 >= 6) {
+                    playerSprite.src = "Images/morte2.png";
+                    if (morteSla2 >= 10) {
+                        morteSla2 = 0;
+                    }
+                }
+                player.w = 36;
+                player.h = 37;
+                context.drawImage(playerSprite, player.x, player.y, player.w, player.h);
+                if (player.y + player.h >= 0) {
+                    player.y = player.y - 7;
+                    ghostAnim = true;
+                }
+            //------------------------
+            }
 
-			lockGame = true;
-			if (player.y <= 70) {
-				context.drawImage(pt2,pts.x,pts.y,pts.w,pts.h);
-				context.drawImage(play, pts.x + pts.w / 4, pts.y + 65, playRW, playRH);
-				context.drawImage(menu, pts.x + pts.w / 3, pts.y + 125, menuBP.w, menuBP.h);
-				drawText(pts.x + 125, pts.y + 38, Score, "#000000", "30px Arial");
+            lockGame = true;
+            if (player.y <= 70) {
+                context.drawImage(pt2,pts.x,pts.y,pts.w,pts.h);
+                context.drawImage(play, pts.x + pts.w / 4, pts.y + 65, playRW, playRH);
+                context.drawImage(menu, pts.x + pts.w / 3, pts.y + 125, menuBP.w, menuBP.h);
+                drawText(pts.x + 125, pts.y + 38, Score, "#000000", "30px Arial");
 
-				if (mouseX >= pts.x + 75 && mouseX <= pts.x + 75 + playRW && mouseY >= pts.y + 65 && mouseY <= pts.y + 65 + playRH) {
-					play.src = "Images/Buttons/playSelected.png";
-					if (mouse_pressed) {
-						lockGame = true;
-						reset();
-					}
-				} else {play.src = "Images/Buttons/playDefault.png";}
+                if (mouseX >= pts.x + 75 && mouseX <= pts.x + 75 + playRW && mouseY >= pts.y + 65 && mouseY <= pts.y + 65 + playRH) {
+                    play.src = "Images/Buttons/playSelected.png";
+                    if (mouse_pressed) {
+                        lockGame = true;
+                        reset();
+                    }
+                } else {play.src = "Images/Buttons/playDefault.png";}
 
-				if (mouseX >= pts.x + pts.w / 3 && mouseX <= pts.x + pts.w / 3 + menuBP.w && mouseY >= pts.y + 125 && mouseY <= pts.y + 125 + menuBP.h) {
-					menu.src = "Images/Buttons/menuSelected.png";
-					if (mouse_pressed) {
-						reset();
-						lockGame = true;
-						lockMenu = false;
-						happy.play();
-						scene = "menu";
-					}
-				} else {menu.src = "Images/Buttons/menuDefault.png";}
-			}
-		}
+                if (mouseX >= pts.x + pts.w / 3 && mouseX <= pts.x + pts.w / 3 + menuBP.w && mouseY >= pts.y + 125 && mouseY <= pts.y + 125 + menuBP.h) {
+                    menu.src = "Images/Buttons/menuSelected.png";
+                    if (mouse_pressed) {
+                        reset();
+                        lockGame = true;
+                        lockMenu = false;
+                        happy.play();
+                        scene = "menu";
+                    }
+                } else {menu.src = "Images/Buttons/menuDefault.png";}
+            }
+        }
 
-		function checkItself() {
-			if (!lockItself) {
-				scene = "fade";
-				lockItself = true;
-			}
-		}
+        function checkItself() {
+            if (!lockItself) {
+                scene = "fade";
+                lockItself = true;
+            }
+        }
 
-		function loop() {
-			switch (scene) {
-				case "death":
-					context.clearRect(0, 0, canvas.width, canvas.heigh);
-					updatePlay();
-					drawEnemy();
-					scoreControl();
-					gameOver();
-					break;
+        function loop() {
+            switch (scene) {
+                case "death":
+                    context.clearRect(0, 0, canvas.width, canvas.heigh);
+                    updatePlay();
+                    drawEnemy();
+                    scoreControl();
+                    gameOver();
+                    break;
 
-				case "menu":
-					if (!lockMenu) {
-						context.clearRect(0, 0, canvas.width, canvas.heigh);
-						drawRect(0, 0, canvas.width, canvas.height, "#512a00");
-						drawMenu();
-						input();
-						updateMenu();
-						updateMenuButtons();
-						updateCowMenu();
-						getVersion();
-						happy.play();
-						happy.loop = true;
-					}
-					break;
+                case "menu":
+                    if (!lockMenu) {
+                        context.clearRect(0, 0, canvas.width, canvas.heigh);
+                        drawRect(0, 0, canvas.width, canvas.height, "#512a00");
+                        drawMenu();
+                        input();
+                        updateMenu();
+                        updateMenuButtons();
+                        updateCowMenu();
+                        getVersion();
+                        happy.play();
+                        happy.loop = true;
+                    }
+                    break;
 
-				case "fade":
-					fading++;
-					context.globalAlpha = 0.1;
-					drawFSRect(0, 0, canvas.width, canvas.height, "#000000", "#000000");
-					if (fading >= 35) {
-						context.globalAlpha = 1;
-						fading = 0;
-						gameStart = false;
-						lockGame = false;
-						lockCow = true;
-						lockMenu = true;
-						scene = "game";
-					}
-					break;
+                case "fade":
+                    fading++;
+                    context.globalAlpha = 0.1;
+                    drawFSRect(0, 0, canvas.width, canvas.height, "#000000", "#000000");
+                    if (fading >= 35) {
+                        context.globalAlpha = 1;
+                        fading = 0;
+                        gameStart = false;
+                        lockGame = false;
+                        lockCow = true;
+                        lockMenu = true;
+                        scene = "game";
+                    }
+                    break;
 
-				case "game":
-					if (!lockGame) {
-						if (!pause) {
-							context.clearRect(0, 0, canvas.width, canvas.heigh);
-							cbLocked = false;
-							cbSelected = false;
-							input();
-							updatePlay();
-							drawEnemy();
-							updatePlayer();
-							updateBonus();
-							if (!lockP) {
-								drawPlayer();
-							}
-							scoreControl();
-						}
-						buttonsPlay();
-						getVersion();
-						happy.loop = true;
-						happy.pause();
-					}
-					break;
+                case "game":
+                    if (!lockGame) {
+                        if (!pause) {
+                            context.clearRect(0, 0, canvas.width, canvas.heigh);
+                            cbLocked = false;
+                            cbSelected = false;
+                            input();
+                            updatePlay();
+                            drawEnemy();
+                            updatePlayer();
+                            updateBonus();
+                            if (!lockP) {
+                                drawPlayer();
+                            }
+                            scoreControl();
+                        }
+                        buttonsPlay();
+                        getVersion();
+                        happy.loop = true;
+                        happy.pause();
+                    }
+                    break;
 
-				default:
-					scene.draw();
-					scene.update();
-					input();
-					if (mouse_pressed){
-						scene.video.volume = 0;
-						scene = "menu";
-					}
-					break;
-			}
-			toggleSound();
-			setTimeout(loop, 30);
-		}
+                default:
+                    scene.draw();
+                    scene.update();
+                    input();
+                    if (mouse_pressed){
+                        scene.video.volume = 0;
+                        scene = "menu";
+                    }
+                    break;
+            }
+            toggleSound();
+            setTimeout(loop, 30);
+        }
 
-	</script>
-	<hr>
+    </script>
+    <hr>
 </body>
 </html>
