@@ -20,6 +20,25 @@ div#list {
 div#header {
     text-align: center;
 }
+div.search {
+    position: absolute;
+    left: 10px;
+}
+input.search-box {
+    width: 200px;
+    outline: 0;
+    border: 0;
+    background: 0 0;
+    color: #eee;
+    font-weight: 400;
+    font-size: 13px;
+}
+input.search-box:focus {
+    outline: -webkit-focus-ring-color auto 5px;
+    outline-color: -webkit-focus-ring-color;
+    outline-style: auto;
+    outline-width: 5px;
+}
 h1,
 .start {
     color: #009cdd;
