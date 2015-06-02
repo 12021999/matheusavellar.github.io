@@ -13,6 +13,9 @@ a {
 .left a:hover {
     text-decoration: underline;
 }
+.currently.profile {
+    color: #eeeeee;
+}
 div#list {
     width: 50%;
     min-width: 500px;
