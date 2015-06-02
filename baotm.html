@@ -42,23 +42,17 @@
 
         function onInputUpdate() {
             loob = true;
-            if ($("input.search-box").val().length * 9 > 30) {
-                $("input.search-box").width($("input.search-box").val().length * 9);
-            } else {
-                $("input.search-box").width(200);
-            }
-
             if ($("input.search-box").val() == "") {
                 $("#allowed").text("");
             } else {
-                $("#allowed").text("✘").removeClass("isGreen");
+                $("#allowed").text("Nope, sorry. ✘").removeClass("isGreen");
                 for (var i = 0, l = BAs.length; i < l; i++) {
                     if (loob) {
                         i = 0;
                         loob = false;
                     }
                     if ($("input.search-box").val() == BAs[i]) {
-                        $("#allowed").text("✔").addClass("isGreen");
+                        $("#allowed").text("Yes, yes you may! ✔").addClass("isGreen");
                         break;
                     }           
                 }
@@ -67,7 +61,7 @@
     </script>
     <div id="header">
         <div class="search">May I vote on... 
-            <input class="search-box" type="text" value="" maxlength="20" oninput="onInputUpdate();" placeholder="Insert BA username here" />
+            <input class="search-box" type="text" value="" maxlength="18" oninput="onInputUpdate();" placeholder="Insert BA username here" />
             <span id="allowed"></span>
         </div>
         <h1>People who have already been<br />
