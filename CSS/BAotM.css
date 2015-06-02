@@ -39,6 +39,12 @@ input.search-box:focus {
     outline-width: 1px;
     outline-offset: 1px;
 }
+span#allowed {
+    color: #C42E3B;
+}
+span#allowed.isGreen {
+    color: #90AD2F;
+}
 h1,
 .start {
     color: #009cdd;

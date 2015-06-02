@@ -4,13 +4,71 @@
     <meta property="og:description" content="People who have already been Brand Ambassador of the Month" />
     <title>BA of the Month 🌽</title>
     <link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
     <link rel="stylesheet" href="https://rawgit.com/Tetheu98/tetheu98.github.io/master/CSS/BAotM.css" type="text/css" />
 </head>
 <body>
+    <script>
+        const BAs = [
+            "Micro",
+            "FAT32",
+            "Isacarius",
+            "Xuxa",
+            "Henchman",
+            "Shazzka",
+            "Omicron",
+            "Wilson",
+            "TheCaptain",
+            "Gin",
+            "Whale",
+            "Motel Bible",
+            "Flynn",
+            "J!nKx",
+            "Bob",
+            "Moodance",
+            "Feary",
+            "DANGUY44",
+            "UMCOOKIES",
+            "BRADEZ1571",
+            "Yenn",
+            "Marciano",
+            "SWORDLING",
+            "Asi",
+            "Sakailicious"
+        ];
+
+        var loob = false;
+
+        function onInputUpdate() {
+            loob = true;
+            if ($("input.search-box").val().length * 9 > 30) {
+                $("input.search-box").width($("input.search-box").val().length * 9);
+            } else {
+                $("input.search-box").width(200);
+            }
+
+            if ($("input.search-box").val() == "") {
+                $("#allowed").text("");
+            } else {
+                $("#allowed").text("✘").removeClass("isGreen");
+                for (var i = 0, l = BAs.length; i < l; i++) {
+                    if (loob) {
+                        i = 0;
+                        loob = false;
+                    }
+                    if ($("input.search-box").val() == BAs[i]) {
+                        $("#allowed").text("✔").addClass("isGreen");
+                        break;
+                    }           
+                }
+            }
+        }
+    </script>
     <div id="header">
         <div class="search">May I vote on... 
-            <input class="search-box" type="text" value="" placeholder="Insert BA username here" />
+            <input class="search-box" type="text" value="" maxlength="20" oninput="onInputUpdate();" placeholder="Insert BA username here" />
+            <span id="allowed"></span>
         </div>
         <h1>People who have already been<br />
         Brand Ambassador of the Month:</h1>
