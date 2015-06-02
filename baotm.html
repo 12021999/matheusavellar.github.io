@@ -51,7 +51,7 @@
                         i = 0;
                         loob = false;
                     }
-                    if ($("input.search-box").val() == BAs[i]) {
+                    if ($("input.search-box").val().toLowerCase() == BAs[i].toLowerCase()) {
                         $("#allowed").text("Yes, yes you may! ✔").addClass("isGreen");
                         break;
                     }           
