@@ -13,7 +13,8 @@ a {
 .left a:hover {
     text-decoration: underline;
 }
-.currently .profile {
+.currently .profile,
+.currently {
     color: #eeeeee;
 }
 div#list {
