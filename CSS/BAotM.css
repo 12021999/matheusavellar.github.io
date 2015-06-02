@@ -49,6 +49,9 @@ span#allowed {
 span#allowed.isGreen {
     color: #90AD2F;
 }
+h1 {
+    padding-top: 45px;
+}
 h1,
 .start {
     color: #009cdd;
