@@ -38,8 +38,13 @@
             cursor: default;
             transition: color .2s ease;
         }
+
         div#logo a.logo:hover {
             color: #41b7d8;
+        }
+
+        div#logo a.logo:before {
+            content: "Project Avelludo";
         }
 
         div#options {
@@ -50,6 +55,10 @@
         div#options span {
             padding-left: 25px;
         }
+
+        span#about a.option:before {     content: "About";  }
+        span#download a.option:before {  content: "Download";  }
+        span#contact a.option:before {   content: "Contact Us";  }
 
         div#options a.option {
             cursor: pointer;
@@ -62,6 +71,7 @@
         div#scope {
             margin: 50px;
         }
+
         div#scope h1 {
             cursor: default;
             text-align: center;
@@ -69,9 +79,13 @@
             font-family: "Bree Serif", serif;
             transition: color .2s ease;
         }
+
         div#scope h1:hover {
             color: #41b7d8;
         }
+
+        div#scope h1#about:before {  content: "About";  }
+
         div#scope p {
             margin-left: 10%;
             text-align: left;
@@ -79,16 +93,20 @@
             max-width: 900px;
             display: block;
         }
+
         div#scope p:before {
             content: "\00a0\00a0\00a0\00a0\00a0";
         }
+
         footer {
             background-color: #41b7d8;
         }
+
         footer span.love {
             padding-left: 50px;
             font-size: 15px;
         }
+
         footer span.love:before {
             content: "\00bb";
             margin-right: 20px;
@@ -101,17 +119,17 @@
 <body>
     <div id="header">
         <div id="logo">
-            <a class="logo">Project Avelludo</a>
+            <a class="logo"></a>
         </div>
         <div id="options">
             <span id="about">
-                <a class="option">About</a>
+                <a class="option"></a>
             </span>
             <span id="download">
-                <a class="option">Download</a>
+                <a class="option"></a>
             </span>
             <span id="contact">
-                <a class="option">Contact Us</a>
+                <a class="option"></a>
             </span>
         </div>
     </div>
@@ -119,7 +137,7 @@
         
     </div>
     <div id="scope">
-        <h1>About</h1>
+        <h1 id="about"></h1>
         <p class="body">Project Avelludo was created by students from Colégio Estadual José Leite Lopes, AKA NAVE, and its main premise is to bring children a fun way to play</p>
     </div>
     <!--<footer>
