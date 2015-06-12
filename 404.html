@@ -33,25 +33,28 @@
         }
     </style>
 </head>
-<body>
+<body onload="_ranMsg();">
+    <script>
+        function _ranMsg() {
+            var _messages = [
+                "Woops.",
+                "Nothing here!",
+                "Whatever it was you were looking for... It's clearly not here.",
+                "This is like the WebPage version of a Rick Roll",
+                "I guess you need another link",
+                "Houston, we have a problem",
+                "I'll be back. Wait, maybe I won't.",
+                "Say \"WHAT\" again!",
+                "<img src='http://i.imgur.com/VEqt5It.gif' />"
+            ];
+            document.getElementById("info").innerHTML = _messages[Math.floor(Math.random()* _messages.length)];
+        }
+    </script>
     <div id="main">
         <div id="title">
             <span>404</span>
         </div>
-        <div id="info">
-            <?php
-                $_messages = array(
-                    "Woops.",
-                    "Nothing here!",
-                    "Whatever it was you were looking for... It's clearly not here.",
-                    "This is like the WebPage version of a Rick Roll",
-                    "I guess you need another link",
-                    "Houston, we have a problem",
-                    "I'll be back. Wait, maybe I won't."
-                );
-                echo $_messages[rand(1, count($_messages))]
-            ?>
-        </div>
+        <div id="info"></div>
     </div>
 </body>
 </html>
