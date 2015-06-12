@@ -1,3 +1,2 @@
 # tetheu98.github.io
-I was just kinda testing
-Pretty much
+There isn't really any need for a readme here, to be honest.
