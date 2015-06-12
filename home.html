@@ -1,36 +1,55 @@
-<html>
-<head>
-	<!--
-		Awesome square animation from http://tobiasahlin.com/spinkit/
-	-->
-	<title>Matheus Avellar</title>
-	<meta charset="utf-8">
-	<meta name="description" content="This is sorta like a portfolio? Maybe?">
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/Tetheu98/tetheu98.github.io/master/browserDetect.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/Tetheu98/tetheu98.github.io/master/version.js"></script>
-	<link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
-	<link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
-	<link rel="stylesheet" href="https://rawgit.com/Tetheu98/tetheu98.github.io/master/CSS/seeessess.css" type="text/css">
+<!DOCTYPE html>
+<html
+><head>
+    <title>404</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
+    <link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
+    <style>
+        body {
+            background-color: #0a0a0a;
+            font-family: "Open Sans";
+            font-size: 30px;
+            color: #ededed;
+            margin: 0px;
+        }
+        div#main {
+            height: 120px;
+            top: 10%;
+            background-color: #41b7d8;
+            margin-top: 10%;
+        }
+        div#title  {
+            text-align: center;
+            font-family: "Bree Serif", serif;
+            font-size: 85px;
+        }
+        div#info {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 25px;
+        }
+    </style>
 </head>
-
-<body bgcolor="#404040" onLoad=beforeStart()>
-	<script type="text/javascript" src="https://rawgit.com/Tetheu98/tetheu98.github.io/master/jayess.js"></script>
-	<div id="loading">
-		<div class="spinner"></div>
-		<div id="subtitle" class="loadingLong" style="margin-left: 10px; margin-top: 30px; display: none;">
-			Taking too long? <strong>It might be broken.</strong> Sorry for the inconvenience!
-		</div>
-	</div>
-	<div id="top">
-		<a class="lang" href="/pt-br">⏎ Versão em Português</a>
-		<span class="version"></span>
-	</div>
-	<div id="right" style="display: none;">
-		<div id="title">
-			<span>matheus avellar</span>
-		</div>
-		<div id="subtitle">We're working on it.</div>
-	</div>
+<body>
+    <script>
+        function _ranMsg() {
+            var _messages = [
+                "Cause I can do just fine without templates",
+                "Screw templates!",
+                "WebDesign is love, WebDesign is life",
+                "Insert funny quote here"
+            ];
+            document.getElementById("info").innerHTML = _messages[Math.floor(Math.random()* _messages.length)];
+        }
+    </script>
+    <div id="main">
+        <div id="title">
+            <span>Matheus Avellar</span>
+        </div>
+        <div id="info"></div>
+    </div>
 </body>
 </html>
