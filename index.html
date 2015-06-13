@@ -16,9 +16,15 @@
         }
 
         div#header {
-            margin: 50px;
+            margin: 50px 50px 0px 50px;
             height: 350px;
             box-shadow: 0px 1px 0px #ededed;
+        }
+
+        div#main {
+            background-color: #ededed;
+            color: #0a0a0a;
+            padding-top: 30px;
         }
 
         div#title {
@@ -45,13 +51,22 @@
         }
 
         a {
-            color: #ededed;
+            color: #0a0a0a;
             text-decoration: none;
             font-size: 20px;
         }
 
+        a:hover {
+            text-decoration: underline;
+        }
+
         ul {
             list-style-type: none;
+        }
+
+        ul#repos:last-child {
+            -webkit-margin-after: 0px;
+            padding-bottom: 20px;
         }
 
         li:before {
@@ -87,7 +102,8 @@
 <body>
     <script>
         var _repoURL = "https://api.github.com/repos/theavellar/theavellar.github.io/contents/";
-        var _count = 0;
+        var _filesCount = 0;
+        var _dirCount = 0;
 
         function getContents(URL) {
             try {
@@ -112,6 +128,7 @@
                                     +"</li>"
                                     +"<ul id='" + result[i].name + "'>"
                                     +"</ul>");
+                                _dirCount++;
                                 getContents(result[i].url.replace("?ref=master", ""));
                             } else {
                                 if (result[i].path.indexOf('/') > -1) {
@@ -128,7 +145,7 @@
                                                 +        result[i].name
                                                 +   "</a>"
                                                 +"</li>");
-                                            _count++;
+                                            _filesCount++;
                                             break;
                                         };
                                     };
@@ -140,12 +157,14 @@
                                     +        result[i].name
                                     +   "</a>"
                                     +"</li>");
-                                _count++;
+                                _filesCount++;
                             }
                         }
                     }
                 }).done(function() {
-                    $("span#count").text("Number of listed files: " + _count);
+                    var _files = _filesCount == 1 ? "1 file" : _filesCount + " files";
+                    var _dirs = _dirCount == 1 ? "1 folder" : _dirCount + " folders";
+                    $("span#count").text(_dirs + ", " + _files);
                 });
             } catch(e) {
                 console.error(e);
