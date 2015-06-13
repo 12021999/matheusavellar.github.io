@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>WebPage</title>
+    <link href="http://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        body {
+            background-color: #0a0a0a;
+            color: #ededed;
+            margin: 0px;
+            font-family: "Open Sans", sans-serif;
+            min-width: 720px;
+            min-height: 800px;
+        }
+
+        div#header {
+            background-color: #ededed;
+            color: #0a0a0a;
+            height: 120px;
+            font-size: 20px;
+            overflow-x: none;
+        }
+
+        div#logo {
+            font-size: 30px;
+            padding: 40px;
+            width: 300px;
+            display: inline-block;
+            float: left;
+        }
+
+        div#logo a.logo {
+            color: #0a0a0a;
+            outline: 2px solid #0a0a0a;
+            padding: 10px 20px;
+            cursor: default;
+            transition: color .2s ease;
+        }
+
+        div#logo a.logo:hover {
+            color: #41b7d8;
+        }
+
+        div#logo a.logo:before {
+            content: "Project Avelludo";
+        }
+
+        div#options {
+            padding-top: 50px;
+            float: left;
+        }
+
+        div#options span {
+            padding-left: 25px;
+        }
+
+        span#about a.option:before {     content: "About";  }
+        span#download a.option:before {  content: "Download";  }
+        span#contact a.option:before {   content: "Contact Us";  }
+
+        div#options a.option {
+            cursor: pointer;
+        }
+
+        div#options a.option:hover {
+            border-bottom: 2px solid #41b7d8;
+        }
+
+        div#scope {
+            margin: 50px;
+        }
+
+        div#scope h1 {
+            cursor: default;
+            text-align: center;
+            font-size: 45px;
+            font-family: "Bree Serif", serif;
+            transition: color .2s ease;
+        }
+
+        div#scope h1:hover {
+            color: #41b7d8;
+        }
+
+        div#scope h1#about:before {  content: "About";  }
+
+        div#scope p {
+            margin-left: 10%;
+            text-align: left;
+            font-size: 15px;
+            max-width: 900px;
+            display: block;
+        }
+
+        div#scope p:before {
+            content: "\00a0\00a0\00a0\00a0\00a0";
+        }
+
+        footer {
+            background-color: #41b7d8;
+        }
+
+        footer span.love {
+            padding-left: 50px;
+            font-size: 15px;
+        }
+
+        footer span.love:before {
+            content: "\00bb";
+            margin-right: 20px;
+            margin-top: -50px;
+        }
+        /* \2665 <3 */
+        /* \00bb >> */
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="logo">
+            <a class="logo"></a>
+        </div>
+        <div id="options">
+            <span id="about">
+                <a class="option"></a>
+            </span>
+            <span id="download">
+                <a class="option"></a>
+            </span>
+            <span id="contact">
+                <a class="option"></a>
+            </span>
+        </div>
+    </div>
+    <div id="intro">
+        
+    </div>
+    <div id="scope">
+        <h1 id="about"></h1>
+        <p class="body">Project Avelludo was created by students from Colégio Estadual José Leite Lopes, AKA NAVE, and its main premise is to bring children a fun way to play</p>
+    </div>
+    <!--<footer>
+        <span class="love">Made with love</span>
+    </footer>-->
+</body>
+</html>

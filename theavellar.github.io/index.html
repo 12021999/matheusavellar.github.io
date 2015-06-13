@@ -1,0 +1,176 @@
+<html>
+<head>
+    <title>Index of TheAvellar</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
+    <link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
+    <style>
+        body {
+            background-color: #0a0a0a;
+            font-family: "Open Sans", sans-serif;
+            font-size: 30px;
+            color: #ededed;
+            margin: 0px;
+        }
+
+        div#header {
+            margin: 50px;
+            height: 350px;
+            box-shadow: 0px 1px 0px #ededed;
+        }
+
+        div#title {
+            font-family: "Bree Serif", serif;
+            color: #41b7d8;
+            font-size: 50px;
+            height: 300px;
+            width: 300px;
+            border-radius: 100%;
+            background-color: #ededed;
+            text-align: center;
+        }
+
+        div#title p {
+            padding-top: 65px;
+        }
+
+        div#desc {
+            position: absolute;
+            top: calc(50px + 60px);
+            left: calc(300px + 50px + 30px);
+            font-size: 20px;
+            width: 500px;
+        }
+
+        a {
+            color: #ededed;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li:before {
+            content: "\00a0\00a0\00a0\00a0\00a0"
+        }
+
+        li.dir {
+            background-image: url(http://www.entypo.com/images/folder.svg);
+            background-size: 20px 20px;
+            background-repeat: no-repeat;
+            background-position: 5px 12px;
+        }
+
+        li.file {
+            background-image: url(http://www.entypo.com/images/code.svg);
+            background-size: 20px 20px;
+            background-repeat: no-repeat;
+            background-position: 5px 12px;
+        }
+
+        li.dir a {
+            color: #41b7d8;
+            font-size: 25px;
+        }
+
+        span#count {
+            font-family: "Bree Serif", serif;
+            font-size: 30px;
+            margin-left: 55px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var _repoURL = "https://api.github.com/repos/theavellar/theavellar.github.io/contents/";
+        var _count = 0;
+
+        function getContents(URL) {
+            try {
+                $.ajax({
+                    type: "GET",
+                    url: URL,
+                    dataType: "json",
+                    success: function(result) {
+                        for (var i in result) {
+                            if (result[i].type == "dir") {
+                                var _pathname;
+                                if (result[i].path.indexOf('/') == -1) {
+                                    _pathname ="ul#repos";
+                                } else {
+                                    _pathname = "ul#" + result[i].path.slice(0, result[i].path.indexOf('/'));
+                                }
+                                $(_pathname).append(
+                                    "<li class='dir'>"
+                                    +   "<a href='" + result[i].html_url + "' target='_blank'>"
+                                    +        result[i].name
+                                    +   "/</a>"
+                                    +"</li>"
+                                    +"<ul id='" + result[i].name + "'>"
+                                    +"</ul>");
+                                getContents(result[i].url.replace("?ref=master", ""));
+                            } else {
+                                if (result[i].path.indexOf('/') > -1) {
+                                    var _ul = $("ul");
+                                    var _firstIndex = result[i].path.indexOf('/');
+                                    var _lastIndex = result[i].path.lastIndexOf('/')
+                                    var _index = _firstIndex != _lastIndex ? result[i].path.slice(_firstIndex + 1, _lastIndex) : result[i].path.slice(0, _lastIndex);
+                                    console.log(_index);
+                                    for (var j in _ul) {
+                                        if (_ul[j].id == _index) {
+                                            $($("ul")[j]).append(
+                                                "<li class='file'>"
+                                                +   "<a href='" + result[i].html_url + "' target='_blank'>"
+                                                +        result[i].name
+                                                +   "</a>"
+                                                +"</li>");
+                                            _count++;
+                                            break;
+                                        };
+                                    };
+                                    continue;
+                                };
+                                $("ul#repos").append(
+                                    "<li class='file'>"
+                                    +   "<a href='" + result[i].html_url + "' target='_blank'>"
+                                    +        result[i].name
+                                    +   "</a>"
+                                    +"</li>");
+                                _count++;
+                            }
+                        }
+                    }
+                }).done(function() {
+                    $("span#count").text("Number of listed files: " + _count);
+                });
+            } catch(e) {
+                console.error(e);
+            }
+        }
+
+        getContents(_repoURL);
+    </script>
+    <div id="header">
+        <div id="title">
+            <p>Index of TheAvellar</p>
+        </div>
+        <div id="desc">
+            <span>
+                No clue how you ended up here. But hello there!<br />
+                Here is the list of all (well, most) subdomains on theavellar.github.io<br />
+                Please note that some of these might be solely<br />
+                experimental, and possibly broken.<br />
+                Thanks a ton for passing by!
+            </span>
+        </div>
+    </div>
+    <div id="main">
+        <span id="count"></span>
+        <ul id="repos"></ul>
+    </div>
+</body>
+</html>

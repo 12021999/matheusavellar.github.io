@@ -1,0 +1,95 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	color: #eee;
+}
+
+div#right {
+	margin-left: 60px;
+}
+div#title {
+	font-size: 85px;
+	font-weight: bold;
+}
+#title.regular {
+	text-transform: none !important;
+}
+div#subtitle {
+	font-size: 22px;
+	margin: 15px;
+}
+div#uselessinfo {
+	margin-top: 100px;
+	background-color: rgba(0, 0, 0, 0.48);
+	height: 60px;
+	width: 850px;
+	border-radius: 12px;
+}
+div#loading {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background-color: #404040;
+	margin-left: -8px;
+	margin-top: -8px;
+}
+div#loadingPic{
+	width: 500px;
+	height: 420px;
+}
+div#multiuse {
+	margin-top: 100px;
+	height: 100px;
+	width: 100%;
+	background-color: #282C35;
+	font-size: 15px;
+	color: #808691;
+	text-align: center;
+	border-radius: 25px 25px 0px 0px;
+}
+
+div#break {
+	width: 75%;
+	height: 1px;
+	-webkit-box-shadow: 6px 6px 0px 0px #444;
+	-moz-box-shadow: 6px 6px 0px 0px #444;
+	margin-left: 12.5%;
+	box-shadow: 6px 6px 0px 0px #444;
+}
+
+#top .version {
+	right: 5px;
+	position: absolute;
+}
+.spinner {
+	width: 100px;
+	height: 100px;
+	background-color: #eee;
+	margin: 100px auto;
+	-webkit-animation: rotateplane 1.2s infinite ease-in-out;
+	animation: rotateplane 1.2s infinite ease-in-out;
+}
+@-webkit-keyframes rotateplane {
+	0% { -webkit-transform: perspective(120px) }
+	50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+	100% { -webkit-transform: perspective(120px) rotateY(180deg)	rotateX(180deg) }
+}
+@keyframes rotateplane {
+	0% { 
+	transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+	-webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+	} 50% { 
+	transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+	-webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+	} 100% { 
+	transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+	-webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+	}
+}
+
+a {
+	text-decoration: none;
+	color: #eee;
+}
+a:hover {
+	color: #009cdd;
+}
