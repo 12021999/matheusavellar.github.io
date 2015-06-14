@@ -56,7 +56,7 @@
             font-size: 20px;
         }
 
-        a:hover {
+        ul#repos a:hover {
             text-decoration: underline;
         }
 
@@ -64,12 +64,12 @@
             list-style-type: none;
         }
 
-        ul#repos:last-child {
+        ul#list:last-child {
             -webkit-margin-after: 0px;
             padding-bottom: 20px;
         }
 
-        ul#repos li:before {
+        ul#list li:before {
             content: "\00a0\00a0\00a0\00a0\00a0"
         }
 
@@ -98,7 +98,12 @@
             background-position: 5px 15px;
         }
 
-        li.dir a {
+        li.home {
+            background-image: url(http://theavellar.github.io/resources/home.svg);
+            background-position: 5px 12px;
+        }
+
+        li.dir a, li.home a {
             color: #41b7d8;
             font-size: 25px;
         }
@@ -201,8 +206,8 @@
     </div>
     <div id="main">
         <span id="count"></span>
-        <ul>
-            <li class="home">theavellar.github.io</li>
+        <ul id="list">
+            <li class="home"><a>theavellar.github.io</a></li>
             <ul id="repos"></ul>
         </ul>
     </div>
