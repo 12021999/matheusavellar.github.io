@@ -7,13 +7,19 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
     <link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
+    <link href="https://theavellar.github.io/resources/prism.css" rel="stylesheet" />
     <style>
         body {
             background-color: #0a0a0a;
             font-family: "Open Sans", sans-serif;
             font-size: 30px;
-            color: #ededed;
+            color: #0a0a0a;
+            min-width: 700px;
             margin: 0px;
+
+        }
+        ul {
+            list-style-type: none;
         }
         div#main {
             height: 120px;
@@ -25,15 +31,61 @@
             text-align: center;
             font-family: "Bree Serif", serif;
             font-size: 85px;
+            color: #ededed;
         }
         div#info {
             text-align: center;
             margin-top: 10px;
             font-size: 25px;
+            color: #ededed;
+        }
+        div#scope {
+            height: 1000px;
+            width: 100%;
+            background-color: #ededed;
+            margin-top: 500px;
+            color: #0a0a0a;
+        }
+        div.container {
+            font-size: 30px;
+            margin-left: 30px;
+            width: 85%;
+        }
+        div.header {
+            font-family: "Bree Serif", serif;
+            padding: 65px 0px 0px 65px;
+            font-size: 45px;
+            border-bottom: 4px solid #41b7d8;
+        }
+        div.header.who {  width: 400px;  }
+        p {
+            font-size: 24px;
+        }
+        .paragraph:before {
+            content: "\00a0\00a0\00a0\00a0";
+        }
+        ul#skillList li {
+            float: left;
+            margin: 5px 25px 0px 25px;
+        }
+        ul#skillList a:hover {
+            border-bottom: 4px solid #41b7d8;
+        }
+        pre {
+            width: 585px;
+            height: 100px;
+            position: absolute;
+            font-size: 10px;
+            padding: 30px;
+            margin-top: 25px;
+            background: #f3f3f7;
+            border: 1px solid #dedee3;
+            line-height: 15px;
         }
     </style>
 </head>
 <body onload="_ranMsg()">
+    <script src="https://theavellar.github.io/resources/prism.js"></script>
     <script>
         function _ranMsg() {
             var _messages = [
@@ -50,6 +102,65 @@
             <span>Matheus Avellar</span>
         </div>
         <div id="info"></div>
+        <div id="scope">
+            <article>
+                <div class="header who">So... Who am I?</div>
+                <div class="container">
+                    <p class="paragraph">
+                        I'm currently still a student who will be graduating in a couple years. I have a passion for WebDesign, even though I'm not the best at it.
+                    </p>
+                    <p class="paragraph">
+                        Hopefully you disagree with me after the visit!
+                    </p>
+                </div>
+            </article>
+            <article>
+                <div class="header skills">What are my skills?</div>
+                <div class="container">
+                    <p class="paragraph">
+                        I currently know a few programming languages, but I study everyday to learn even more!<br />Here's the list of them:
+                    </p>
+                    <ul id="skillList">
+                        <li>
+                            <a>JavaScript</a>
+                            <pre>
+<code class="language-js">
+    "use strict";
+    const PATHNAME = "https://theavellar.github.io/";
+    var getChildren = function(path) {
+        console.log("lol");
+    }
+</code>
+                            </pre>
+                        </li>
+                        <li>
+                            <a>C#</a>
+                            <pre>
+<code class="language-csharp">
+    "use strict";
+    const PATHNAME = "https://theavellar.github.io/";
+    var getChildren = function(path) {
+        console.log("lol");
+    }
+</code>
+                            </pre>
+                        </li>
+                        <li>
+                            <a>Python</a>
+                            <pre>
+<code class="language-python">
+    "use strict";
+    const PATHNAME = "https://theavellar.github.io/";
+    var getChildren = function(path) {
+        console.log("lol");
+    }
+</code>
+                            </pre>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        </div>
     </div>
 </body>
 </html>
