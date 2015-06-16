@@ -7,7 +7,7 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
     <link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
-    <link href="https://theavellar.github.io/resources/prism.css" rel="stylesheet" />
+    <link href="https://matheusavellar.github.io/resources/prism.css" rel="stylesheet" />
     <style>
         body {
             background-color: #0a0a0a;
@@ -57,7 +57,8 @@
             font-size: 45px;
             border-bottom: 4px solid #41b7d8;
         }
-        div.header.who {  width: 400px;  }
+        div.header.who {  width: 300px;  }
+        div.header.skills {  width: 400px;  }
         p {
             font-size: 24px;
         }
@@ -73,19 +74,23 @@
         }
         pre {
             width: 585px;
-            height: 100px;
+            height: 300px;
             position: absolute;
-            font-size: 10px;
+            font-size: 12px;
             padding: 30px;
             margin-top: 25px;
             background: #f3f3f7;
             border: 1px solid #dedee3;
             line-height: 15px;
+            display: none;
+        }
+        pre.active {
+            display: block;
         }
     </style>
 </head>
 <body onload="_ranMsg()">
-    <script src="https://theavellar.github.io/resources/prism.js"></script>
+    <script src="https://matheusavellar.github.io/resources/prism.js"></script>
     <script>
         function _ranMsg() {
             var _messages = [
@@ -123,13 +128,22 @@
                     <ul id="skillList">
                         <li>
                             <a>JavaScript</a>
-                            <pre>
+                            <pre class="active">
 <code class="language-javascript">
+/*
+    Script by Matheus Avellar
+    This is merely a demo
+*/
+
 "use strict";
-const PATHNAME = "https://theavellar.github.io/";
-var getChildren = function(path) {
-    console.log("lol");
+
+var easterEgg = [];
+
+for (var i = 0; i &lt; 10; i++) {
+    easterEgg.push("#" + i);
+    console.log("Hit #" + i);
 }
+
 </code>
                             </pre>
                         </li>
@@ -137,10 +151,17 @@ var getChildren = function(path) {
                             <a>C#</a>
                             <pre>
 <code class="language-csharp">
-"use strict";
-const PATHNAME = "https://theavellar.github.io/";
-var getChildren = function(path) {
-    console.log("lol");
+/*
+    Script by Matheus Avellar
+    This is merely a demo
+*/
+
+using System.Diagnostics;
+
+public string[] easterEgg;
+for (int i = 0; i &lt; 10; i++) {
+    easterEgg.push("#" + i);
+    Debug.Log("Hit #" + i);
 }
 </code>
                             </pre>
