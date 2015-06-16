@@ -39,10 +39,10 @@
         }
 
         div#title p {
-            padding-top: 65px;
+            padding-top: 50px;
         }
         div#title p:before {
-            content: "Index of MatheusAvellar";
+            content: "Index of Matheus\000a Avellar";
         }
 
         div#desc {
@@ -120,6 +120,7 @@
 </head>
 <body>
     <script>
+        var _mainURL = "https://matheusavellar.github.io/"
         var _repoURL = "https://api.github.com/repos/MatheusAvellar/matheusavellar.github.io/contents/";
         var _filesCount = 0;
         var _dirCount = 0;
@@ -141,7 +142,7 @@
                                 }
                                 $(_pathname).append(
                                     "<li class='dir'>"
-                                    +   "<a href='" + result[i].html_url + "' target='_blank'>"
+                                    +   "<a href='" + _mainURL + result[i].path + "' target='_blank'>"
                                     +        result[i].name
                                     +   "/</a>"
                                     +"</li>"
@@ -161,7 +162,7 @@
                                         if (_ul[j].id == _index) {
                                             $($("ul")[j]).append(
                                                 "<li class='file " + _ext + "'>"
-                                                +   "<a href='" + result[i].html_url + "' target='_blank'>"
+                                                +   "<a href='" + _mainURL + result[i].path + "' target='_blank'>"
                                                 +        result[i].name
                                                 +   "</a>"
                                                 +"</li>");
@@ -173,7 +174,7 @@
                                 };
                                 $("ul#repos").append(
                                     "<li class='file " + _ext + "'>"
-                                    +   "<a href='" + result[i].html_url + "' target='_blank'>"
+                                    +   "<a href='" + _mainURL + result[i].path + "' target='_blank'>"
                                     +        result[i].name
                                     +   "</a>"
                                     +"</li>");
