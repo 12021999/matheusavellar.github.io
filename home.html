@@ -18,27 +18,36 @@
             margin: 0px;
 
         }
+
         ul {
             list-style-type: none;
         }
+
         div#main {
             height: 120px;
             top: 10%;
             background-color: #41b7d8;
             margin-top: 10%;
         }
+
         div#title  {
             text-align: center;
             font-family: "Bree Serif", serif;
             font-size: 85px;
             color: #ededed;
         }
+
+        div#title span:before {
+            content: "Matheus Avellar";
+        }
+
         div#info {
             text-align: center;
             margin-top: 10px;
             font-size: 25px;
             color: #ededed;
         }
+
         div#scope {
             height: 1000px;
             width: 100%;
@@ -46,51 +55,95 @@
             margin-top: 500px;
             color: #0a0a0a;
         }
+
         div.container {
             font-size: 30px;
             margin-left: 30px;
             width: 85%;
         }
+
         div.header {
             font-family: "Bree Serif", serif;
             padding: 65px 0px 0px 65px;
             font-size: 45px;
             border-bottom: 4px solid #41b7d8;
         }
-        div.header.who {  width: 300px;  }
-        div.header.skills {  width: 400px;  }
+
+        div.header.about {
+            width: 200px;
+        }
+
+        div.header.about:before {
+            content: "About me";
+        }
+
+        div.header.skills {
+            width: 400px;
+        }
+
+        div.header.skills:before {
+            content: "What are my skills?";
+        }
+
+        div.header.wip {
+            width: 350px;
+        }
+
+        div.header.wip:before {
+            content: "Work in Progress";
+        }
+
+        i.icon {
+            border-radius: 100%;
+            display: block;
+            width: 50px;
+            height: 49px;
+        }
+
+        i.icon.profile {
+            background-image: url(https://i.imgur.com/DkdRtA6.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin: -55px 0px 0px 280px;
+        }
+
         p {
             font-size: 24px;
         }
+
         .paragraph:before {
             content: "\00a0\00a0\00a0\00a0";
         }
+
         ul#skillList li {
             float: left;
             margin: 5px 25px 0px 25px;
         }
+
         ul#skillList a:hover {
             border-bottom: 4px solid #41b7d8;
         }
-        pre {
-            width: 585px;
-            height: 300px;
-            position: absolute;
-            font-size: 12px;
-            padding: 30px;
-            margin-top: 25px;
-            background: #f3f3f7;
-            border: 1px solid #dedee3;
-            line-height: 15px;
-            display: none;
+
+        li.javascript a:before {
+            content: "JavaScript";
         }
-        pre.active {
-            display: block;
+        li.csharp a:before {
+            content: "C#";
+        }
+        li.python a:before {
+            content: "Python";
+        }
+        li.batch a:before {
+            content: "Batch";
+        }
+
+        li a {
+            text-decoration: none;
+            color: #0a0a0a;
         }
     </style>
 </head>
 <body onload="_ranMsg()">
-    <script src="https://matheusavellar.github.io/resources/prism.js"></script>
     <script>
         function _ranMsg() {
             var _messages = [
@@ -104,82 +157,49 @@
     </script>
     <div id="main">
         <div id="title">
-            <span>Matheus Avellar</span>
+            <span></span>
         </div>
         <div id="info"></div>
         <div id="scope">
             <article>
-                <div class="header who">So... Who am I?</div>
+                <div class="header about"></div>
+                <i class="icon profile"></i>
                 <div class="container">
                     <p class="paragraph">
-                        I'm currently still a student who will be graduating in a couple years. I have a passion for WebDesign, even though I'm not the best at it.
-                    </p>
-                    <p class="paragraph">
-                        Hopefully you disagree with me after the visit!
+                        I'm still a student who will be graduating in a couple years.
+                        I have a passion for WebDesign, even though I still struggle a bit with it.
+                        My main goal is to learn the most amount of programming languages as possible!
                     </p>
                 </div>
             </article>
             <article>
-                <div class="header skills">What are my skills?</div>
+                <div class="header skills"></div>
                 <div class="container">
                     <p class="paragraph">
-                        I currently know a few programming languages, but I study everyday to learn even more!<br />Here's the list of them:
+                        I currently only know a few programming languages, but I study everyday to learn even more!<br />Here's the list of them:
                     </p>
                     <ul id="skillList">
-                        <li>
-                            <a>JavaScript</a>
-                            <pre class="active">
-<code class="language-javascript">
-/*
-    Script by Matheus Avellar
-    This is merely a demo
-*/
-
-"use strict";
-
-var easterEgg = [];
-
-for (var i = 0; i &lt; 10; i++) {
-    easterEgg.push("#" + i);
-    console.log("Hit #" + i);
-}
-
-</code>
-                            </pre>
+                        <li class="javascript">
+                            <a></a>
                         </li>
-                        <li>
-                            <a>C#</a>
-                            <pre>
-<code class="language-csharp">
-/*
-    Script by Matheus Avellar
-    This is merely a demo
-*/
-
-using System.Diagnostics;
-
-public string[] easterEgg;
-for (int i = 0; i &lt; 10; i++) {
-    easterEgg.push("#" + i);
-    Debug.Log("Hit #" + i);
-}
-</code>
-                            </pre>
+                        <li class="csharp">
+                            <a></a>
                         </li>
-                        <li>
-                            <a>Python</a>
-                            <pre>
-<code class="language-python">
-"""
-    Script by Matheus Avellar
-    This is merely a demo
-"""
-import os
-
-</code>
-                            </pre>
+                        <li class="python">
+                            <a></a>
+                        </li>
+                        <li class="batch">
+                            <a></a>
                         </li>
                     </ul>
+                </div>
+            </article><br /><br />
+            <article>
+                <div class="header wip"></div>
+                <div class="container">
+                    <p class="paragraph">
+                        This webpage is still under development. Thanks a lot for checking it out, though!
+                    </p>
                 </div>
             </article>
         </div>
