@@ -73,19 +73,22 @@
             padding-bottom: 20px;
         }
 
-        ul#list li:before {
-            content: "\00a0\00a0\00a0\00a0\00a0"
-        }
-
         li {
             background-size: 20px 20px;
             background-repeat: no-repeat;
         }
 
         li.dir:before {
-            content: "\f115" !important;
+            content: "\f115";
             font-family: "FontAwesome";
             font-size: 21px;
+            padding-right: 10px;
+        }
+
+        li.file:before, li.home:before {
+            content: "\f016";
+            font-size: 21px;
+            font-family: "FontAwesome";
             padding-right: 10px;
         }
 
@@ -96,10 +99,7 @@
         li.file.css:before,
         li.file.rb:before,
         li.file.py:before {
-            content: "\f121" !important;
-            font-family: "FontAwesome";
-            font-size: 21px;
-            padding-right: 10px;
+            content: "\f121";
         }
 
         li.file.jpg:before,
@@ -107,24 +107,15 @@
         li.file.gif:before,
         li.file.gifv:before,
         li.file.svg:before {
-            content: "\f1c5" !important;
-            font-family: "FontAwesome";
-            font-size: 21px;
-            padding-right: 10px;
+            content: "\f1c5";
         }
 
         li.file.md:before {
-            content: "\f0f6" !important;
-            font-family: "FontAwesome";
-            font-size: 21px;
-            padding-right: 10px;
+            content: "\f0f6";
         }
 
         li.home:before {
-            content: "\f187" !important;
-            font-family: "FontAwesome";
-            font-size: 21px;
-            padding-right: 10px;
+            content: "\f187";
         }
 
         li.dir a, li.home a {
