@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,20 +17,34 @@
     <link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
     <style>
         @font-face {
-            font-family: "Above Ground";
-            font-style: normal;
-            font-weight: 400;
-            src: local("Above Ground"), url(http://matheusavellar.github.io/resources/AboveGround.ttf) format("ttf");
+            font-family: AboveGround;
+            src: url("http://matheusavellar.github.io/resources/AboveGround.ttf");
         }
 
         body {
             background-color: #0071AC;
             min-height: 420px;
+            font-family: "Open Sans";
         }
         i.logo:before {
             content: "Kamau";
             font-style: normal;
-            font-family: "Above Ground";
+            font-family: AboveGround;
+        }
+        h1.cover-heading:after {
+            content: "The game";
+            font-family: AboveGround;
+            position: absolute;
+            margin: 90px 0px 0px -65px;
+        }
+        i.logo.smaller:before {
+            font-size: 40px;
+        }
+        i.logo.bigger:before {
+            font-size: 130px;
+        }
+        i.fa:after {
+            content: "\00a0\00a0\00a0";
         }
         div.inner.cover {
             display: none;
@@ -37,15 +52,32 @@
         div.inner.cover.active {
             display: block;
         }
-
         nav ul.nav li {
             cursor: pointer;
+        }
+        .btn-lg {
+            margin: 15px;
+        }
+        ul.credits {
+            list-style-type: none;
+            font-size: 30px;
+            font-family: "Bree Serif", serif;
+        }
+        ul.credits:nth-child(odd) {  text-align: left;  }
+        ul.credits:nth-child(even) {  text-align: right;  }
+        ul.credits li {
+            font-size: 20px;
+            font-family: "Open Sans";
+        }
+        p.contact {
+            margin-top: 40px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
     <script>
-        const _range = ["home", "contact", "download"];
+        const _range = ["home", "about", "download"];
         var _prev = "home";
         function _page(_str) {
             if (typeof _str == "string" && _str != _prev) {
@@ -71,44 +103,72 @@
                 <div class="masthead clearfix">
                     <div class="inner">
                         <h3 class="masthead-brand">
-                            <i class="icon logo"></i>
+                            <i class="icon logo smaller"></i>
                         </h3>
                         <nav>
                             <ul class="nav masthead-nav">
                                 <li class="home active">
                                     <a onclick="_page('home');">Home</a>
                                 </li>
-                                <li class="contact">
-                                    <a onclick="_page('contact');">Contact</a>
-                                </li>
                                 <li class="download">
                                     <a onclick="_page('download');">Download</a>
+                                </li>
+                                <li class="about">
+                                    <a onclick="_page('about');">About</a>
                                 </li>
                             </ul>
                         </nav>
                     </div>
                 </div>
                 <div class="inner cover home" style="display: block;">
-                    <h1 class="cover-heading"><i class="icon logo"></i></h1>
+                    <h1 class="cover-heading">
+                        <i class="icon logo bigger"></i>
+                    </h1>
                     <p class="lead">Mais que somente um jogo. Mais que somente uma história.<br />Uma vida.</p>
                     <p class="lead">
-                        <a onclick="_page('download');" class="btn btn-lg btn-default">Baixe a demo</a>
+                        <a onclick="_page('download');" class="btn btn-lg btn-default"><i class="fa fa-arrow-down"></i>Baixe a demo</a>
                     </p>
                 </div>
-                <div class="inner cover screenshots">
-                    <h1 class="cover-heading"><i class="icon logo"></i></h1>
-                    <p class="lead">Screenshots go here</p>
-                    <p class="lead">And here</p>
-                </div>
-                <div class="inner cover contact">
-                    <h1 class="cover-heading"><i class="icon logo"></i></h1>
-                    <p class="lead">Contact us at</p>
-                    <p class="lead"></p>
-                </div>
                 <div class="inner cover download">
-                    <h1 class="cover-heading"><i class="icon logo"></i></h1>
-                    <p class="lead">Download</p>
-                    <p class="lead">Blablablabla</p>
+                    <h1 class="cover-heading">
+                        <i class="icon logo bigger"></i>
+                    </h1>
+                    <p class="lead">Página de download tutistutis<br />Já pensou que tipo, tu baixar torrent, é baixar um arquivo que baixa arquivos?</p>
+                    <p class="lead">
+                        <a href="https://youtu.be/dQw4w9WgXcQ" class="btn btn-lg btn-default" target="_blank">
+                            <i class="fa fa-windows"></i>
+                            Kamau v0.0.0
+                        </a>
+                        <a href="https://youtu.be/dQw4w9WgXcQ" class="btn btn-lg btn-default" target="_blank">
+                            <i class="fa fa-android"></i>
+                            Kamau v0.0.0
+                        </a>
+                    </p>
+                </div>
+                <div class="inner cover about">
+                    <ul class="credits">
+                        Programação
+                        <li>João Ricardo</li>
+                        <li>Matheus Avellar</li>
+                    </ul>
+                    <ul class="credits">
+                        Mutlimídia
+                        <li>Pedro Aquino</li>
+                        <li>Lucas Wiliam</li>
+                        <li>Lucas Lourenço</li>
+                        <li>Francisco Vasconcelos</li>
+                    </ul>
+                    <ul class="credits">
+                        Roteiro
+                        <li>Rafael Lopes</li>
+                        <li>Julliana Muniz</li>
+                        <li>Matheus Rocha</li>
+                    </ul>
+                    <br />
+                    <p class="contact">
+                        <b>Tem algo a dizer?</b> Nos envie um email:
+                        <br />betterthanpissurno@kamau.com
+                    </p>
                 </div>
             </div>
         </div>
