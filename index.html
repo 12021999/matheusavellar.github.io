@@ -4,6 +4,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
+    <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
     <link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
     <style>
@@ -81,29 +82,49 @@
             background-repeat: no-repeat;
         }
 
-        li.dir {
-            background-image: url(http://matheusavellar.github.io/resources/folder.svg);
-            background-position: 5px 12px;
+        li.dir:before {
+            content: "\f115" !important;
+            font-family: "FontAwesome";
+            font-size: 21px;
+            padding-right: 10px;
         }
 
-        li.file.html, li.file.htm, li.file.php, li.file.js, li.file.css, li.file.rb, li.file.py {
-            background-image: url(http://matheusavellar.github.io/resources/code.svg);
-            background-position: 5px 15px;
+        li.file.html:before,
+        li.file.htm:before,
+        li.file.php:before,
+        li.file.js:before,
+        li.file.css:before,
+        li.file.rb:before,
+        li.file.py:before {
+            content: "\f121" !important;
+            font-family: "FontAwesome";
+            font-size: 21px;
+            padding-right: 10px;
         }
 
-        li.file.png, li.file.jpg, li.file.jpeg, li.file.gif, li.file.gifv, li.file.svg {
-            background-image: url(http://matheusavellar.github.io/resources/image.svg);
-            background-position: 5px 15px;
+        li.file.jpg:before,
+        li.file.jpeg:before,
+        li.file.gif:before,
+        li.file.gifv:before,
+        li.file.svg:before {
+            content: "\f1c5" !important;
+            font-family: "FontAwesome";
+            font-size: 21px;
+            padding-right: 10px;
         }
 
-        li.file.md {
-            background-image: url(http://matheusavellar.github.io/resources/text.svg);
-            background-position: 5px 15px;
+        li.file.md:before {
+            content: "\f0f6" !important;
+            font-family: "FontAwesome";
+            font-size: 21px;
+            padding-right: 10px;
         }
 
-        li.home {
-            background-image: url(http://matheusavellar.github.io/resources/home.svg);
-            background-position: 5px 12px;
+        li.home:before {
+            content: "\f187" !important;
+            font-family: "FontAwesome";
+            font-size: 21px;
+            padding-right: 10px;
         }
 
         li.dir a, li.home a {

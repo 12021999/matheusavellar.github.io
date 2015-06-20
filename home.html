@@ -5,6 +5,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
+    <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
     <link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
     <link href="https://matheusavellar.github.io/resources/prism.css" rel="stylesheet" />
@@ -141,6 +142,30 @@
             text-decoration: none;
             color: #0a0a0a;
         }
+
+        div#bottom {
+            height: 151px;;
+        }
+        div#social {
+            padding: 50px;
+            box-shadow: 0px 1px 0px #ededed;
+        }
+
+        div#social a {
+            color: #ededed;
+            text-decoration: none;
+            transition: 0.3s ease;
+            padding: 5px 15px 5px 7px;
+        }
+
+        div#social a:hover {
+            background-color: #ededed;
+            color: #0a0a0a;
+        }
+
+        div#social a i {
+            padding: 10px;
+        }
     </style>
 </head>
 <body onload="_ranMsg()">
@@ -202,6 +227,13 @@
                     </p>
                 </div>
             </article>
+        </div>
+        <div id="bottom">
+            <div id="social">
+                <a href="https://github.com/MatheusAvellar">
+                    <i class="fa fa-github"></i>GitHub
+                </a>
+            </div>
         </div>
     </div>
 </body>
