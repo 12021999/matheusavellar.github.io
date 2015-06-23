@@ -1,0 +1,111 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Unemojify</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
+    <link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
+    <style>
+        body {
+            background-color: #1c1f25;
+            color: #eeeeee;
+            font-family: "Open Sans", sans-serif;
+            font-size: 15px;
+        }
+        div#header {
+            font-size: 15px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 40px;
+            font-weight: bold;
+            padding-top: 45px;
+            color: #009cdd;
+        }
+        h2 {
+            font-size: 18px;
+            font-weight: normal;
+            color: #808691;
+        }
+        span.emoji {
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            background: url("https://cdn.plug.dj/_/static/images/emoji.a207cf6164153362e6327e4884c795617291da2c.png") top left no-repeat;
+        }
+        span.emoji.xd {
+            background-position: -68px -1972px;
+        }
+        span.emoji.smile {
+            background-position: -68px -1921px;
+            margin: 6px 0px 0px 2px;
+        }
+        span.emoji.laugh {
+            background-position: -68px -1870px;
+            margin-top: 3px;
+        }
+        div#button {
+            text-align: center;
+            margin-top: 50px;
+        }
+        a.button {
+            background-color: #009cdd;
+            color: #eeeeee;
+            text-decoration: none;
+            padding: 10px 20px 10px 20px;
+            border: 2px solid #009cdd;
+            font-weight: bold;
+        }
+        a.button:active {
+            background-color: #44afff;
+            border: 2px solid #44afff;
+        }
+        div#scope, div#credits {
+            margin: 100px 0px 0px 10px;
+        }
+        div.break {
+            width: 100%;
+            box-shadow: 0px -1px 0px #808691;
+            padding: 1px;
+        }
+        code {
+            font-family: "Arial";
+        }
+        div#credits {
+            width: 375px;
+        }
+        span.credits {
+            color: #808691;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Unemojify™</h1>
+        <h2>The perfect script for those who dislike
+        <br />ugly emojis, like this <span title="Ew" class="emoji smile"></span>&nbsp;&nbsp;&nbsp;&nbsp; thing</h2>
+    </div>
+    <div id="button">
+        <a
+            class="button"
+            title="Drag this thing to your bookmarks!"
+            type="button"
+            onclick="return alert('Drag this thing to your bookmarks!'),false;"
+            href="javascript:(function(){  $.getScript('https://rawgit.com/MatheusAvellar/FunBotThing/master/unemojify.js');  }());">
+            Unemojify™
+        </a>
+    </div>
+    <div id="scope">
+        <div class="break"></div>
+        <h3>What does it do?</h3>
+        <p>Unemojify™ adds a tiny little grey button next to plug.dj's chat input. Upon clicking it, it becomes light blue, and you're set!
+        <br />No more typing <code>:D</code>, and instead of a cute smiley face, getting a weird <span title="Ew" class="emoji laugh"></span>&nbsp;&nbsp;&nbsp;&nbsp; all over your message!</p>
+    </div>
+    <div id="credits">
+        <div class="break"></div>
+        <span class="credits">©2015 Matheus Avellar, Beta Tester and T98 are trademarks, no rights reserved.</span>
+    </div>
+</body>
+</html>
