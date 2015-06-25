@@ -1,14 +1,31 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="content-language" content="en-us" />
     <title>404</title>
-    <meta charset="utf-8">
+    <meta name="author" content="Matheus Avellar" />
+    <meta name="description" content="The 404 Error page for matheusavellar.github.io" />
+    <meta name="robots" content="noindex, nofollow" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <link href="http://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-    <link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
-    <link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png">
-    <style>
+    <link href="http://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
+    <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <!-- Page icon: I really need a better one, but I'll work on that later -->
+    <link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
+    <link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
+    <style type="text/css">
+        * {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -o-user-select: none;
+            -ms-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            cursor: default;
+        }
+        a {
+            cursor: auto !important;
+        }
         body {
             background-color: #0a0a0a;
             font-family: "Open Sans";
@@ -49,6 +66,9 @@
                 "Houston, we have a problem",
                 "I'll be back. Wait, maybe I won't.",
                 "Say \"WHAT\" again!",
+                "Please forgive me, senpai",
+                "Uh oh.",
+                "i cri",
                 "<img src='https://i.imgur.com/VEqt5It.gif' />"
             ];
             document.getElementById("info").innerHTML = _messages[Math.floor(Math.random()* _messages.length)];

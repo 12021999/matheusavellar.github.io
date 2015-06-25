@@ -189,7 +189,6 @@
                                     var _firstIndex = result[i].path.indexOf('/');
                                     var _lastIndex = result[i].path.lastIndexOf('/')
                                     var _index = _firstIndex != _lastIndex ? result[i].path.slice(_firstIndex + 1, _lastIndex) : result[i].path.slice(0, _lastIndex);
-                                    console.log(_index);
                                     for (var j in _ul) {
                                         if (_ul[j].id == _index) {
                                             $($("ul")[j]).append(
