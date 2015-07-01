@@ -1,20 +1,34 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>WebPage</title>
-    <link href="http://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="content-language" content="en-us" />
+    <title>Avelludo - NAVE</title>
+    <meta name="author" content="Matheus Avellar" />
+    <meta name="description" content="The best Tamagochi-like game ever!" />
+    <meta name="keyword" content="github,game" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
+    <link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
     <style type="text/css">
+        * {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -o-user-select: none;
+            -ms-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            cursor: default;
+        }
         body {
             background-color: #0a0a0a;
-            color: #ededed;
+            color: #cfcfcf;
             margin: 0px;
             font-family: "Open Sans", sans-serif;
             min-width: 720px;
             min-height: 800px;
         }
-
         div#header {
             background-color: #ededed;
             color: #0a0a0a;
@@ -22,7 +36,6 @@
             font-size: 20px;
             overflow-x: none;
         }
-
         div#logo {
             font-size: 30px;
             padding: 40px;
@@ -30,7 +43,6 @@
             display: inline-block;
             float: left;
         }
-
         div#logo a.logo {
             color: #0a0a0a;
             outline: 2px solid #0a0a0a;
@@ -38,110 +50,192 @@
             cursor: default;
             transition: color .2s ease;
         }
-
-        div#logo a.logo:hover {
-            color: #41b7d8;
+        h1, h2 {
+            color: #ededed;
         }
-
-        div#logo a.logo:before {
-            content: "Project Avelludo";
-        }
-
+        div#logo a.logo:hover,
+        div#scope h1:hover {  color: #41b7d8;  }
         div#options {
             padding-top: 50px;
             float: left;
         }
-
         div#options span {
             padding-left: 25px;
         }
-
-        span#about a.option:before {     content: "About";  }
-        span#download a.option:before {  content: "Download";  }
-        span#contact a.option:before {   content: "Contact Us";  }
-
-        div#options a.option {
+        div#options a {
             cursor: pointer;
+            border-bottom: 2px solid transparent;
+            color: #0a0a0a;
+            text-decoration: none;
         }
-
-        div#options a.option:hover {
-            border-bottom: 2px solid #41b7d8;
-        }
-
-        div#scope {
-            margin: 50px;
-        }
-
+        div#options a:hover {  border-bottom: 2px solid #41b7d8;  }
+        div#scope {  margin: 50px;  }
         div#scope h1 {
             cursor: default;
             text-align: center;
             font-size: 45px;
             font-family: "Bree Serif", serif;
             transition: color .2s ease;
+            width: 80%;
         }
-
-        div#scope h1:hover {
-            color: #41b7d8;
-        }
-
-        div#scope h1#about:before {  content: "About";  }
-
-        div#scope p {
-            margin-left: 10%;
+        div#scope p.body {
+            margin-left: 2%;
             text-align: left;
-            font-size: 15px;
-            max-width: 900px;
+            font-size: 17px;
+            max-width: 600px;
             display: block;
         }
-
-        div#scope p:before {
+        div#scope p.body:before {
             content: "\00a0\00a0\00a0\00a0\00a0";
         }
-
-        footer {
-            background-color: #41b7d8;
+        div#scope p.extra {
+            margin-left: 0px;
+            margin-top: 50px;
+            font-size: 17px;
+            max-width: 1200px;
+            display: block;
+            text-align: center;
         }
-
-        footer span.love {
-            padding-left: 50px;
-            font-size: 15px;
+        a.name {
+            transition: color .2s ease;
+            font-size: 19px;
+            line-height: 2em;
+            font-weight: bold;
+            padding-left: 35px;
+            text-align: center;
+            white-space: nowrap;
         }
-
-        footer span.love:before {
-            content: "\00bb";
-            margin-right: 20px;
-            margin-top: -50px;
+        a.name:hover {
+            color: #ffffff;
         }
-        /* \2665 <3 */
-        /* \00bb >> */
+        div#section {
+            margin-bottom: 120px;
+            min-height: 500px;
+        }
+        div.block {
+            float: left;
+            padding: 50px;
+            margin-bottom: 10px;
+            transition: .2s ease all;
+        }
+        div.block:hover {  background-color: #111317;  }
+        div.block:hover > h2 {  color: #41b7d8;  }
+        div#quotes {
+            width: 700px;
+            float: left;
+            padding: 15px 50px 50px 100px;
+            font-size: 40px;
+            transition: .2s ease all;
+        }
+        span.title {
+            font-size: 16px;
+            font-variant: small-caps;
+            transform: rotate(-90deg);
+            position: absolute;
+            margin-left: -50px;
+            margin-top: 45px;
+        }
+        span.author {
+            color: #555555;
+            display: block;
+            font-size: 20px;
+            transition: .2s ease all;
+        }
+        span.quote { transition: .2s ease all; }
     </style>
 </head>
 <body>
     <div id="header">
         <div id="logo">
-            <a class="logo"></a>
+            <a class="logo">Project Avelludo</a>
         </div>
         <div id="options">
             <span id="about">
-                <a class="option"></a>
+                <a href="#about">About</a>
             </span>
             <span id="download">
-                <a class="option"></a>
-            </span>
-            <span id="contact">
-                <a class="option"></a>
+                <a href="#download">Download</a>
             </span>
         </div>
-    </div>
-    <div id="intro">
-        
+        <div id="quotes">
+            <span class="title">Quotes</span>
+            <span class="quote">Woof! Woof woof!</span>
+            <span class="author">A dog at the park</span>
+            <script>
+                const quotes = [
+                    {"q":"Woof! Woof woof!","a":"A dog at the park"},
+                    {"q":"Oh, darling, it looks great.","a":"My mother"},
+                    {"q":"Baaadaaaahh", "a":"1 year old kid at the park"},
+                    {"q":"I definitely recommend it.","a":"Me"},
+                    {"q":"10/10 best game I've never played","a":"Random nerd"}
+                ];
+                var _pos = 0;
+                var _int = setInterval(function() {
+                    if (_pos >= quotes.length - 1) {  _pos = 0;  }
+                    else {  _pos++;  }
+                    $("#quotes span.quote, #quotes span.author").css({"opacity":"0"});
+                    setTimeout(function()  {
+                        $("#quotes span.quote").text(quotes[_pos].q);
+                        $("#quotes span.author").text(quotes[_pos].a);
+                        $("#quotes span.quote, #quotes span.author").css({"opacity":"1"});
+                    }, 500);
+                }, 5000);
+            </script>
+        </div>
     </div>
     <div id="scope">
-        <h1 id="about"></h1>
-        <p class="body">Project Avelludo was created by students from Colégio Estadual José Leite Lopes, AKA NAVE, and its main premise is to bring children a fun way to play</p>
+        <div id="section">
+            <h1 id="about">About</h1>
+            <div class="block">
+                <a name="about">&nbsp;</a>
+                <h2>The Game</h2>
+                <p class="body">
+                    Project Avelludo was developed to present to the public what the daily life at CJLL - NAVE
+                    (later referred to only as NAVE) feels like from the student perspective.
+                    The game quite surprisingly well represents the everyday struggle to get everything done and dusted before exams,
+                    and also to learn each and every subject without forgetting any homework.
+                    Rated 10/10 by my mother, this game is an incredible experience that must not be overestimated.
+                </p>
+                <p class="extra"></p>
+            </div>
+            <div class="block">
+                <h2>Us</h2>
+                <p class="body">
+                    We, developers of Project Avelludo, are High School students,
+                    and proudly participate in the Programming course from Colégio José Leite Lopes - NAVE.
+                    We here have the opportunity to study and develop digital and analog games on their most exciting iterations.
+                </p>
+                <p class="extra">
+                    <a class="name">João Ricardo Freitas Lages Alves Gomes</a>
+                    <a class="name">Lucas Gutierres Gomes</a><br />
+                    <a class="name">Matheus Avellar de Barros</a>
+                    <a class="name">Thaís Luiza Dias Alves</a><br />
+                    <a class="name">Thiago Moraes da Silva</a>
+                </p>
+            </div>
+        </div>
+        <div id="section">
+            <h1 id="download">Download</h1>
+            <div class="block">
+                <a name="download">&nbsp;</a>
+                <h2>The Game</h2>
+                <p class="body">
+                    Currently, considering our tight schedules and tons of work we have do and finish everyday,
+                    there is no available download link for Project Avelludo.
+                    However, we will bring you an opportunity to try out this game as soon as possible!
+                </p>
+                <p class="extra"></p>
+            </div>
+            <div class="block">
+                <h2>Us</h2>
+                <p class="body">
+                    We, developers of Project Avelludo, are High School students,
+                    and as of right now, human downloading is not legal in most countries.
+                    Sorry for the inconvenience!
+                </p>
+                <p class="extra"></p>
+            </div>
+        </div>
     </div>
-    <!--<footer>
-        <span class="love">Made with love</span>
-    </footer>-->
 </body>
 </html>

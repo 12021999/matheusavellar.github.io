@@ -3,10 +3,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="content-language" content="en-us">
-    <title>Retro index of matheusavellar</title>
+    <title>Retro Home - Matheus Avellar</title>
     <meta name="author" content="Matheus Avellar">
-    <meta name="description" content="Retro list of public subdomains of matheusavellar.github.io">
-    <meta name="keyword" content="matheus,avellar,github">
+    <meta name="description" content="Retro homepage of matheusavellar.github.io">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
     <!--<link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">-->
@@ -30,82 +29,99 @@
             font-family: RemachineScript;
             src: url("http://matheusavellar.github.io/resources/RemachineScript.ttf");
         }
-        @media (min-width: 1000px) {
-            .form-horizontal .form-group-lg .control-label {
-                padding-top: 14.33px;
-                font-size: 18px
-            }
-        }
         * {
             -moz-user-select: none;
             -webkit-user-select: none;
             -o-user-select: none;
             -ms-user-select: none;
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            -webkit-tap-highlight-color: transparent;
             cursor: default;
         }
         a {
             cursor: auto !important;
         }
-        a.bazar {
-            font-family: "Bazar";
-        }
         body {
-            color: #fce3aa;
-            background-color: #fce3aa;
-            padding: 30px;
-            border: 8px solid #71969f;
-            margin: 0px;
-            min-width: 1000px;
+            background-color: #0a0a0a;
+            color: #ededed;
         }
-        div#header {
-            height: 1000px;
-            background-color: #71969f;
+        div#mobile {
+            font-family: "Open Sans";
         }
-        div#header ul.title {
-            list-style-type: none;
-            font-family: "Bazar";
-            font-variant: small-caps;
-            text-shadow: 1px 1px 0px #00304f;
-            text-align: center;            
-            margin-top: 0px;                              
-            padding: 50px 0px 0px 0px;
-        }
-        li.big {
-            font-size: 100px;
-            line-height: 1.3em;
-        }
-        li.small {
-            font-size: 50px;
-        }
-        div.arrow {
-            border: 8px solid transparent;
-            display: inline-block;
-            height: 0px;
-            width: 0px;
-        }
-        div.arrow.left {
-            border-left: 35px solid #d71a21;
-        }
-        div.arrow.right {   
-            border-right: 35px solid #d71a21;
-        }
-        div.splash {
-            font-family: "RemachineScript";
-            font-size: 80px;
-            text-shadow: 3px 3px 0px rgba(0, 48, 79, 0.22);
-            right: 10%;
-            transform: rotate(-7deg);
-            position: absolute;
-            color: #053155;
-            text-align: center;
-        }
-        div.splash a.bazar {
-            font-size: 40px;
+        @media (min-width: 1100px) {
+            div#mobile {
+                display: none;
+            }
+            a.bazar {
+                font-family: "Bazar";
+            }
+            body {
+                color: #fce3aa;
+                background-color: #fce3aa;
+                padding: 30px;
+                border: 8px solid #71969f;
+                margin: 0px;
+                min-width: 1000px;
+            }
+            div#header {
+                height: 1000px;
+                background-color: #71969f;
+            }
+            div#header ul.title {
+                list-style-type: none;
+                font-family: "Bazar";
+                font-variant: small-caps;
+                text-shadow: 1px 1px 0px #00304f;
+                text-align: center;            
+                margin-top: 0px;                              
+                padding: 50px 0px 0px 0px;
+            }
+            li.big {
+                font-size: 100px;
+                line-height: 1.3em;
+            }
+            li.small {
+                font-size: 50px;
+            }
+            div.arrow {
+                border: 14px solid transparent;
+                display: inline-block;
+                height: 0px;
+                width: 0px;
+            }
+            div.arrow.left {
+                border-left: 80px solid #d71a21;
+            }
+            div.arrow.right {   
+                border-right: 80px solid #d71a21;
+            }
+            div.splash {
+                font-family: "RemachineScript";
+                font-size: 80px;
+                text-shadow: 3px 3px 0px rgba(0, 48, 79, 0.22);
+                right: 10%;
+                transform: rotate(-7deg);
+                position: absolute;
+                color: #053155;
+                text-align: center;
+            }
+            div.splash a.bazar {
+                font-size: 40px;
+            }
         }
     </style>
 </head>
 <body>
+    <script>
+        function init() {
+            $("body").append(
+                "<div class='splash'>"
+                +   "Miserably failing at retro design"
+                +   "<br />since "
+                +   "<a class='bazar'>1998</a>"
+                +"</div>");
+        }
+    </script>
+    <div id="mobile">Mobile coming soon!</div>
     <div id="header">
         <ul class="title">
             <li class="big">Home</li>
@@ -116,7 +132,6 @@
             </li>
             <li class="big">Matheus Avellar</li>
         </ul>
-        <div class="splash">Miserably failing at retro design<br />since <a class="bazar">1998</a></div>
     </div>
 </body>
 </html>
