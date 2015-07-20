@@ -217,6 +217,7 @@
                     var _files = _filesCount == 1 ? "1 file" : _filesCount + " files";
                     var _dirs = _dirCount == 1 ? "1 folder" : _dirCount + " folders";
                     $("span#count").text(_dirs + ", " + _files);
+                    $("script").remove();
                 });
             } catch(e) {
                 console.error(e);
