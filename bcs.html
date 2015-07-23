@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="content-language" content="en-us" />
+    <title>Beta Client Script</title>
+    <meta name="author" content="Matheus Avellar" />
+    <meta name="description" content="Beta Client Script" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
+    <!-- Page icon: I really need a better one, but I'll work on that later -->
+    <link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
+    <link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
+    <style>
+        * {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -o-user-select: none;
+            -ms-user-select: none;
+            -webkit-margin-before: 0px;      
+            -webkit-margin-after: 0px;
+            -webkit-margin-start: 0px;
+            -webkit-margin-end: 0px;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            cursor: default;
+        }
+        a {
+            cursor: auto !important;
+            color: #00bee8;
+            text-decoration: none;
+        }
+        body {
+            color: #ededed;
+            font-family: "Open Sans", sans-serif;
+            background-color: #1c1f25;
+        }
+        div#header {
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1#title {
+            font-size: 60px;
+            color: #00bee8;
+            font-weight: bolder;
+        }
+        h2#subtitle {
+            font-size: 30px;
+            font-weight: normal;
+        }
+        div.post {
+            padding: 50px;
+        }
+        div.heading {
+            width: 300px;
+            border-bottom: 1px solid #ededed;
+        }
+        div.heading h2 {
+            font-family: "Bree Serif", serif;
+            font-size: 40px;
+        }
+        a.button {
+            padding: 5px 30px 5px 30px;
+            margin: 20px;
+            background-color: #282c35;
+            color: #ededed;
+            font-size: 16px;
+        }
+        a.button:active {
+            background-color: #009cdd;
+        }
+        div.article {
+            padding: 40px;
+        }
+        ul {
+            list-style-type: none;
+        }
+        li {
+            float: left;
+            width: 315px;
+            margin: 0px 50px 50px 0px;
+        }
+        li h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        li h3, li p, li p a, li p b {
+            font-size: 16px;
+            -moz-user-select: initial;
+            -webkit-user-select: initial;
+            -o-user-select: initia;
+            -ms-user-select: initial;
+            cursor: text;
+        }
+        li h3::selection, li p::selection, li p a::selection, li p b::selection {
+            background-color: #00bee8;
+        }
+        li p a {
+            transition: all .2s ease;
+            border-radius: 5px;
+        }
+        li p a::selection {
+            color: #1c1f25;
+        }
+        li p a:hover {
+            background-color: rgba(0, 190, 232, 0.5);
+            color: #ededed;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div id="scope">
+        <div id="header">
+            <h1 id="title">BCS</h1>
+            <h2 id="subtitle">Not the best out there. Possibly not the worst.</h2><br />
+            To get BCS, simply drag this button to your bookmarks bar: <br /><br />
+            <a
+                class="button"
+                title="Quick! You can still go get RCS!"
+                type="button"
+                onclick="return alert('Yeah, that\'s not how you do it.'), false;"
+                href="javascript:(function(){$.getScript('https://rawgit.com/MatheusAvellar/BCS/master/BCS-2.js');}());"
+            >BCS-2</a>
+        </div>
+        <div id="body">
+            <div class="post">
+                <div class="heading">
+                    <h2>FAQ</h2>
+                </div>
+                <div class="article">
+                    <ul>
+                        <li>
+                            <h3>What is this?</h3>
+                            <p>
+                                Scientists have proven that using long
+                                words in a sentence makes you sound
+                                smarter than you actually are. That
+                                being said, this, my friend, is the most
+                                absurdly emancipational photosynthesis
+                                plug.dj script you have ever laid your
+                                eyes on. To sum it up, this script will
+                                enhance and add features to the
+                                music website <a href="http://plug.dj/" target="_blank">plug.dj</a>.
+                            </p>
+                        </li>
+                        <li>
+                            <h3>Why is it better than any other?</h3>
+                            <p>
+                                What makes BCS different are its fresh,
+                                homegrown ingredients. Here, everything
+                                is gluten free and 100% organic. Along
+                                with that, BCS' authors are the youngest
+                                and most creative in the market. They
+                                once managed to persuade poor souls to
+                                endure over 500 characters of pure
+                                babbling!
+                            </p>
+                        </li>
+                        <li>
+                            <h3>But RCS has custom emotes!</h3>
+                            <p>
+                                No one here is saying that BCS is better
+                                than RCS -- In fact, we <b>recommend</b> RCS. It
+                                is a professional and well-maintained
+                                script, and it definitely has a lot of better
+                                features than BCS. I honestly don't know
+                                why you're even here. <a href="http://rcs.radiant.dj" target="_blank">Go get RCS!</a>
+                                I know what it looks like, but no, I do not own RCS or have any sort of
+                                partnership with its authors.
+                            </p>
+                        </li>
+                        <li>
+                            <h3>How do I turn it off?</h3>
+                            <p>
+                                Refresh the page.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

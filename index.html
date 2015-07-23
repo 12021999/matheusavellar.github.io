@@ -22,230 +22,60 @@
             -ms-user-select: none;
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
             cursor: default;
+            overflow: hidden;
+            font-family: monospace;
+            font-size: 15px;
         }
         a {
+            color: #008080;
+            text-decoration: none;
             cursor: auto !important;
         }
+        a:focus, a:hover {
+            outline: none;
+            color: #C0C0C0;
+            font-weight: bold;
+        }
         body {
-            background-color: #0a0a0a;
-            font-family: "Open Sans", sans-serif;
-            font-size: 30px;
-            color: #ededed;
-            margin: 0px;
+            background-color: #000000;
+            color: #008800;
         }
 
-        div#header {
-            margin: 50px 50px 0px 50px;
-            height: 350px;
-            box-shadow: 0px 1px 0px #ededed;
-        }
-
-        div#main {
-            background-color: #ededed;
-            color: #0a0a0a;
-            padding-top: 30px;
-        }
-
-        div#title {
-            font-family: "Bree Serif", serif;
-            color: #41b7d8;
-            font-size: 50px;
-            height: 300px;
-            width: 300px;
-            border-radius: 100%;
-            background-color: #ededed;
-            text-align: center;
-        }
-
-        div#title p {
-            padding-top: 50px;
-        }
-        div#title p:before {
-            content: "Index of Matheus\000a Avellar";
-        }
-
-        div#desc {
-            position: absolute;
-            top: calc(50px + 60px);
-            left: calc(300px + 50px + 30px);
-            font-size: 20px;
-            width: 500px;
-        }
-
-        a {
-            color: #0a0a0a;
-            text-decoration: none;
-            font-size: 20px;
-            cursor: auto;
-        }
-        li.home a {  cursor: default;  }
-
-        ul#repos a:hover {
-            text-decoration: underline;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        ul#list:last-child {
-            -webkit-margin-after: 0px;
-            padding-bottom: 20px;
-        }
-
-        li {
-            background-size: 20px 20px;
-            background-repeat: no-repeat;
-        }
-
-        li.dir:before {
-            content: "\f115";
-            font-family: "FontAwesome";
-            font-size: 21px;
-            padding-right: 10px;
-        }
-
-        li.file:before, li.home:before {
-            content: "\f016";
-            font-size: 21px;
-            font-family: "FontAwesome";
-            padding-right: 10px;
-        }
-
-        li.file.html:before,
-        li.file.htm:before,
-        li.file.php:before,
-        li.file.js:before,
-        li.file.css:before,
-        li.file.rb:before,
-        li.file.py:before {
-            content: "\f121";
-        }
-
-        li.file.jpg:before,
-        li.file.jpeg:before,
-        li.file.gif:before,
-        li.file.gifv:before,
-        li.file.svg:before {
-            content: "\f1c5";
-        }
-
-        li.file.md:before {
-            content: "\f0f6";
-        }
-
-        li.home:before {
-            content: "\f187";
-        }
-
-        li.dir a, li.home a {
-            color: #41b7d8;
-            font-size: 25px;
-        }
-
-        span#count {
-            font-family: "Bree Serif", serif;
-            font-size: 30px;
-            margin-left: 55px;
+        div#main, div#blink {
+            display: inline;
         }
     </style>
 </head>
 <body>
-    <script>
-        var _mainURL = "http://matheusavellar.github.io/"
-        var _repoURL = "https://api.github.com/repos/MatheusAvellar/matheusavellar.github.io/contents/";
-        var _filesCount = 0;
-        var _dirCount = 0;
-
-        function getContents(URL) {
-            try {
-                $.ajax({
-                    type: "GET",
-                    url: URL,
-                    dataType: "json",
-                    success: function(result) {
-                        for (var i in result) {
-                            if (result[i].type == "dir") {
-                                var _pathname;
-                                if (result[i].path.indexOf('/') == -1) {
-                                    _pathname ="ul#repos";
-                                } else {
-                                    _pathname = "ul#" + result[i].path.slice(0, result[i].path.indexOf('/'));
-                                }
-                                $(_pathname).append(
-                                    "<li class='dir'>"
-                                    +   "<a href='" + _mainURL + result[i].path + "' target='_blank'>"
-                                    +        result[i].name
-                                    +   "/</a>"
-                                    +"</li>"
-                                    +"<ul id='" + result[i].name + "'>"
-                                    +"</ul>");
-                                _dirCount++;
-                                getContents(result[i].url.replace("?ref=master", ""));
-                            } else {
-                                var _ext = result[i].name.slice(result[i].name.lastIndexOf('.') + 1, result[i].name.length);
-                                if (result[i].path.indexOf('/') > -1) {
-                                    var _ul = $("ul");
-                                    var _firstIndex = result[i].path.indexOf('/');
-                                    var _lastIndex = result[i].path.lastIndexOf('/')
-                                    var _index = _firstIndex != _lastIndex ? result[i].path.slice(_firstIndex + 1, _lastIndex) : result[i].path.slice(0, _lastIndex);
-                                    for (var j in _ul) {
-                                        if (_ul[j].id == _index) {
-                                            $($("ul")[j]).append(
-                                                "<li class='file " + _ext + "'>"
-                                                +   "<a href='" + _mainURL + result[i].path + "' target='_blank'>"
-                                                +        result[i].name
-                                                +   "</a>"
-                                                +"</li>");
-                                            _filesCount++;
-                                            break;
-                                        };
-                                    };
-                                    continue;
-                                };
-                                $("ul#repos").append(
-                                    "<li class='file " + _ext + "'>"
-                                    +   "<a href='" + _mainURL + result[i].path + "' target='_blank'>"
-                                    +        result[i].name
-                                    +   "</a>"
-                                    +"</li>");
-                                _filesCount++;
-                            }
-                        }
-                    }
-                }).done(function() {
-                    var _files = _filesCount == 1 ? "1 file" : _filesCount + " files";
-                    var _dirs = _dirCount == 1 ? "1 folder" : _dirCount + " folders";
-                    $("span#count").text(_dirs + ", " + _files);
-                    $("script").remove();
-                });
-            } catch(e) {
-                console.error(e);
-            }
-        }
-
-        getContents(_repoURL);
+    <script type="text/javascript">
+        (function loop() {
+            $("div#blink").text($("div#blink").text() == " " ? "█" : " ");
+            var _t = setTimeout(loop, 750);
+        })();
     </script>
-    <div id="header">
-        <div id="title">
-            <p></p>
-        </div>
-        <div id="desc">
-            <span>
-                No clue how you ended up here. But hello there!<br />
-                Here is the list of all (well, most) subdomains on matheusavellar.github.io<br />
-                Please note that some of these might be solely<br />
-                experimental, and possibly broken.<br />
-                Thanks a ton for passing by!
-            </span>
-        </div>
-    </div>
     <div id="main">
-        <span id="count"></span>
-        <ul id="list">
-            <li class="home"><a>matheusavellar.github.io</a></li>
-            <ul id="repos"></ul>
-        </ul>
-    </div>
+        Microsoft Windows [Version 6.1.7601]<br />
+        Copyright (c) 2009 Microsoft Corporation. All rights reseved.<br/><br/>
+        C:\Users\matheus> color 02<br/><br/>
+        C:\Users\matheus> @echo off<br/><br /><br/>
+        Why, hello there! Didn't expect anyone to come here!<br />
+        I don't really have much ready, but you can check out the 404 page if you'd like!<br />
+        Just follow this link:<br /><br />
+        &gt; <a href="http://matheusavellar.github.io/404">Click here</a><br /><br />
+        I'm sorry for the inconvenience!
+    </div><br /><br />
+─────────────────────────────<br />
+───────██████─██████████████─<br />
+─────████░░██─██░░░░░░░░░░██─<br />
+───████░░████─██████████░░██─<br />
+─████░░████───────────██░░██─<br />
+─██░░████─────██████████░░██─<br />
+─██░░██───────██░░░░░░░░░░██─<br />
+─██░░████─────██████████░░██─<br />
+─████░░████───────────██░░██─<br />
+───████░░████─██████████░░██─<br />
+─────████░░██─██░░░░░░░░░░██─<br />
+───────██████─██████████████─<br />
+─────────────────────────────<div id="blink"> </div>
 </body>
 </html>
