@@ -8,9 +8,7 @@
     <meta name="description" content="The Answer to The Ultimate Question of Life, the Universe, and Everything" />
     <meta name="robots" content="noindex, nofollow" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <link href="http://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
-    <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
     <!-- Page icon: I really need a better one, but I'll work on that later -->
     <link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
     <link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
@@ -33,23 +31,37 @@
             font-weight: normal;
             text-align: left;
         }
-        footer {
-            color: #1C1F25;
-            font-family: "Open Sans", sans-serif;
-            font-style: oblique;
-            position: fixed;
-            bottom: 5px;
-            left: 10px;
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -o-user-select: none;
-            -ms-user-select: none;
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-            cursor: default;
-        }
     </style>
 </head>
 <body>
+<script>
+    var _4 = false;
+    document.addEventListener("keydown", function(e) {
+        if (e.keyCode == 52 || e.keyCode == 100) {  _4 = true;  }
+        if (_4 && (e.keyCode == 50 || e.keyCode == 98)) {
+            (function() {
+                $("pre").text("42").css({"text-align":"center"});
+            })();
+        }
+    }, false);
+    $("script").remove();
+</script>
+<!--
+    The Answer to The Ultimate Question of Life, the Universe, and Everything
+ *                                *                         *
+       *           *    ██████  ██████ ██████████████
+                        ██░░██  ██░░██ ██░░░░░░░░░░██              *
+                    *   ██░░██  ██░░██ ██████████░░██
+            *           ██░░██  ██░░██         ██░░██     *              *
+                        ██░░██████░░██ ██████████░░██
+ *                      ██░░░░░░░░░░██ ██░░░░░░░░░░██               *
+                   *    ██████████░░██ ██░░██████████   *
+                                ██░░██ ██░░██              *
+   *              *             ██░░██ ██░░██████████            *
+           *                    ██░░██ ██░░░░░░░░░░██
+                       *        ██████ ██████████████    *  *             *
+
+-->
 <pre>
 &gt;
 +++++ +++++ [
@@ -59,6 +71,5 @@
   ++.
   --.
 </pre>
-<footer>brainfuck</footer>
 </body>
 </html>
