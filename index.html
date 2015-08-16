@@ -9,7 +9,7 @@
     <meta name="keyword" content="matheus,avellar,github" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Lora" rel="stylesheet" type="text/css" />
     <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
     <!-- Page icon: I really need a better one, but I'll work on that later -->
     <link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
@@ -23,59 +23,144 @@
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
             cursor: default;
             overflow: hidden;
-            font-family: monospace;
-            font-size: 15px;
         }
         a {
-            color: #008080;
-            text-decoration: none;
             cursor: auto !important;
-        }
-        a:focus, a:hover {
-            outline: none;
-            color: #C0C0C0;
-            font-weight: bold;
         }
         body {
             background-color: #000000;
-            color: #008800;
+            color: #555;
+            margin: 0px;
+        }
+        .h {
+            font-family: "Bree Serif", serif;
+        }
+        .b {
+            font-family: "Lora", serif;
+        }
+        div#main {
+            position: absolute;
+            background-color: #ededed;
+            height: 100%;
+            width: 100%;
+            min-width: 250px;
+        }
+        div#main div.title {
+            transition: all .25s ease;
+            color: #e74c3c;
+            position: absolute;
+            opacity: 0;
+            top: 0px;
+        }
+        div#main div.bar {
+            transition: width .5s ease, top .25s ease;
+            background-color: #e74c3c;
+            position: absolute;
+            height: 5px;
+            width: 0px;
         }
 
-        div#main, div#blink {
-            display: inline;
+        div#scope {
+            transition: all .25s ease;
+            position: absolute;
+            opacity: 0;
+        }
+
+        div.container:hover {
+            background-color: rgba(85, 85, 85, 0.05);
+        }
+
+        @media screen {
+            div#main div.title {
+                font-size: 30px;
+                padding-left: 20px;
+            }
+            div#main div.bar {
+                top: 45px;
+            }
+            div#scope {
+                top: 75px;
+                padding: 0px 0px 0px 15px;
+                width: 90%;
+            }
+            div#scope div.container {
+                padding: 0px 0px 0px 10px;
+                width: 90%;
+                float: left;
+            }
+            div#scope div.header {
+                font-size: 20px;
+            }
+            div#scope div.paragraph {
+                font-size: 15px;
+                padding: 10px 20px;
+            }
+        }
+        @media screen and (min-width: 500px) {
+            div#main div.title {
+                font-size: 50px;
+                padding-left: 40px;
+                min-width: 375px;
+            }
+            div#main div.bar {
+                top: 75px;
+            }
+            div#scope {
+                top: 100px;
+                padding: 50px;
+                width: calc(100% - 100px);
+            }
+            div#scope div.container {
+                padding: 10px;
+                width: 450px;
+                float: left;
+            }
+            div#scope div.header {
+                font-size: 35px;
+            }
+            div#scope div.paragraph {
+                font-size: 20px;
+                padding: 10px 20px;
+            }
         }
     </style>
 </head>
-<body>
+<body onload="loaded();">
     <script type="text/javascript">
-        (function loop() {
-            $("div#blink").text($("div#blink").text() == " " ? "█" : " ");
-            var _t = setTimeout(loop, 750);
-        })();
+        function loaded() {
+            $("div#main div.bar").css({
+                "width": "100%"
+            });
+            setTimeout(function() {
+                $("div#main div.title, div#scope").css({
+                    "opacity": "1"
+                });
+            }, 550);
+        }
     </script>
     <div id="main">
-        Microsoft Windows [Version 6.1.7601]<br />
-        Copyright (c) 2009 Microsoft Corporation. All rights reseved.<br/><br/>
-        C:\Users\matheus> color 02<br/><br/>
-        C:\Users\matheus> @echo off<br/><br /><br/>
-        Why, hello there! Didn't expect anyone to come here!<br />
-        I don't really have much ready, but you can check out the 404 page if you'd like!<br />
-        Just follow this link:<br /><br />
-        &gt; <a href="http://matheusavellar.github.io/404">Click here</a><br /><br />
-        I'm sorry for the inconvenience!
-    </div><br /><br />
-─────────────────────────────<br />
-───────██████─██████████████─<br />
-─────████░░██─██░░░░░░░░░░██─<br />
-───████░░████─██████████░░██─<br />
-─████░░████───────────██░░██─<br />
-─██░░████─────██████████░░██─<br />
-─██░░██───────██░░░░░░░░░░██─<br />
-─██░░████─────██████████░░██─<br />
-─████░░████───────────██░░██─<br />
-───████░░████─██████████░░██─<br />
-─────████░░██─██░░░░░░░░░░██─<br />
-───────██████─██████████████─<br />
-─────────────────────────────<div id="blink"> </div>
+        <div class="title h">Matheus Avellar</div>
+        <div class="bar"></div>
+        <div id="scope">
+            <div class="container">
+                <div class="header h">About</div>
+                <div class="paragraph b">
+                    Matheus Avellar is an apprendice Web
+                    Designer and amateur front-end
+                    programmer who oddly yet interestingly
+                    enjoys talking about himself in third person.
+                    However weird that might sound, doctors
+                    assured that he is sane enough to live in
+                    society, and represents no danger to other
+                    human beings.</div>
+            </div>
+            <div class="container">
+                <div class="header h">Motto</div>
+                <div class="paragraph b">
+                    In spite the lack of professional skills (in his sole humble opinion), Avellar's life motto is "Do it from scratch". His twisted logic tells him that if he is not capable of coming out with a good design himself, then he should keep trying until he does.
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
