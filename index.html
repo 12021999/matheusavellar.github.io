@@ -80,6 +80,32 @@
             color: #0a0a0a;
         }
 
+        div#scope div.button,
+        div#prompt div.button {
+            background-color: #e74c3c;
+            position: absolute;
+            text-align: center;
+            color: #ededed;
+            cursor: pointer;
+            border-bottom: 5px solid #bb4033;
+        }
+
+        div#scope div.button:active,
+        div#prompt div.button:active {
+            background-color: #bb4033;
+            border-bottom: none;
+        }
+
+        div#prompt {
+            height: 100%;
+            width: 100%;
+            background-color: rgba(237, 237, 237, 0.5);
+            position: fixed;
+            transition: all .25s ease;
+            display: none;
+            opacity: 0;
+        }
+
         @media screen {
             div#main div.title {
                 font-size: 30px;
@@ -105,6 +131,56 @@
             div#scope div.paragraph {
                 font-size: 15px;
                 padding: 10px 20px;
+            }
+            div#scope div.button {
+                height: 30px;
+                width: 125px;
+                bottom: -60px;
+                margin: 0px 0px 10px 80px;
+                padding-top: 6px;
+            }
+
+            div#prompt div.box {
+                width: 300px;
+                height: 250px;
+                background-color: #ededed;
+                position: absolute;
+                top: calc(50% - 125px);
+                border: 3px solid #e74c3c;
+                border-radius: 8px;
+                left: calc(50% - 150px);
+                box-shadow: 10px 10px 4px #555555;
+                transition: all .25s ease;
+            }
+
+            div#prompt div.warning {
+                text-align: center;
+                color: #e74c3c;
+                font-size: 55px;
+                transition: all .25s ease;
+            }
+
+            div#prompt div.text {
+                padding: 20px;
+                font-size: 14px;
+                transition: all .25s ease;
+            }
+
+            div#prompt div.button.yes {
+                height: 30px;
+                bottom: 20px;
+                width: 125px;
+                padding-top: 6px;
+                left: 155px;
+                transition: all .25s ease;
+            }
+            div#prompt div.button.no {
+                height: 30px;
+                bottom: 20px;
+                width: 125px;
+                padding-top: 6px;
+                left: 15px;
+                transition: all .25s ease;
             }
         }
         @media screen and (min-width: 500px) {
@@ -132,6 +208,29 @@
                 font-size: 20px;
                 padding: 10px 20px;
             }
+            div#scope div.button {
+                margin: 0px 0px 50px 250px;
+            }
+
+            div#prompt div.box {
+                width: 500px;
+                left: calc(50% - 250px);
+            }
+
+            div#prompt div.warning {
+                font-size: 80px;
+            }
+
+            div#prompt div.text {
+                font-size: 16px;
+            }
+
+            div#prompt div.button.yes {
+                left: 325px;
+            }
+            div#prompt div.button.no {
+                left: 50px;
+            }
         }
     </style>
 </head>
@@ -146,6 +245,31 @@
                     "opacity": "1"
                 });
             }, 500);
+        }
+
+        function pmpt(str) {
+            if (str.indexOf("@@") == -1) {
+                $("div#prompt span.link").text("matheusavellar.github.io/" + str);
+                $("div#prompt").css({
+                    "display": "block"
+                });
+                setTimeout(function() {
+                    $("div#prompt").css({
+                        "opacity": "1"
+                    });
+                }, 50);
+            } else if (str.indexOf("@@yes") == -1) {
+                $("div#prompt").css({
+                        "opacity": "0"
+                });
+                setTimeout(function() {
+                    $("div#prompt").css({
+                        "display": "none"
+                    });
+                }, 250);
+            } else {
+                window.location.assign("http://" + $("div#prompt span.link").text());
+            }
         }
     </script>
     <div id="main">
@@ -176,6 +300,18 @@
                     keep trying until he does.
                 </div>
             </div>
+            <div class="button h u" onclick="pmpt('404');">Test button</div>
+        </div>
+    </div>
+    <div id="prompt">
+        <div class="box">
+            <div class="warning h u">!</div>
+            <div class="text b">
+                You are being redirected to "<span class="link"></span>".
+                Are you sure you wish to continue?
+            </div>
+            <div class="button no h u" onclick="pmpt('@@no');">Nope!</div>
+            <div class="button yes h u" onclick="pmpt('@@yes');">Yup!</div>
         </div>
     </div>
 </body>
