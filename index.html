@@ -5,271 +5,35 @@
     <meta http-equiv="content-language" content="en-us" />
     <title>Index of matheusavellar</title>
     <meta name="author" content="Matheus Avellar" />
-    <meta name="description" content="List of public subdomains of matheusavellar.github.io" />
-    <meta name="keyword" content="matheus,avellar,github" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <link href="http://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=Lora" rel="stylesheet" type="text/css" />
-    <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://matheus-avellar.c9.io/resources/main.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet" type="text/css" />
+    <link href="https://matheus-avellar.c9.io/resources/style.css" rel="stylesheet" type="text/css" />
     <!-- Page icon: I really need a better one, but I'll work on that later -->
     <link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
     <link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
-    <style type="text/css">
-        *::selection {
-            background-color: rgba(231, 76, 60, 0.5);
-        }
-
-        a {
-            cursor: auto !important;
-        }
-
-        body {
-            background-color: #ededed;
-            color: #555;
-            margin: 0px;
-        }
-
-        .h {
-            font-family: "Bree Serif", serif;
-        }
-
-        .b {
-            font-family: "Lora", serif;
-        }
-
-        .u {
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -o-user-select: none;
-            -ms-user-select: none;
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-            cursor: default;
-        }
-
-        div#main {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            min-width: 250px;
-        }
-
-        div#main div.title {
-            transition: all .25s ease;
-            color: #e74c3c;
-            position: absolute;
-            opacity: 0;
-            top: 0px;
-        }
-
-        div#main div.bar {
-            transition: width .5s ease, top .25s ease;
-            background-color: #e74c3c;
-            position: absolute;
-            height: 5px;
-            width: 0px;
-        }
-
-        div#scope {
-            transition: all .25s ease;
-            position: absolute;
-            opacity: 0;
-        }
-
-        div.container:hover {
-            background-color: rgba(85, 85, 85, 0.05);
-            color: #0a0a0a;
-        }
-
-        div#scope div.button,
-        div#prompt div.button {
-            background-color: #e74c3c;
-            position: absolute;
-            text-align: center;
-            color: #ededed;
-            cursor: pointer;
-            border-bottom: 5px solid #bb4033;
-        }
-
-        div#scope div.button:active,
-        div#prompt div.button:active {
-            background-color: #bb4033;
-            border-bottom: none;
-        }
-
-        div#prompt {
-            height: 100%;
-            width: 100%;
-            background-color: rgba(237, 237, 237, 0.5);
-            position: fixed;
-            transition: all .25s ease;
-            display: none;
-            opacity: 0;
-        }
-
-        @media screen {
-            div#main div.title {
-                font-size: 30px;
-                padding-left: 20px;
-            }
-            div#main div.bar {
-                top: 45px;
-            }
-            div#scope {
-                top: 75px;
-                padding: 0px 0px 0px 15px;
-                width: 90%;
-            }
-            div#scope div.container {
-                padding: 0px 0px 0px 10px;
-                width: 90%;
-                float: left;
-                transition: all .25s ease;
-            }
-            div#scope div.header {
-                font-size: 20px;
-            }
-            div#scope div.paragraph {
-                font-size: 15px;
-                padding: 10px 20px;
-            }
-            div#scope div.button {
-                height: 30px;
-                width: 125px;
-                bottom: -60px;
-                margin: 0px 0px 10px 80px;
-                padding-top: 6px;
-            }
-
-            div#prompt div.box {
-                width: 300px;
-                height: 250px;
-                background-color: #ededed;
-                position: absolute;
-                top: calc(50% - 125px);
-                border: 3px solid #e74c3c;
-                border-radius: 8px;
-                left: calc(50% - 150px);
-                box-shadow: 10px 10px 4px #555555;
-                transition: all .25s ease;
-            }
-
-            div#prompt div.warning {
-                text-align: center;
-                color: #e74c3c;
-                font-size: 55px;
-                transition: all .25s ease;
-            }
-
-            div#prompt div.text {
-                padding: 20px;
-                font-size: 14px;
-                transition: all .25s ease;
-            }
-
-            div#prompt div.button.yes {
-                height: 30px;
-                bottom: 20px;
-                width: 125px;
-                padding-top: 6px;
-                left: 155px;
-                transition: all .25s ease;
-            }
-            div#prompt div.button.no {
-                height: 30px;
-                bottom: 20px;
-                width: 125px;
-                padding-top: 6px;
-                left: 15px;
-                transition: all .25s ease;
-            }
-        }
-        @media screen and (min-width: 500px) {
-            div#main div.title {
-                font-size: 50px;
-                padding-left: 40px;
-                min-width: 375px;
-            }
-            div#main div.bar {
-                top: 75px;
-            }
-            div#scope {
-                top: 100px;
-                padding: 50px;
-                width: calc(100% - 100px);
-            }
-            div#scope div.container {
-                padding: 10px;
-                width: 450px;
-            }
-            div#scope div.header {
-                font-size: 35px;
-            }
-            div#scope div.paragraph {
-                font-size: 20px;
-                padding: 10px 20px;
-            }
-            div#scope div.button {
-                margin: 0px 0px 50px 250px;
-            }
-
-            div#prompt div.box {
-                width: 500px;
-                left: calc(50% - 250px);
-            }
-
-            div#prompt div.warning {
-                font-size: 80px;
-            }
-
-            div#prompt div.text {
-                font-size: 16px;
-            }
-
-            div#prompt div.button.yes {
-                left: 325px;
-            }
-            div#prompt div.button.no {
-                left: 50px;
-            }
-        }
-    </style>
 </head>
 <body onload="loaded();">
     <script type="text/javascript">
+        var _c = 0;
+        function unexpected() {
+            _c++;
+            var _t = _c == 100 ? "Wow that's a lot" :
+            (_c >= 150 && _c <= 200) ? "Stop, please." :
+            (_c >= 300 && _c <= 500) ? "It's over. Stop." : _c;
+            $("div#scope div.button").text(_t);
+        }
+
         function loaded() {
             $("div#main div.bar").css({
                 "width": "100%"
             });
             setTimeout(function() {
-                $("div#main div.title, div#scope").css({
+                $("div#main div.title, div#main div.subtitle, div#scope").css({
                     "opacity": "1"
                 });
             }, 500);
-        }
-
-        function pmpt(str) {
-            if (str.indexOf("@@") == -1) {
-                $("div#prompt span.link").text("matheusavellar.github.io/" + str);
-                $("div#prompt").css({
-                    "display": "block"
-                });
-                setTimeout(function() {
-                    $("div#prompt").css({
-                        "opacity": "1"
-                    });
-                }, 50);
-            } else if (str.indexOf("@@yes") == -1) {
-                $("div#prompt").css({
-                        "opacity": "0"
-                });
-                setTimeout(function() {
-                    $("div#prompt").css({
-                        "display": "none"
-                    });
-                }, 250);
-            } else {
-                window.location.assign("http://" + $("div#prompt span.link").text());
-            }
         }
     </script>
     <div id="main">
@@ -300,7 +64,7 @@
                     keep trying until he does.
                 </div>
             </div>
-            <div class="button h u" onclick="pmpt('404');">Test button</div>
+            <div class="button h u" onclick="unexpected();">Test button</div>
         </div>
     </div>
     <div id="prompt">

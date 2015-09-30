@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="content-language" content="en-us" />
+    <title>Pokémon</title>
+    <meta name="author" content="Matheus Avellar" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet" type="text/css" />
+    <!-- Page icon: I really need a better one, but I'll work on that later -->
+    <link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
+    <link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
+    <style type="text/css">
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            overflow: hidden;
+            font-family: "Courier New", monospace;
+            font-size: 5px;
+            text-align: left;
+        }
+        @media screen and (min-width: 200px) {
+            pre {  font-size: 8px;  }
+        }
+        @media screen and (min-width: 650px) {
+            pre {  font-size: 15px;  }
+        }
+        @media screen and (min-width: 1100px) {
+            pre {  font-size: 25px;  }
+        }
+        a.cp {  color: #C820F8;  }
+        a.bp {  background-color: #c820f8;  }
+    </style>
+</head>
+<body>
+    <center>
+<pre>
+┌━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┐
+│                                                                 │
+│                                .::.                             │
+│                              .;:**'                             │
+│                              `                                  │
+│  .:XHHHHk.              db.   .;;.     dH  MX                   │
+│oMMMMMMMMMMM       ~MM  dMMP :MMMMMR   MMM  MR      ~MRMN        │
+│QMMMMMb  "MMX       MMMMMMP !MX' :M~   MMM MMM  .oo. XMMM 'MMM   │
+│  `MMMM.  )M> :X!Hk. MMMM   XMM.o"  .  MMMMMMM X?XMMM MMM>!MMP   │
+│   'MMMb.dM! XM M'?M MMMMMX.`MMMMMMMM~ MM MMM XM `" MX MMXXMM    │
+│    ~MMMMM~ XMM. .XM XM`"MMMb.~*?**~ .MMX M t MMbooMM XMMMMMP    │
+│     ?MMM>  YMMMMMM! MM   `?MMRb.    `"""   !L"MMMMM XM IMMM     │
+│      MMMX   "MMMM"  MM       ~%:           !Mh.""" dMI IMMP     │
+│      'MMM.                                             IMX      │
+│       ~M!M                                             IMP      │
+│                                                                 │
+└━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┘
+</pre>
+
+<script type="text/javascript">
+    const BORDER = [
+        "┌━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┐\n",
+        "└━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┘"
+    ];
+    const SCENES = {
+        "step1": {
+            "len": 1500,
+            "txt": [
+                "                                                                 ",
+                "                                                                 ",
+                "                                                                 ",
+                "                       ▄$bp▀▀▀▀▀▀$▄                                  ",
+                "                      █$cp████████$█                                 ",
+                "                     ███$bp▄$▄▄▄▄$bp▄$███                                ",
+                "                    █ ▀  ▄  ▄  ▀ █                               ",
+                "                    ▀█$bp▀$▄ ▀$cp▄▄$▀ ▄▀█▀                               ",
+                "                     █▄▀▀████$bp▀$█▀                                 ",
+                "                      ▀▄▄▀$bp▄▄▀▀$█                                  ",
+                "                           ▀▀▀                                   ",
+                "                                                                 ",
+                "                                                                 ",
+                "                                                                 ",
+                "                                                                 "
+              ]
+        },
+        "step2": {
+            "len": 7500,
+            "txt": [
+                "                                                                 ",
+                "                                                                 ",
+                "                       ▄$bp▀▀▀▀▀▀$▄                                  ",
+                "                      █$cp████████$█                                 ",
+                "                     ██▀$bp▄$▄▄▄▄$bp▄$▀██                                ",
+                "                    █ ▀  ▄  ▄  ▀ █                               ",
+                "                     ██▄ ▀$cp▄▄$▀ ▄██                                ",
+                "                    █  ████████  █                               ",
+                "                     ▀█$bp▀▄▄▀▀▄▄▀$█▀                                ",
+                "                      ▀$bp▄▄▄$▀▀$bp▄▄▄$▀                                 ",
+                "                                                                 ",
+                "                                                                 ",
+                "                                                                 ",
+                "                                                                 ",
+                "                                                                 "
+              ]
+        }
+    }
+
+    function colorize(_str) {
+        return _str
+            .split("$bp").join("<a class='bp'>")
+            .split("$cp").join("<a class='cp'>")
+            .split("$cw").join("<a class='cw'>")
+            .split("$").join("</a>");
+    }
+
+    function run() {
+        for (var i in SCENES) {
+            var _timeout = setTimeout(function() {
+                console.log(i);
+                $("pre").html(BORDER[0]);
+                for (var j = 0, l = SCENES[i].txt.length; j < l; j++) {
+                    $("pre").html($("pre").html() + "│" + colorize(SCENES[i].txt[j]) + "│\n");
+                }
+                $("pre").html($("pre").html() + BORDER[1]);
+            }, SCENES[i].len);
+        }
+    }
+    run();
+</script>
+    </center>
+</body>
+</html>

@@ -3,10 +3,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="content-language" content="en-us" />
-    <title>404</title>
+    <title>500</title>
     <meta name="author" content="Matheus Avellar" />
-    <meta name="description" content="List of public subdomains of matheusavellar.github.io" />
-    <meta name="keyword" content="matheus,avellar,github" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://matheus-avellar.c9.io/resources/main.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css" />
@@ -15,6 +13,22 @@
     <!-- Page icon: I really need a better one, but I'll work on that later -->
     <link rel="shortcut icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
     <link rel="icon" href="https://i.imgur.com/q266ffS.png" type="image/png" />
+    <style type="text/css">
+        div#main div.title {
+            color: #41b7d8;
+        }
+        div#main div.bar {
+            background-color: #41b7d8;
+        }
+        div#scope div.button {
+            background-color: #41b7d8;
+            border-bottom: 5px solid #49a1b9;
+        }
+
+        div#scope div.button:active {
+            background-color: #49a1b9;
+        }
+    </style>
 </head>
 <body onload="loaded();">
     <script type="text/javascript">
@@ -30,19 +44,17 @@
         }
     </script>
     <div id="main">
-        <div class="title h u">404</div>
-        <div class="subtitle h u">Not Found</div>
+        <div class="title h u">500</div>
+        <div class="subtitle h u">Internal Server Error</div>
         <div class="bar"></div>
         <div id="scope">
             <div class="container">
-                <div class="header h">Sorry about that.</div>
+                <div class="header h">Uhm... What?</div>
                 <div class="paragraph b">
-                    Apparently something went wrong. I'm not
-                    really sure what it was, either. But it turns
-                    out this URL you chose doesn't exist at all.
+                    Yeah it's frustrating to have this happen to you. But I guess we can all learn from this experience, and move on to a better path in life. Don't you agree?
                 </div>
             </div>
-            <div class="button h u" onclick="pmpt('');">Go back!</div>
+            <div class="button h u" onclick="pmpt('');">Go back</div>
         </div>
     </div>
     <div id="prompt">
